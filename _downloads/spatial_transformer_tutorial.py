@@ -9,20 +9,20 @@ Spatial Transformer Networks Tutorial
 In this tutorial, you will learn how to augment your network using
 a visual attention mechanism called spatial transformer
 networks. You can read more about the spatial transformer
-networks in `DeepMind paper <https://arxiv.org/abs/1506.02025>`__
+networks in the `DeepMind paper <https://arxiv.org/abs/1506.02025>`__
 
 Spatial transformer networks are a generalization of differentiable
 attention to any spatial transformation. Spatial transformer networks
-(STN for short) allows a neural network to learn how to do spatial
-transformations to the input image in order to enhance the geometric
+(STN for short) allow a neural network to learn how to perform spatial
+transformations on the input image in order to enhance the geometric
 invariance of the model.
-For example it can crop a region of interest, scale and correct
-the orientation of an image. It can be a useful mechanism because CNN
-are not invariant to rotation and scale and more generally : affine
+For example, it can crop a region of interest, scale and correct
+the orientation of an image. It can be a useful mechanism because CNNs
+are not invariant to rotation and scale and more general affine
 transformations.
 
 One of the best things about STN is the ability to simply plug it into
-any existing CNN with very little modifications.
+any existing CNN with very little modification.
 """
 # License: BSD
 # Author: Ghassen Hamrouni
@@ -34,7 +34,6 @@ import torch.nn.functional as F
 import torch.optim as optim
 import torchvision
 from torchvision import datasets, transforms
-from torch.autograd import Variable
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -48,7 +47,7 @@ plt.ion()   # interactive mode
 # standard convolutional network augmented with a spatial transformer
 # network.
 
-use_cuda = torch.cuda.is_available()
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Training dataset
 train_loader = torch.utils.data.DataLoader(
@@ -76,7 +75,7 @@ test_loader = torch.utils.data.DataLoader(
 #    the spatial transformations that enhances the global accuracy.
 # -  The grid generator generates a grid of coordinates in the input
 #    image corresponding to each pixel from the output image.
-# -  The sampler uses the parameters of the transformation and apply
+# -  The sampler uses the parameters of the transformation and applies
 #    it to the input image.
 #
 # .. figure:: /_static/img/stn/stn-arch.png
@@ -114,8 +113,8 @@ class Net(nn.Module):
         )
 
         # Initialize the weights/bias with identity transformation
-        self.fc_loc[2].weight.data.fill_(0)
-        self.fc_loc[2].bias.data = torch.FloatTensor([1, 0, 0, 0, 1, 0])
+        self.fc_loc[2].weight.data.zero_()
+        self.fc_loc[2].bias.data.copy_(torch.tensor([1, 0, 0, 0, 1, 0], dtype=torch.float))
 
     # Spatial transformer network forward function
     def stn(self, x):
@@ -133,19 +132,17 @@ class Net(nn.Module):
         # transform the input
         x = self.stn(x)
 
-        # Perform the usual froward pass
+        # Perform the usual forward pass
         x = F.relu(F.max_pool2d(self.conv1(x), 2))
         x = F.relu(F.max_pool2d(self.conv2_drop(self.conv2(x)), 2))
         x = x.view(-1, 320)
         x = F.relu(self.fc1(x))
         x = F.dropout(x, training=self.training)
         x = self.fc2(x)
-        return F.log_softmax(x)
+        return F.log_softmax(x, dim=1)
 
 
-model = Net()
-if use_cuda:
-    model.cuda()
+model = Net().to(device)
 
 ######################################################################
 # Training the model
@@ -162,10 +159,8 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 def train(epoch):
     model.train()
     for batch_idx, (data, target) in enumerate(train_loader):
-        if use_cuda:
-            data, target = data.cuda(), target.cuda()
+        data, target = data.to(device), target.to(device)
 
-        data, target = Variable(data), Variable(target)
         optimizer.zero_grad()
         output = model(data)
         loss = F.nll_loss(output, target)
@@ -174,32 +169,31 @@ def train(epoch):
         if batch_idx % 500 == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
-                100. * batch_idx / len(train_loader), loss.data[0]))
+                100. * batch_idx / len(train_loader), loss.item()))
 #
 # A simple test procedure to measure STN the performances on MNIST.
 #
 
 
 def test():
-    model.eval()
-    test_loss = 0
-    correct = 0
-    for data, target in test_loader:
-        if use_cuda:
-            data, target = data.cuda(), target.cuda()
-        data, target = Variable(data, volatile=True), Variable(target)
-        output = model(data)
+    with torch.no_grad():
+        model.eval()
+        test_loss = 0
+        correct = 0
+        for data, target in test_loader:
+            data, target = data.to(device), target.to(device)
+            output = model(data)
 
-        # sum up batch loss
-        test_loss += F.nll_loss(output, target, size_average=False).data[0]
-        # get the index of the max log-probability
-        pred = output.data.max(1, keepdim=True)[1]
-        correct += pred.eq(target.data.view_as(pred)).cpu().sum()
+            # sum up batch loss
+            test_loss += F.nll_loss(output, target, size_average=False).item()
+            # get the index of the max log-probability
+            pred = output.max(1, keepdim=True)[1]
+            correct += pred.eq(target.view_as(pred)).sum().item()
 
-    test_loss /= len(test_loader.dataset)
-    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'
-          .format(test_loss, correct, len(test_loader.dataset),
-                  100. * correct / len(test_loader.dataset)))
+        test_loss /= len(test_loader.dataset)
+        print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'
+              .format(test_loss, correct, len(test_loader.dataset),
+                      100. * correct / len(test_loader.dataset)))
 
 ######################################################################
 # Visualizing the STN results
@@ -227,29 +221,26 @@ def convert_image_np(inp):
 
 
 def visualize_stn():
-    # Get a batch of training data
-    data, _ = next(iter(test_loader))
-    data = Variable(data, volatile=True)
+    with torch.no_grad():
+        # Get a batch of training data
+        data = next(iter(test_loader))[0].to(device)
 
-    if use_cuda:
-        data = data.cuda()
+        input_tensor = data.cpu()
+        transformed_input_tensor = model.stn(data).cpu()
 
-    input_tensor = data.cpu().data
-    transformed_input_tensor = model.stn(data).cpu().data
+        in_grid = convert_image_np(
+            torchvision.utils.make_grid(input_tensor))
 
-    in_grid = convert_image_np(
-        torchvision.utils.make_grid(input_tensor))
+        out_grid = convert_image_np(
+            torchvision.utils.make_grid(transformed_input_tensor))
 
-    out_grid = convert_image_np(
-        torchvision.utils.make_grid(transformed_input_tensor))
+        # Plot the results side-by-side
+        f, axarr = plt.subplots(1, 2)
+        axarr[0].imshow(in_grid)
+        axarr[0].set_title('Dataset Images')
 
-    # Plot the results side-by-side
-    f, axarr = plt.subplots(1, 2)
-    axarr[0].imshow(in_grid)
-    axarr[0].set_title('Dataset Images')
-
-    axarr[1].imshow(out_grid)
-    axarr[1].set_title('Transformed Images')
+        axarr[1].imshow(out_grid)
+        axarr[1].set_title('Transformed Images')
 
 
 for epoch in range(1, 20 + 1):

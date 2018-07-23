@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sequence Models and Long-Short Term Memory Networks &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Sequence Models and Long-Short Term Memory Networks &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../../index.html"/>
         <link rel="up" title="Deep Learning for NLP with Pytorch" href="../deep_learning_nlp_tutorial.html"/>
         <link rel="next" title="Advanced: Making Dynamic Decisions and the Bi-LSTM CRF" href="advanced_tutorial.html"/>
         <link rel="prev" title="Word Embeddings: Encoding Lexical Semantics" href="word_embeddings_tutorial.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -109,16 +109,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -175,7 +175,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -199,7 +199,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -218,7 +218,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -283,7 +283,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -443,9 +443,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -513,7 +536,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sequence-models-and-long-short-term-memory-networks">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-beginner-nlp-sequence-models-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="sequence-models-and-long-short-term-memory-networks">
 <span id="sphx-glr-beginner-nlp-sequence-models-tutorial-py"></span><h1>Sequence Models and Long-Short Term Memory Networks<a class="headerlink" href="#sequence-models-and-long-short-term-memory-networks" title="Permalink to this headline">¶</a></h1>
 <p>At this point, we have seen various feed-forward networks. That is,
 there is no state maintained by the network at all. This might not be
@@ -553,7 +580,6 @@ case the 1st axis will have size 1 also.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Author: Robert Guthrie</span>
 
 <span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.autograd</span> <span class="kn">as</span> <span class="nn">autograd</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="kn">as</span> <span class="nn">F</span>
 <span class="kn">import</span> <span class="nn">torch.optim</span> <span class="kn">as</span> <span class="nn">optim</span>
@@ -562,12 +588,11 @@ case the 1st axis will have size 1 also.</p>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">lstm</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Input dim is 3, output dim is 3</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
-          <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>  <span class="c1"># make a sequence of length 5</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>  <span class="c1"># make a sequence of length 5</span>
 
 <span class="c1"># initialize the hidden state.</span>
-<span class="n">hidden</span> <span class="o">=</span> <span class="p">(</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
-          <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))))</span>
+<span class="n">hidden</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+          <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inputs</span><span class="p">:</span>
     <span class="c1"># Step through the sequence one element at a time.</span>
     <span class="c1"># after each step, hidden contains the hidden state.</span>
@@ -583,40 +608,23 @@ case the 1st axis will have size 1 also.</p>
 <span class="c1"># by passing it as an argument  to the lstm at a later time</span>
 <span class="c1"># Add the extra 2nd dimension</span>
 <span class="n">inputs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">hidden</span> <span class="o">=</span> <span class="p">(</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span>
-    <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))))</span>  <span class="c1"># clean out hidden state</span>
+<span class="n">hidden</span> <span class="o">=</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># clean out hidden state</span>
 <span class="n">out</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="n">lstm</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">hidden</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.2410</span>  <span class="mf">0.0926</span>  <span class="mf">0.0145</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[[-0.0187,  0.1713, -0.2944]],
 
-<span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.1168</span> <span class="o">-</span><span class="mf">0.0040</span>  <span class="mf">0.2024</span>
+        [[-0.3521,  0.1026, -0.2971]],
 
-<span class="p">(</span><span class="mi">2</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.0572</span> <span class="o">-</span><span class="mf">0.0214</span>  <span class="mf">0.2348</span>
+        [[-0.3191,  0.0781, -0.1957]],
 
-<span class="p">(</span><span class="mi">3</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.0182</span> <span class="o">-</span><span class="mf">0.1506</span>  <span class="mf">0.2259</span>
+        [[-0.1634,  0.0941, -0.1637]],
 
-<span class="p">(</span><span class="mi">4</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.0220</span>  <span class="mf">0.0112</span>  <span class="mf">0.3491</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">5</span><span class="n">x1x3</span><span class="p">]</span>
-
-<span class="p">(</span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.0220</span>  <span class="mf">0.0112</span>  <span class="mf">0.3491</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x1x3</span><span class="p">]</span>
-<span class="p">,</span> <span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.0431</span>  <span class="mf">0.0247</span>  <span class="mf">0.7800</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x1x3</span><span class="p">]</span>
-<span class="p">)</span>
+        [[-0.3368,  0.0959, -0.0538]]], grad_fn=&lt;CatBackward&gt;)
+(tensor([[[-0.3368,  0.0959, -0.0538]]], grad_fn=&lt;ViewBackward&gt;), tensor([[[-0.9825,  0.4715, -0.0633]]], grad_fn=&lt;ViewBackward&gt;))
 </pre></div>
 </div>
 </div>
@@ -646,8 +654,7 @@ target space of <span class="math">\(A\)</span> is <span class="math">\(|T|\)</s
 <p>Prepare data:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prepare_sequence</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">to_ix</span><span class="p">):</span>
     <span class="n">idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">to_ix</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">seq</span><span class="p">]</span>
-    <span class="n">tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
 
 
 <span class="n">training_data</span> <span class="o">=</span> <span class="p">[</span>
@@ -669,7 +676,7 @@ target space of <span class="math">\(A\)</span> is <span class="math">\(|T|\)</s
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;the&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;book&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;that&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;ate&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;The&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Everybody&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>{&#39;The&#39;: 0, &#39;dog&#39;: 1, &#39;ate&#39;: 2, &#39;the&#39;: 3, &#39;apple&#39;: 4, &#39;Everybody&#39;: 5, &#39;read&#39;: 6, &#39;that&#39;: 7, &#39;book&#39;: 8}
 </pre></div>
 </div>
 <p>Create the model:</p>
@@ -694,15 +701,15 @@ target space of <span class="math">\(A\)</span> is <span class="math">\(|T|\)</s
         <span class="c1"># Refer to the Pytorch documentation to see exactly</span>
         <span class="c1"># why they have this dimensionality.</span>
         <span class="c1"># The axes semantics are (num_layers, minibatch_size, hidden_dim)</span>
-        <span class="k">return</span> <span class="p">(</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">)),</span>
-                <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">),</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sentence</span><span class="p">):</span>
         <span class="n">embeds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">word_embeddings</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
         <span class="n">lstm_out</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span>
             <span class="n">embeds</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden</span><span class="p">)</span>
         <span class="n">tag_space</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden2tag</span><span class="p">(</span><span class="n">lstm_out</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-        <span class="n">tag_scores</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">tag_space</span><span class="p">)</span>
+        <span class="n">tag_scores</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">tag_space</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">tag_scores</span>
 </pre></div>
 </div>
@@ -713,9 +720,11 @@ target space of <span class="math">\(A\)</span> is <span class="math">\(|T|\)</s
 
 <span class="c1"># See what the scores are before training</span>
 <span class="c1"># Note that element i,j of the output is the score for tag j for word i.</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="n">prepare_sequence</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">word_to_ix</span><span class="p">)</span>
-<span class="n">tag_scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tag_scores</span><span class="p">)</span>
+<span class="c1"># Here we don&#39;t need to train, so the code is wrapped in torch.no_grad()</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">prepare_sequence</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">word_to_ix</span><span class="p">)</span>
+    <span class="n">tag_scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tag_scores</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>  <span class="c1"># again, normally you would NOT do 300 epochs, it is toy data</span>
     <span class="k">for</span> <span class="n">sentence</span><span class="p">,</span> <span class="n">tags</span> <span class="ow">in</span> <span class="n">training_data</span><span class="p">:</span>
@@ -728,7 +737,7 @@ target space of <span class="math">\(A\)</span> is <span class="math">\(|T|\)</s
         <span class="n">model</span><span class="o">.</span><span class="n">hidden</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">init_hidden</span><span class="p">()</span>
 
         <span class="c1"># Step 2. Get our inputs ready for the network, that is, turn them into</span>
-        <span class="c1"># Variables of word indices.</span>
+        <span class="c1"># Tensors of word indices.</span>
         <span class="n">sentence_in</span> <span class="o">=</span> <span class="n">prepare_sequence</span><span class="p">(</span><span class="n">sentence</span><span class="p">,</span> <span class="n">word_to_ix</span><span class="p">)</span>
         <span class="n">targets</span> <span class="o">=</span> <span class="n">prepare_sequence</span><span class="p">(</span><span class="n">tags</span><span class="p">,</span> <span class="n">tag_to_ix</span><span class="p">)</span>
 
@@ -742,33 +751,30 @@ target space of <span class="math">\(A\)</span> is <span class="math">\(|T|\)</s
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
 <span class="c1"># See what the scores are after training</span>
-<span class="n">inputs</span> <span class="o">=</span> <span class="n">prepare_sequence</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">word_to_ix</span><span class="p">)</span>
-<span class="n">tag_scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
-<span class="c1"># The sentence is &quot;the dog ate the apple&quot;.  i,j corresponds to score for tag j</span>
-<span class="c1">#  for word i. The predicted tag is the maximum scoring tag.</span>
-<span class="c1"># Here, we can see the predicted sequence below is 0 1 2 0 1</span>
-<span class="c1"># since 0 is index of the maximum value of row 1,</span>
-<span class="c1"># 1 is the index of maximum value of row 2, etc.</span>
-<span class="c1"># Which is DET NOUN VERB DET NOUN, the correct sequence!</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tag_scores</span><span class="p">)</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">prepare_sequence</span><span class="p">(</span><span class="n">training_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">word_to_ix</span><span class="p">)</span>
+    <span class="n">tag_scores</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+
+    <span class="c1"># The sentence is &quot;the dog ate the apple&quot;.  i,j corresponds to score for tag j</span>
+    <span class="c1"># for word i. The predicted tag is the maximum scoring tag.</span>
+    <span class="c1"># Here, we can see the predicted sequence below is 0 1 2 0 1</span>
+    <span class="c1"># since 0 is index of the maximum value of row 1,</span>
+    <span class="c1"># 1 is the index of maximum value of row 2, etc.</span>
+    <span class="c1"># Which is DET NOUN VERB DET NOUN, the correct sequence!</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">tag_scores</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">0.9910</span> <span class="o">-</span><span class="mf">1.1752</span> <span class="o">-</span><span class="mf">1.1393</span>
-<span class="o">-</span><span class="mf">1.0081</span> <span class="o">-</span><span class="mf">1.1000</span> <span class="o">-</span><span class="mf">1.1965</span>
-<span class="o">-</span><span class="mf">1.0978</span> <span class="o">-</span><span class="mf">1.1130</span> <span class="o">-</span><span class="mf">1.0853</span>
-<span class="o">-</span><span class="mf">0.9537</span> <span class="o">-</span><span class="mf">1.1596</span> <span class="o">-</span><span class="mf">1.2003</span>
-<span class="o">-</span><span class="mf">0.9241</span> <span class="o">-</span><span class="mf">1.2080</span> <span class="o">-</span><span class="mf">1.1898</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">5</span><span class="n">x3</span><span class="p">]</span>
-
-<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">0.1632</span> <span class="o">-</span><span class="mf">3.1029</span> <span class="o">-</span><span class="mf">2.2476</span>
-<span class="o">-</span><span class="mf">4.9742</span> <span class="o">-</span><span class="mf">0.0183</span> <span class="o">-</span><span class="mf">4.4864</span>
-<span class="o">-</span><span class="mf">3.6390</span> <span class="o">-</span><span class="mf">5.0683</span> <span class="o">-</span><span class="mf">0.0331</span>
-<span class="o">-</span><span class="mf">0.0841</span> <span class="o">-</span><span class="mf">3.0592</span> <span class="o">-</span><span class="mf">3.3886</span>
-<span class="o">-</span><span class="mf">2.5666</span> <span class="o">-</span><span class="mf">0.0818</span> <span class="o">-</span><span class="mf">6.3366</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">5</span><span class="n">x3</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[-1.1389, -1.2024, -0.9693],
+        [-1.1065, -1.2200, -0.9834],
+        [-1.1286, -1.2093, -0.9726],
+        [-1.1190, -1.1960, -0.9916],
+        [-1.0137, -1.2642, -1.0366]])
+tensor([[-0.0858, -2.9355, -3.5374],
+        [-5.2313, -0.0234, -4.0314],
+        [-3.9098, -4.1279, -0.0368],
+        [-0.0187, -4.7809, -4.5960],
+        [-5.8170, -0.0183, -4.1879]])
 </pre></div>
 </div>
 </div>
@@ -795,8 +801,8 @@ outputs a character-level representation of each word.</li>
 <li>To do a sequence model over characters, you will have to embed characters.
 The character embeddings will be the input to the character LSTM.</li>
 </ul>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  2.099 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.736 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-beginner-nlp-sequence-models-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/sequence_models_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">sequence_models_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -850,8 +856,7 @@ The character embeddings will be the input to the character LSTM.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

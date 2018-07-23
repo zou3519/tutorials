@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Word Embeddings: Encoding Lexical Semantics &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Word Embeddings: Encoding Lexical Semantics &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../../index.html"/>
         <link rel="up" title="Deep Learning for NLP with Pytorch" href="../deep_learning_nlp_tutorial.html"/>
         <link rel="next" title="Sequence Models and Long-Short Term Memory Networks" href="sequence_models_tutorial.html"/>
         <link rel="prev" title="Deep Learning with PyTorch" href="deep_learning_tutorial.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -109,16 +109,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -175,7 +175,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -199,7 +199,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -218,7 +218,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -283,7 +283,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -443,9 +443,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -513,7 +536,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="word-embeddings-encoding-lexical-semantics">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-beginner-nlp-word-embeddings-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="word-embeddings-encoding-lexical-semantics">
 <span id="sphx-glr-beginner-nlp-word-embeddings-tutorial-py"></span><h1>Word Embeddings: Encoding Lexical Semantics<a class="headerlink" href="#word-embeddings-encoding-lexical-semantics" title="Permalink to this headline">¶</a></h1>
 <p>Word embeddings are dense vectors of real numbers, one per word in your
 vocabulary. In NLP, it is almost always the case that your features are
@@ -612,7 +639,7 @@ that the word embeddings will probably not be interpretable. That is,
 although with our hand-crafted vectors above we can see that
 mathematicians and physicists are similar in that they both like coffee,
 if we allow a neural network to learn the embeddings and see that both
-mathematicians and physicisits have a large value in the second
+mathematicians and physicists have a large value in the second
 dimension, it is not clear what that means. They are similar in some
 latent semantic dimension, but this probably has no interpretation to
 us.</p>
@@ -642,7 +669,6 @@ indices are integers, not floats).</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Author: Robert Guthrie</span>
 
 <span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.autograd</span> <span class="kn">as</span> <span class="nn">autograd</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
 <span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="kn">as</span> <span class="nn">F</span>
 <span class="kn">import</span> <span class="nn">torch.optim</span> <span class="kn">as</span> <span class="nn">optim</span>
@@ -652,15 +678,13 @@ indices are integers, not floats).</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">word_to_ix</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;hello&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 <span class="n">embeds</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Embedding</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 2 words in vocab, 5 dimensional embeddings</span>
-<span class="n">lookup_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">word_to_ix</span><span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">]])</span>
-<span class="n">hello_embed</span> <span class="o">=</span> <span class="n">embeds</span><span class="p">(</span><span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">lookup_tensor</span><span class="p">))</span>
+<span class="n">lookup_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">word_to_ix</span><span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+<span class="n">hello_embed</span> <span class="o">=</span> <span class="n">embeds</span><span class="p">(</span><span class="n">lookup_tensor</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">hello_embed</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">2.9718</span>  <span class="mf">1.7070</span> <span class="o">-</span><span class="mf">0.4305</span> <span class="o">-</span><span class="mf">2.2820</span>  <span class="mf">0.5237</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x5</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[ 0.6614,  0.2669,  0.0617,  0.6213, -0.4519]], grad_fn=&lt;EmbeddingBackward&gt;)
 </pre></div>
 </div>
 </div>
@@ -713,7 +737,7 @@ examples and update the parameters with backpropagation.</p>
         <span class="n">embeds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">embeddings</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
         <span class="n">out</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linear1</span><span class="p">(</span><span class="n">embeds</span><span class="p">))</span>
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linear2</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">log_probs</span>
 
 
@@ -723,13 +747,12 @@ examples and update the parameters with backpropagation.</p>
 <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">total_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">context</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">trigrams</span><span class="p">:</span>
 
         <span class="c1"># Step 1. Prepare the inputs to be passed to the model (i.e, turn the words</span>
-        <span class="c1"># into integer indices and wrap them in variables)</span>
-        <span class="n">context_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">word_to_ix</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">context</span><span class="p">]</span>
-        <span class="n">context_var</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">context_idxs</span><span class="p">))</span>
+        <span class="c1"># into integer indices and wrap them in tensors)</span>
+        <span class="n">context_idxs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">word_to_ix</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">context</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
 
         <span class="c1"># Step 2. Recall that torch *accumulates* gradients. Before passing in a</span>
         <span class="c1"># new instance, you need to zero out the gradients from the old</span>
@@ -738,55 +761,25 @@ examples and update the parameters with backpropagation.</p>
 
         <span class="c1"># Step 3. Run the forward pass, getting log probabilities over next</span>
         <span class="c1"># words</span>
-        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">context_var</span><span class="p">)</span>
+        <span class="n">log_probs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">context_idxs</span><span class="p">)</span>
 
         <span class="c1"># Step 4. Compute your loss function. (Again, Torch wants the target</span>
-        <span class="c1"># word wrapped in a variable)</span>
-        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_function</span><span class="p">(</span><span class="n">log_probs</span><span class="p">,</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span>
-            <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">word_to_ix</span><span class="p">[</span><span class="n">target</span><span class="p">]])))</span>
+        <span class="c1"># word wrapped in a tensor)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_function</span><span class="p">(</span><span class="n">log_probs</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">word_to_ix</span><span class="p">[</span><span class="n">target</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">))</span>
 
         <span class="c1"># Step 5. Do the backward pass and update the gradient</span>
         <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
 
-        <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">data</span>
+        <span class="c1"># Get the Python number from a 1-element Tensor by calling tensor.item()</span>
+        <span class="n">total_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
     <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total_loss</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">losses</span><span class="p">)</span>  <span class="c1"># The loss decreased every iteration over the training data!</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[([</span><span class="s1">&#39;When&#39;</span><span class="p">,</span> <span class="s1">&#39;forty&#39;</span><span class="p">],</span> <span class="s1">&#39;winters&#39;</span><span class="p">),</span> <span class="p">([</span><span class="s1">&#39;forty&#39;</span><span class="p">,</span> <span class="s1">&#39;winters&#39;</span><span class="p">],</span> <span class="s1">&#39;shall&#39;</span><span class="p">),</span> <span class="p">([</span><span class="s1">&#39;winters&#39;</span><span class="p">,</span> <span class="s1">&#39;shall&#39;</span><span class="p">],</span> <span class="s1">&#39;besiege&#39;</span><span class="p">)]</span>
-<span class="p">[</span>
- <span class="mf">515.8066</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">513.3784</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">510.9676</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">508.5739</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">506.1965</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">503.8344</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">501.4880</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">499.1561</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">496.8385</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">,</span>
- <span class="mf">494.5331</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>[([&#39;When&#39;, &#39;forty&#39;], &#39;winters&#39;), ([&#39;forty&#39;, &#39;winters&#39;], &#39;shall&#39;), ([&#39;winters&#39;, &#39;shall&#39;], &#39;besiege&#39;)]
+[523.4760098457336, 520.8744840621948, 518.2884106636047, 515.7171995639801, 513.1607172489166, 510.61677980422974, 508.0845158100128, 505.5630929470062, 503.050843000412, 500.54833245277405]
 </pre></div>
 </div>
 </div>
@@ -851,25 +844,24 @@ reshape.</li>
 
 <span class="k">def</span> <span class="nf">make_context_vector</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">word_to_ix</span><span class="p">):</span>
     <span class="n">idxs</span> <span class="o">=</span> <span class="p">[</span><span class="n">word_to_ix</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">context</span><span class="p">]</span>
-    <span class="n">tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">idxs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">tensor</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">idxs</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
 
 
 <span class="n">make_context_vector</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">word_to_ix</span><span class="p">)</span>  <span class="c1"># example</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[([</span><span class="s1">&#39;We&#39;</span><span class="p">,</span> <span class="s1">&#39;are&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;study&#39;</span><span class="p">],</span> <span class="s1">&#39;about&#39;</span><span class="p">),</span> <span class="p">([</span><span class="s1">&#39;are&#39;</span><span class="p">,</span> <span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;study&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">],</span> <span class="s1">&#39;to&#39;</span><span class="p">),</span> <span class="p">([</span><span class="s1">&#39;about&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;idea&#39;</span><span class="p">],</span> <span class="s1">&#39;study&#39;</span><span class="p">),</span> <span class="p">([</span><span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;study&#39;</span><span class="p">,</span> <span class="s1">&#39;idea&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">],</span> <span class="s1">&#39;the&#39;</span><span class="p">),</span> <span class="p">([</span><span class="s1">&#39;study&#39;</span><span class="p">,</span> <span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="s1">&#39;idea&#39;</span><span class="p">)]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>[([&#39;We&#39;, &#39;are&#39;, &#39;to&#39;, &#39;study&#39;], &#39;about&#39;), ([&#39;are&#39;, &#39;about&#39;, &#39;study&#39;, &#39;the&#39;], &#39;to&#39;), ([&#39;about&#39;, &#39;to&#39;, &#39;the&#39;, &#39;idea&#39;], &#39;study&#39;), ([&#39;to&#39;, &#39;study&#39;, &#39;idea&#39;, &#39;of&#39;], &#39;the&#39;), ([&#39;study&#39;, &#39;the&#39;, &#39;of&#39;, &#39;a&#39;], &#39;idea&#39;)]
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.880 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.459 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-beginner-nlp-word-embeddings-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/word_embeddings_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">word_embeddings_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/word_embeddings_tutorial.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">word_embeddings_tutorial.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="http://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -917,8 +909,7 @@ reshape.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

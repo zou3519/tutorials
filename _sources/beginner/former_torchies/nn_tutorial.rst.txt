@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_beginner_former_torchies_nn_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_beginner_former_torchies_nn_tutorial.py:
 
@@ -54,7 +58,6 @@ All of your networks are derived from the base class ``nn.Module``:
 
 
     import torch
-    from torch.autograd import Variable
     import torch.nn as nn
     import torch.nn.functional as F
 
@@ -122,15 +125,17 @@ You create an instance of the class first.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    MNISTConvNet (
+ .. code-block:: none
+
+    MNISTConvNet(
       (conv1): Conv2d(1, 10, kernel_size=(5, 5), stride=(1, 1))
-      (pool1): MaxPool2d (size=(2, 2), stride=(2, 2), dilation=(1, 1))
+      (pool1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
       (conv2): Conv2d(10, 20, kernel_size=(5, 5), stride=(1, 1))
-      (pool2): MaxPool2d (size=(2, 2), stride=(2, 2), dilation=(1, 1))
-      (fc1): Linear (320 -> 50)
-      (fc2): Linear (50 -> 10)
+      (pool2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (fc1): Linear(in_features=320, out_features=50, bias=True)
+      (fc2): Linear(in_features=50, out_features=10, bias=True)
     )
 
 
@@ -154,7 +159,7 @@ sample through the ConvNet.
 .. code-block:: python
 
 
-    input = Variable(torch.randn(1, 1, 28, 28))
+    input = torch.randn(1, 1, 28, 28)
     out = net(input)
     print(out.size())
 
@@ -164,7 +169,9 @@ sample through the ConvNet.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     torch.Size([1, 10])
 
@@ -176,7 +183,7 @@ Define a dummy target label and compute error using a loss function.
 .. code-block:: python
 
 
-    target = Variable(torch.LongTensor([3]))
+    target = torch.tensor([3], dtype=torch.long)
     loss_fn = nn.CrossEntropyLoss()  # LogSoftmax + ClassNLL Loss
     err = loss_fn(out, target)
     err.backward()
@@ -189,15 +196,15 @@ Define a dummy target label and compute error using a loss function.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-     2.3339
-    [torch.FloatTensor of size 1]
+ .. code-block:: none
+
+    tensor(2.1632, grad_fn=<NllLossBackward>)
 
 
-The output of the ConvNet ``out`` is a ``Variable``. We compute the loss
-using that, and that results in ``err`` which is also a ``Variable``.
+The output of the ConvNet ``out`` is a ``Tensor``. We compute the loss
+using that, and that results in ``err`` which is also a ``Tensor``.
 Calling ``.backward`` on ``err`` hence will propagate gradients all the
 way through the ConvNet to it’s weights
 
@@ -216,7 +223,9 @@ Let's access individual layer weights and gradients:
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     torch.Size([10, 1, 5, 5])
 
@@ -233,10 +242,12 @@ Let's access individual layer weights and gradients:
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    1.8359720477056398
-    0.17869178890723547
+ .. code-block:: none
+
+    tensor(1.7508)
+    tensor(0.5292)
 
 
 Forward and Backward Function Hooks
@@ -247,7 +258,7 @@ We’ve inspected the weights and the gradients. But how about inspecting
 
 We introduce **hooks** for this purpose.
 
-You can register a function on a ``Module`` or a ``Variable``.
+You can register a function on a ``Module`` or a ``Tensor``.
 The hook can be a forward hook or a backward hook.
 The forward hook will be executed when a forward call is executed.
 The backward hook will be executed in the backward phase.
@@ -263,7 +274,7 @@ We register a forward hook on conv2 and print some information
 
     def printnorm(self, input, output):
         # input is a tuple of packed inputs
-        # output is a Variable. output.data is the Tensor we are interested
+        # output is a Tensor. output.data is the Tensor we are interested
         print('Inside ' + self.__class__.__name__ + ' forward')
         print('')
         print('input: ', type(input))
@@ -285,17 +296,19 @@ We register a forward hook on conv2 and print some information
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Inside Conv2d forward
 
     input:  <class 'tuple'>
-    input[0]:  <class 'torch.autograd.variable.Variable'>
-    output:  <class 'torch.autograd.variable.Variable'>
+    input[0]:  <class 'torch.Tensor'>
+    output:  <class 'torch.Tensor'>
 
     input size: torch.Size([1, 10, 12, 12])
     output size: torch.Size([1, 20, 8, 8])
-    output norm: 15.231866888341694
+    output norm: tensor(11.3367)
 
 
 We register a backward hook on conv2 and print some information
@@ -317,7 +330,7 @@ We register a backward hook on conv2 and print some information
         print('')
         print('grad_input size:', grad_input[0].size())
         print('grad_output size:', grad_output[0].size())
-        print('grad_input norm:', grad_input[0].data.norm())
+        print('grad_input norm:', grad_input[0].norm())
 
 
     net.conv2.register_backward_hook(printgradnorm)
@@ -332,28 +345,30 @@ We register a backward hook on conv2 and print some information
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Inside Conv2d forward
 
     input:  <class 'tuple'>
-    input[0]:  <class 'torch.autograd.variable.Variable'>
-    output:  <class 'torch.autograd.variable.Variable'>
+    input[0]:  <class 'torch.Tensor'>
+    output:  <class 'torch.Tensor'>
 
     input size: torch.Size([1, 10, 12, 12])
     output size: torch.Size([1, 20, 8, 8])
-    output norm: 15.231866888341694
+    output norm: tensor(11.3367)
     Inside Conv2d backward
     Inside class:Conv2d
 
     grad_input:  <class 'tuple'>
-    grad_input[0]:  <class 'torch.autograd.variable.Variable'>
+    grad_input[0]:  <class 'torch.Tensor'>
     grad_output:  <class 'tuple'>
-    grad_output[0]:  <class 'torch.autograd.variable.Variable'>
+    grad_output[0]:  <class 'torch.Tensor'>
 
     grad_input size: torch.Size([1, 10, 12, 12])
     grad_output size: torch.Size([1, 20, 8, 8])
-    grad_input norm: 0.03480324251961025
+    grad_input norm: tensor(0.1169)
 
 
 A full and working MNIST example is located here
@@ -419,9 +434,9 @@ Recurrent Nets
     TIMESTEPS = 5
 
     # Create some fake data
-    batch = Variable(torch.randn(batch_size, 50))
-    hidden = Variable(torch.zeros(batch_size, 20))
-    target = Variable(torch.zeros(batch_size, 10))
+    batch = torch.randn(batch_size, 50)
+    hidden = torch.zeros(batch_size, 20)
+    target = torch.zeros(batch_size, 10)
 
     loss = 0
     for t in range(TIMESTEPS):
@@ -436,11 +451,17 @@ Recurrent Nets
 
 
 
-**Total running time of the script:** ( 0 minutes  0.050 seconds)
+**Total running time of the script:** ( 0 minutes  0.012 seconds)
 
 
+.. _sphx_glr_download_beginner_former_torchies_nn_tutorial.py:
 
-.. container:: sphx-glr-footer
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download
@@ -453,6 +474,9 @@ Recurrent Nets
 
      :download:`Download Jupyter notebook: nn_tutorial.ipynb <nn_tutorial.ipynb>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <http://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

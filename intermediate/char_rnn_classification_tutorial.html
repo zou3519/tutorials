@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Classifying Names with a Character-Level RNN &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Classifying Names with a Character-Level RNN &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../index.html"/>
         <link rel="next" title="Generating Names with a Character-Level RNN" href="char_rnn_generation_tutorial.html"/>
         <link rel="prev" title="Advanced: Making Dynamic Decisions and the Bi-LSTM CRF" href="../beginner/nlp/advanced_tutorial.html"/> 
 
@@ -75,7 +75,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -108,16 +108,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -198,7 +198,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -282,7 +282,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -442,9 +442,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +533,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="classifying-names-with-a-character-level-rnn">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-intermediate-char-rnn-classification-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="classifying-names-with-a-character-level-rnn">
 <span id="sphx-glr-intermediate-char-rnn-classification-tutorial-py"></span><h1>Classifying Names with a Character-Level RNN<a class="headerlink" href="#classifying-names-with-a-character-level-rnn" title="Permalink to this headline">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://github.com/spro/practical-pytorch">Sean Robertson</a></p>
 <p>We will be building and training a basic character-level RNN to classify
@@ -569,6 +596,7 @@ ASCII).</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
 <span class="kn">import</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">findFiles</span><span class="p">(</span><span class="n">path</span><span class="p">):</span> <span class="k">return</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
@@ -600,7 +628,7 @@ ASCII).</p>
     <span class="k">return</span> <span class="p">[</span><span class="n">unicodeToAscii</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">findFiles</span><span class="p">(</span><span class="s1">&#39;data/names/*.txt&#39;</span><span class="p">):</span>
-    <span class="n">category</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filename</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">all_categories</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
     <span class="n">lines</span> <span class="o">=</span> <span class="n">readLines</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="n">category_lines</span><span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines</span>
@@ -609,8 +637,8 @@ ASCII).</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;data/names/Spanish.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Dutch.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Chinese.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Polish.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Korean.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Vietnamese.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/German.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Russian.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Irish.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Scottish.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Czech.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/English.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/French.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Japanese.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Greek.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Italian.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Portuguese.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;data/names/Arabic.txt&#39;</span><span class="p">]</span>
-<span class="n">Slusarski</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>[&#39;data/names/Czech.txt&#39;, &#39;data/names/German.txt&#39;, &#39;data/names/Arabic.txt&#39;, &#39;data/names/Japanese.txt&#39;, &#39;data/names/Chinese.txt&#39;, &#39;data/names/Vietnamese.txt&#39;, &#39;data/names/Russian.txt&#39;, &#39;data/names/French.txt&#39;, &#39;data/names/Irish.txt&#39;, &#39;data/names/English.txt&#39;, &#39;data/names/Spanish.txt&#39;, &#39;data/names/Greek.txt&#39;, &#39;data/names/Italian.txt&#39;, &#39;data/names/Portuguese.txt&#39;, &#39;data/names/Scottish.txt&#39;, &#39;data/names/Dutch.txt&#39;, &#39;data/names/Korean.txt&#39;, &#39;data/names/Polish.txt&#39;]
+Slusarski
 </pre></div>
 </div>
 <p>Now we have <code class="docutils literal"><span class="pre">category_lines</span></code>, a dictionary mapping each category
@@ -621,7 +649,7 @@ later reference.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;Abandonato&#39;</span><span class="p">,</span> <span class="s1">&#39;Abatangelo&#39;</span><span class="p">,</span> <span class="s1">&#39;Abatantuono&#39;</span><span class="p">,</span> <span class="s1">&#39;Abate&#39;</span><span class="p">,</span> <span class="s1">&#39;Abategiovanni&#39;</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>[&#39;Abandonato&#39;, &#39;Abatangelo&#39;, &#39;Abatantuono&#39;, &#39;Abate&#39;, &#39;Abategiovanni&#39;]
 </pre></div>
 </div>
 <div class="section" id="turning-names-into-tensors">
@@ -661,23 +689,11 @@ batches - we’re just using a batch size of 1 here.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Columns</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">12</span>
-    <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>
-
-<span class="n">Columns</span> <span class="mi">13</span> <span class="n">to</span> <span class="mi">25</span>
-    <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>
-
-<span class="n">Columns</span> <span class="mi">26</span> <span class="n">to</span> <span class="mi">38</span>
-    <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">1</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>
-
-<span class="n">Columns</span> <span class="mi">39</span> <span class="n">to</span> <span class="mi">51</span>
-    <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>
-
-<span class="n">Columns</span> <span class="mi">52</span> <span class="n">to</span> <span class="mi">56</span>
-    <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>     <span class="mi">0</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x57</span><span class="p">]</span>
-
-<span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">57</span><span class="p">])</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+         0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1.,
+         0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
+         0., 0., 0.]])
+torch.Size([5, 1, 57])
 </pre></div>
 </div>
 </div>
@@ -689,7 +705,7 @@ cloning the parameters of a layer over several timesteps. The layers
 held hidden state and gradients which are now entirely handled by the
 graph itself. This means you can implement a RNN in a very “pure” way,
 as regular feed-forward layers.</p>
-<p>This RNN module (mostly copied from <a class="reference external" href="https://github.com/pytorch/tutorials/blob/master/Introduction%20to%20PyTorch%20for%20former%20Torchies.ipynb">the PyTorch for Torch users
+<p>This RNN module (mostly copied from <a class="reference external" href="http://pytorch.org/tutorials/beginner/former_torchies/nn_tutorial.html#example-2-recurrent-net">the PyTorch for Torch users
 tutorial</a>)
 is just 2 linear layers which operate on an input and hidden state, with
 a LogSoftmax layer after the output.</p>
@@ -697,7 +713,6 @@ a LogSoftmax layer after the output.</p>
 <img alt="" src="https://i.imgur.com/Z2xbySO.png" />
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
 
 <span class="k">class</span> <span class="nc">RNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
@@ -707,7 +722,7 @@ a LogSoftmax layer after the output.</p>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">i2h</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span> <span class="o">+</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">i2o</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span> <span class="o">+</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LogSoftmax</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LogSoftmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">):</span>
         <span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="nb">input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
@@ -717,7 +732,7 @@ a LogSoftmax layer after the output.</p>
         <span class="k">return</span> <span class="n">output</span><span class="p">,</span> <span class="n">hidden</span>
 
     <span class="k">def</span> <span class="nf">initHidden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">)</span>
 
 <span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">128</span>
 <span class="n">rnn</span> <span class="o">=</span> <span class="n">RNN</span><span class="p">(</span><span class="n">n_letters</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">,</span> <span class="n">n_categories</span><span class="p">)</span>
@@ -728,10 +743,8 @@ Tensor for the current letter) and a previous hidden state (which we
 initialize as zeros at first). We’ll get back the output (probability of
 each language) and a next hidden state (which we keep for the next
 step).</p>
-<p>Remember that PyTorch modules operate on Variables rather than straight
-up Tensors.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">letterToTensor</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span>
-<span class="n">hidden</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">letterToTensor</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">hidden</span> <span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">)</span>
 
 <span class="n">output</span><span class="p">,</span> <span class="n">next_hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>
 </pre></div>
@@ -740,22 +753,17 @@ up Tensors.</p>
 every step, so we will use <code class="docutils literal"><span class="pre">lineToTensor</span></code> instead of
 <code class="docutils literal"><span class="pre">letterToTensor</span></code> and use slices. This could be further optimized by
 pre-computing batches of Tensors.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">lineToTensor</span><span class="p">(</span><span class="s1">&#39;Albert&#39;</span><span class="p">))</span>
-<span class="n">hidden</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">))</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">lineToTensor</span><span class="p">(</span><span class="s1">&#39;Albert&#39;</span><span class="p">)</span>
+<span class="n">hidden</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">)</span>
 
 <span class="n">output</span><span class="p">,</span> <span class="n">next_hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="p">(</span><span class="nb">input</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">hidden</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-
-<span class="n">Columns</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">9</span>
-<span class="o">-</span><span class="mf">2.9427</span> <span class="o">-</span><span class="mf">2.8834</span> <span class="o">-</span><span class="mf">2.8105</span> <span class="o">-</span><span class="mf">2.9505</span> <span class="o">-</span><span class="mf">2.9144</span> <span class="o">-</span><span class="mf">3.0235</span> <span class="o">-</span><span class="mf">2.8622</span> <span class="o">-</span><span class="mf">2.9749</span> <span class="o">-</span><span class="mf">2.9168</span> <span class="o">-</span><span class="mf">2.8478</span>
-
-<span class="n">Columns</span> <span class="mi">10</span> <span class="n">to</span> <span class="mi">17</span>
-<span class="o">-</span><span class="mf">2.8252</span> <span class="o">-</span><span class="mf">2.9027</span> <span class="o">-</span><span class="mf">2.8036</span> <span class="o">-</span><span class="mf">2.8963</span> <span class="o">-</span><span class="mf">2.8294</span> <span class="o">-</span><span class="mf">2.9595</span> <span class="o">-</span><span class="mf">2.8678</span> <span class="o">-</span><span class="mf">2.8471</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="n">x18</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[-2.8196, -2.8993, -2.7868, -2.8055, -2.8157, -2.9523, -2.9593, -2.9582,
+         -2.9725, -2.8902, -2.8272, -2.9689, -2.9284, -2.8857, -2.8348, -2.8285,
+         -2.9307, -3.0036]], grad_fn=&lt;LogSoftmaxBackward&gt;)
 </pre></div>
 </div>
 <p>As you can see the output is a <code class="docutils literal"><span class="pre">&lt;1</span> <span class="pre">x</span> <span class="pre">n_categories&gt;</span></code> Tensor, where
@@ -770,15 +778,15 @@ first is to interpret the output of the network, which we know to be a
 likelihood of each category. We can use <code class="docutils literal"><span class="pre">Tensor.topk</span></code> to get the index
 of the greatest value:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">categoryFromOutput</span><span class="p">(</span><span class="n">output</span><span class="p">):</span>
-    <span class="n">top_n</span><span class="p">,</span> <span class="n">top_i</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Tensor out of Variable with .data</span>
-    <span class="n">category_i</span> <span class="o">=</span> <span class="n">top_i</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">top_n</span><span class="p">,</span> <span class="n">top_i</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">category_i</span> <span class="o">=</span> <span class="n">top_i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">all_categories</span><span class="p">[</span><span class="n">category_i</span><span class="p">],</span> <span class="n">category_i</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">categoryFromOutput</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;French&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>(&#39;Arabic&#39;, 2)
 </pre></div>
 </div>
 <p>We will also want a quick way to get a training example (a name and its
@@ -791,8 +799,8 @@ language):</p>
 <span class="k">def</span> <span class="nf">randomTrainingExample</span><span class="p">():</span>
     <span class="n">category</span> <span class="o">=</span> <span class="n">randomChoice</span><span class="p">(</span><span class="n">all_categories</span><span class="p">)</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">randomChoice</span><span class="p">(</span><span class="n">category_lines</span><span class="p">[</span><span class="n">category</span><span class="p">])</span>
-    <span class="n">category_tensor</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="n">all_categories</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">category</span><span class="p">)]))</span>
-    <span class="n">line_tensor</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">lineToTensor</span><span class="p">(</span><span class="n">line</span><span class="p">))</span>
+    <span class="n">category_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">all_categories</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">category</span><span class="p">)],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">long</span><span class="p">)</span>
+    <span class="n">line_tensor</span> <span class="o">=</span> <span class="n">lineToTensor</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">category</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">category_tensor</span><span class="p">,</span> <span class="n">line_tensor</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
@@ -801,16 +809,16 @@ language):</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">category</span> <span class="o">=</span> <span class="n">Portuguese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Costa</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">French</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Bernard</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">German</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Kerner</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Japanese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Nishimuraya</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Spanish</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Ubina</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Czech</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Petru</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">English</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Lame</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Chinese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Dai</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Spanish</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Asturias</span>
-<span class="n">category</span> <span class="o">=</span> <span class="n">Vietnamese</span> <span class="o">/</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Phung</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>category = Portuguese / line = Araujo
+category = Russian / line = Ryzhik
+category = Russian / line = Rokhin
+category = Chinese / line = Yan
+category = Japanese / line = Ninomiya
+category = Japanese / line = Kaminaga
+category = German / line = Freudenberger
+category = Japanese / line = Hama
+category = Italian / line = Carboni
+category = Italian / line = Modugno
 </pre></div>
 </div>
 </div>
@@ -852,7 +860,7 @@ layer of the RNN is <code class="docutils literal"><span class="pre">nn.LogSoftm
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">rnn</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
         <span class="n">p</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">add_</span><span class="p">(</span><span class="o">-</span><span class="n">learning_rate</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">output</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">output</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Now we just have to run that with a bunch of examples. Since the
@@ -900,26 +908,26 @@ average of the loss.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span>5000 5% (0m 12s) 2.6476 Lobo / Italian ✗ (Spanish)
-10000 10% (0m 25s) 2.3277 Henriques / Greek ✗ (Portuguese)
-15000 15% (0m 39s) 1.6766 Andrysiak / Polish ✓
-20000 20% (0m 52s) 0.5653 Houlis / Greek ✓
-25000 25% (1m 6s) 2.1464 Brain / Irish ✗ (English)
-30000 30% (1m 19s) 0.5896 O&#39;Hagan / Irish ✓
-35000 35% (1m 31s) 0.8017 Vennen / Dutch ✓
-40000 40% (1m 43s) 2.1157 Espino / Italian ✗ (Spanish)
-45000 45% (1m 56s) 0.6085 Soares / Portuguese ✓
-50000 50% (2m 9s) 0.4001 Schuster / German ✓
-55000 55% (2m 22s) 0.1852 Adamczak / Polish ✓
-60000 60% (2m 34s) 1.6915 Rojo / Portuguese ✗ (Spanish)
-65000 65% (2m 47s) 0.1645 Tsahalis / Greek ✓
-70000 70% (3m 0s) 1.8929 Tahan / Irish ✗ (Arabic)
-75000 75% (3m 12s) 1.1049 Duong / Korean ✗ (Vietnamese)
-80000 80% (3m 26s) 0.6917 Antipas / Greek ✓
-85000 85% (3m 39s) 0.4674 Murphy / Scottish ✓
-90000 90% (3m 51s) 0.7140 Urena / Spanish ✓
-95000 95% (4m 4s) 0.5818 Chong / Korean ✓
-100000 100% (4m 17s) 0.8475 Ho / Vietnamese ✗ (Korean)
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>5000 5% (0m 5s) 2.6222 Sai / Chinese ✗ (Vietnamese)
+10000 10% (0m 10s) 2.1689 Garza / Portuguese ✗ (Spanish)
+15000 15% (0m 16s) 2.4517 Koemans / Japanese ✗ (Dutch)
+20000 20% (0m 22s) 1.2895 Oirschotten / Dutch ✓
+25000 25% (0m 27s) 1.0921 Cathain / Irish ✓
+30000 30% (0m 33s) 1.4519 Millard / English ✓
+35000 35% (0m 39s) 2.0126 Fakhoury / Japanese ✗ (Arabic)
+40000 40% (0m 44s) 0.8325 Long / Chinese ✓
+45000 45% (0m 51s) 1.6773 Gaskell / Dutch ✗ (English)
+50000 50% (0m 57s) 1.3410 Kassis / Greek ✗ (Arabic)
+55000 55% (1m 4s) 2.4377 Lucas / Greek ✗ (Dutch)
+60000 60% (1m 11s) 1.5349 Shui / Korean ✗ (Chinese)
+65000 65% (1m 18s) 3.7220 Osipenko / Polish ✗ (Russian)
+70000 70% (1m 24s) 3.7136 Ross / Greek ✗ (Scottish)
+75000 75% (1m 30s) 0.8436 Close / Greek ✓
+80000 80% (1m 37s) 1.9660 Ponec / Spanish ✗ (Czech)
+85000 85% (1m 43s) 0.7528 Jenicek / Czech ✓
+90000 90% (1m 49s) 0.0357 Pechkurov / Russian ✓
+95000 95% (1m 54s) 0.2497 Yap / Chinese ✓
+100000 100% (2m 0s) 0.0238 Kwang  / Korean ✓
 </pre></div>
 </div>
 </div>
@@ -934,7 +942,7 @@ learning:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_losses</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_char_rnn_classification_tutorial_001.png" class="align-center" src="../_images/sphx_glr_char_rnn_classification_tutorial_001.png" />
+<img alt="../_images/sphx_glr_char_rnn_classification_tutorial_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_char_rnn_classification_tutorial_001.png" />
 </div>
 </div>
 <div class="section" id="evaluating-the-results">
@@ -987,7 +995,7 @@ matrix a bunch of samples are run through the network with
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_char_rnn_classification_tutorial_002.png" class="align-center" src="../_images/sphx_glr_char_rnn_classification_tutorial_002.png" />
+<img alt="../_images/sphx_glr_char_rnn_classification_tutorial_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_char_rnn_classification_tutorial_002.png" />
 <p>You can pick out bright spots off the main axis that show which
 languages it guesses incorrectly, e.g. Chinese for Korean, and Spanish
 for Italian. It seems to do very well with Greek, and very poorly with
@@ -996,17 +1004,18 @@ English (perhaps because of overlap with other languages).</p>
 <h3>Running on User Input<a class="headerlink" href="#running-on-user-input" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">input_line</span><span class="p">,</span> <span class="n">n_predictions</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&gt; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">input_line</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">Variable</span><span class="p">(</span><span class="n">lineToTensor</span><span class="p">(</span><span class="n">input_line</span><span class="p">)))</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">lineToTensor</span><span class="p">(</span><span class="n">input_line</span><span class="p">))</span>
 
-    <span class="c1"># Get top N categories</span>
-    <span class="n">topv</span><span class="p">,</span> <span class="n">topi</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">n_predictions</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
-    <span class="n">predictions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Get top N categories</span>
+        <span class="n">topv</span><span class="p">,</span> <span class="n">topi</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">n_predictions</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_predictions</span><span class="p">):</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="n">topv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">category_index</span> <span class="o">=</span> <span class="n">topi</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%.2f</span><span class="s1">) </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">all_categories</span><span class="p">[</span><span class="n">category_index</span><span class="p">]))</span>
-        <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="n">all_categories</span><span class="p">[</span><span class="n">category_index</span><span class="p">]])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_predictions</span><span class="p">):</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">topv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">category_index</span> <span class="o">=</span> <span class="n">topi</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;(</span><span class="si">%.2f</span><span class="s1">) </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">all_categories</span><span class="p">[</span><span class="n">category_index</span><span class="p">]))</span>
+            <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">value</span><span class="p">,</span> <span class="n">all_categories</span><span class="p">[</span><span class="n">category_index</span><span class="p">]])</span>
 
 <span class="n">predict</span><span class="p">(</span><span class="s1">&#39;Dovesky&#39;</span><span class="p">)</span>
 <span class="n">predict</span><span class="p">(</span><span class="s1">&#39;Jackson&#39;</span><span class="p">)</span>
@@ -1014,20 +1023,20 @@ English (perhaps because of overlap with other languages).</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">Dovesky</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.94</span><span class="p">)</span> <span class="n">Czech</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">1.18</span><span class="p">)</span> <span class="n">Russian</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">1.53</span><span class="p">)</span> <span class="n">English</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>&gt; Dovesky
+(-0.65) Czech
+(-1.06) Russian
+(-2.76) English
 
-<span class="o">&gt;</span> <span class="n">Jackson</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.83</span><span class="p">)</span> <span class="n">English</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">1.07</span><span class="p">)</span> <span class="n">Scottish</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">2.23</span><span class="p">)</span> <span class="n">Czech</span>
+&gt; Jackson
+(-0.54) Scottish
+(-1.79) English
+(-2.27) Russian
 
-<span class="o">&gt;</span> <span class="n">Satoshi</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">0.80</span><span class="p">)</span> <span class="n">Japanese</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">1.57</span><span class="p">)</span> <span class="n">Arabic</span>
-<span class="p">(</span><span class="o">-</span><span class="mf">2.32</span><span class="p">)</span> <span class="n">Italian</span>
+&gt; Satoshi
+(-0.79) Italian
+(-1.68) Arabic
+(-1.92) Portuguese
 </pre></div>
 </div>
 <p>The final versions of the scripts <a class="reference external" href="https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification">in the Practical PyTorch
@@ -1069,14 +1078,14 @@ output of predictions.</p>
 </ul>
 </li>
 </ul>
-<p><strong>Total running time of the script:</strong> ( 4 minutes  26.430 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 2 minutes  5.091 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-intermediate-char-rnn-classification-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/char_rnn_classification_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">char_rnn_classification_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/char_rnn_classification_tutorial.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">char_rnn_classification_tutorial.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="http://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -1124,8 +1133,7 @@ output of predictions.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

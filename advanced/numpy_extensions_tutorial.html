@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating extensions using numpy and scipy &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Creating extensions using numpy and scipy &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../index.html"/>
         <link rel="next" title="Transfering a model from PyTorch to Caffe2 and Mobile using ONNX" href="super_resolution_with_caffe2.html"/>
         <link rel="prev" title="Neural Transfer with PyTorch" href="neural_style_tutorial.html"/> 
 
@@ -75,7 +75,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -108,16 +108,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -198,7 +198,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -282,7 +282,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -442,9 +442,32 @@
 <li class="toctree-l2"><a class="reference internal" href="super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -510,29 +533,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-extensions-using-numpy-and-scipy">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-advanced-numpy-extensions-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="creating-extensions-using-numpy-and-scipy">
 <span id="sphx-glr-advanced-numpy-extensions-tutorial-py"></span><h1>Creating extensions using numpy and scipy<a class="headerlink" href="#creating-extensions-using-numpy-and-scipy" title="Permalink to this headline">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://github.com/apaszke">Adam Paszke</a></p>
+<p><strong>Updated by</strong>: <cite>Adam Dziedzic</cite> [<a class="reference external" href="https://github.com/adam-dziedzic](https://github.com/adam-dziedzic">https://github.com/adam-dziedzic](https://github.com/adam-dziedzic</a>)</p>
 <p>In this tutorial, we shall go through two tasks:</p>
 <ol class="arabic">
 <li><p class="first">Create a neural network layer with no parameters.</p>
 <blockquote>
 <div><ul class="simple">
-<li>This calls into <strong>numpy</strong> as part of it’s implementation</li>
+<li>This calls into <strong>numpy</strong> as part of its implementation</li>
 </ul>
 </div></blockquote>
 </li>
 <li><p class="first">Create a neural network layer that has learnable weights</p>
 <blockquote>
 <div><ul class="simple">
-<li>This calls into <strong>SciPy</strong> as part of it’s implementation</li>
+<li>This calls into <strong>SciPy</strong> as part of its implementation</li>
 </ul>
 </div></blockquote>
 </li>
 </ol>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Function</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
 </pre></div>
 </div>
 <div class="section" id="parameter-less-example">
@@ -547,14 +574,14 @@ correct.</p>
 <span class="k">class</span> <span class="nc">BadFFTFunction</span><span class="p">(</span><span class="n">Function</span><span class="p">):</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-        <span class="n">numpy_input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">numpy_input</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
         <span class="n">result</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">rfft2</span><span class="p">(</span><span class="n">numpy_input</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">input</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
         <span class="n">numpy_go</span> <span class="o">=</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">irfft2</span><span class="p">(</span><span class="n">numpy_go</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 <span class="c1"># since this layer does not have any parameters, we can</span>
 <span class="c1"># simply declare this as a function, rather than as an nn.Module class</span>
@@ -565,127 +592,91 @@ correct.</p>
 </pre></div>
 </div>
 <p><strong>Example usage of the created layer:</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">incorrect_fft</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="n">result</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">size</span><span class="p">()))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
-</pre></div>
-</div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">2.1226</span>   <span class="mf">3.8993</span>   <span class="mf">9.6260</span>   <span class="mf">2.7216</span>   <span class="mf">4.9073</span>
-  <span class="mf">4.3791</span>   <span class="mf">9.1649</span>   <span class="mf">5.1780</span>   <span class="mf">5.9066</span>   <span class="mf">4.4092</span>
- <span class="mf">12.3357</span>  <span class="mf">10.6545</span>  <span class="mf">11.3871</span>   <span class="mf">2.9117</span>   <span class="mf">7.6938</span>
-  <span class="mf">5.9608</span>   <span class="mf">3.7098</span>   <span class="mf">6.4056</span>   <span class="mf">6.7317</span>  <span class="mf">10.8145</span>
-  <span class="mf">7.0636</span>   <span class="mf">8.5997</span>   <span class="mf">2.3188</span>   <span class="mf">3.7926</span>   <span class="mf">3.3744</span>
-  <span class="mf">5.9608</span>   <span class="mf">9.3499</span>   <span class="mf">6.3629</span>   <span class="mf">3.1677</span>  <span class="mf">10.8145</span>
- <span class="mf">12.3357</span>  <span class="mf">14.0751</span>   <span class="mf">8.3441</span>  <span class="mf">13.6029</span>   <span class="mf">7.6938</span>
-  <span class="mf">4.3791</span>   <span class="mf">6.5583</span>   <span class="mf">4.3877</span>   <span class="mf">6.7177</span>   <span class="mf">4.4092</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">8</span><span class="n">x5</span><span class="p">]</span>
-
-<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
-<span class="o">-</span><span class="mf">0.0009</span> <span class="o">-</span><span class="mf">0.0995</span> <span class="o">-</span><span class="mf">0.0298</span>  <span class="mf">0.0046</span> <span class="o">-</span><span class="mf">0.2257</span>  <span class="mf">0.0046</span> <span class="o">-</span><span class="mf">0.0298</span> <span class="o">-</span><span class="mf">0.0995</span>
- <span class="mf">0.2027</span> <span class="o">-</span><span class="mf">0.0569</span> <span class="o">-</span><span class="mf">0.1611</span> <span class="o">-</span><span class="mf">0.0592</span> <span class="o">-</span><span class="mf">0.0742</span> <span class="o">-</span><span class="mf">0.0527</span>  <span class="mf">0.0531</span>  <span class="mf">0.2552</span>
- <span class="mf">0.0116</span>  <span class="mf">0.1221</span> <span class="o">-</span><span class="mf">0.1790</span>  <span class="mf">0.0891</span>  <span class="mf">0.0876</span> <span class="o">-</span><span class="mf">0.1443</span>  <span class="mf">0.1612</span> <span class="o">-</span><span class="mf">0.1856</span>
- <span class="mf">0.2251</span>  <span class="mf">0.0971</span> <span class="o">-</span><span class="mf">0.0973</span> <span class="o">-</span><span class="mf">0.1555</span> <span class="o">-</span><span class="mf">0.0310</span>  <span class="mf">0.0258</span>  <span class="mf">0.0064</span> <span class="o">-</span><span class="mf">0.1529</span>
- <span class="mf">0.1359</span>  <span class="mf">0.0751</span>  <span class="mf">0.1883</span> <span class="o">-</span><span class="mf">0.1253</span> <span class="o">-</span><span class="mf">0.1023</span> <span class="o">-</span><span class="mf">0.1253</span>  <span class="mf">0.1883</span>  <span class="mf">0.0751</span>
- <span class="mf">0.2251</span> <span class="o">-</span><span class="mf">0.1529</span>  <span class="mf">0.0064</span>  <span class="mf">0.0258</span> <span class="o">-</span><span class="mf">0.0310</span> <span class="o">-</span><span class="mf">0.1555</span> <span class="o">-</span><span class="mf">0.0973</span>  <span class="mf">0.0971</span>
- <span class="mf">0.0116</span> <span class="o">-</span><span class="mf">0.1856</span>  <span class="mf">0.1612</span> <span class="o">-</span><span class="mf">0.1443</span>  <span class="mf">0.0876</span>  <span class="mf">0.0891</span> <span class="o">-</span><span class="mf">0.1790</span>  <span class="mf">0.1221</span>
- <span class="mf">0.2027</span>  <span class="mf">0.2552</span>  <span class="mf">0.0531</span> <span class="o">-</span><span class="mf">0.0527</span> <span class="o">-</span><span class="mf">0.0742</span> <span class="o">-</span><span class="mf">0.0592</span> <span class="o">-</span><span class="mf">0.1611</span> <span class="o">-</span><span class="mf">0.0569</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">8</span><span class="n">x8</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="parametrized-example">
 <h2>Parametrized example<a class="headerlink" href="#parametrized-example" title="Permalink to this headline">¶</a></h2>
-<p>This implements a layer with learnable weights.</p>
-<p>It implements the Cross-correlation with a learnable kernel.</p>
-<p>In deep learning literature, it’s confusingly referred to as
-Convolution.</p>
-<p>The backward computes the gradients wrt the input and gradients wrt the
-filter.</p>
-<p><strong>Implementation:</strong></p>
-<p><em>Please Note that the implementation serves as an illustration, and we
-did not verify it’s correctness</em></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span><span class="p">,</span> <span class="n">correlate2d</span>
+<p>In deep learning literature, this layer is confusingly referred
+to as convolution while the actual operation is cross-correlation
+(the only difference is that filter is flipped for convolution,
+which is not the case for cross-correlation).</p>
+<p>Implementation of a layer with learnable weights, where cross-correlation
+has a filter (kernel) that represents weights.</p>
+<p>The backward pass computes the gradient wrt the input and the gradient wrt the filter.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">flip</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span><span class="p">,</span> <span class="n">correlate2d</span>
 <span class="kn">from</span> <span class="nn">torch.nn.modules.module</span> <span class="kn">import</span> <span class="n">Module</span>
 <span class="kn">from</span> <span class="nn">torch.nn.parameter</span> <span class="kn">import</span> <span class="n">Parameter</span>
 
 
 <span class="k">class</span> <span class="nc">ScipyConv2dFunction</span><span class="p">(</span><span class="n">Function</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+        <span class="c1"># detach so we can cast to NumPy</span>
+        <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">bias</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">detach</span><span class="p">(),</span> <span class="nb">filter</span><span class="o">.</span><span class="n">detach</span><span class="p">(),</span> <span class="n">bias</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
         <span class="n">result</span> <span class="o">=</span> <span class="n">correlate2d</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="nb">filter</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">save_for_backward</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">+=</span> <span class="n">bias</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">ctx</span><span class="o">.</span><span class="n">save_for_backward</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">bias</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
-        <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">saved_tensors</span>
-        <span class="n">grad_input</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="nb">filter</span><span class="o">.</span><span class="n">t</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
-        <span class="n">grad_filter</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">grad_input</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">grad_filter</span><span class="p">)</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">grad_output</span><span class="p">):</span>
+        <span class="n">grad_output</span> <span class="o">=</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+        <span class="nb">input</span><span class="p">,</span> <span class="nb">filter</span><span class="p">,</span> <span class="n">bias</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="n">saved_tensors</span>
+        <span class="n">grad_output</span> <span class="o">=</span> <span class="n">grad_output</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">grad_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">grad_output</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">grad_input</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="n">grad_output</span><span class="p">,</span> <span class="nb">filter</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span>
+        <span class="c1"># the previous line can be expressed equivalently as:</span>
+        <span class="c1"># grad_input = correlate2d(grad_output, flip(flip(filter.numpy(), axis=0), axis=1), mode=&#39;full&#39;)</span>
+        <span class="n">grad_filter</span> <span class="o">=</span> <span class="n">correlate2d</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">grad_output</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;valid&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">grad_input</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">grad_filter</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">grad_bias</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">ScipyConv2d</span><span class="p">(</span><span class="n">Module</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kh</span><span class="p">,</span> <span class="n">kw</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filter_width</span><span class="p">,</span> <span class="n">filter_height</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ScipyConv2d</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">kh</span><span class="p">,</span> <span class="n">kw</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filter</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">filter_width</span><span class="p">,</span> <span class="n">filter_height</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bias</span> <span class="o">=</span> <span class="n">Parameter</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">ScipyConv2dFunction</span><span class="p">()(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ScipyConv2dFunction</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bias</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Example usage:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="o">=</span> <span class="n">ScipyConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">parameters</span><span class="p">()))</span>
-<span class="nb">input</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Filter and bias: &quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">module</span><span class="o">.</span><span class="n">parameters</span><span class="p">()))</span>
+<span class="nb">input</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">output</span> <span class="o">=</span> <span class="n">module</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Output from the convolution: &quot;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
 <span class="n">output</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">input</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Gradient for the input map: &quot;</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Parameter</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">0.4831</span>  <span class="mf">0.6467</span>  <span class="mf">2.0021</span>
- <span class="mf">0.1193</span> <span class="o">-</span><span class="mf">0.0037</span>  <span class="mf">0.1009</span>
- <span class="mf">0.8712</span>  <span class="mf">0.1695</span> <span class="o">-</span><span class="mf">0.7815</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="n">x3</span><span class="p">]</span>
-<span class="p">]</span>
-<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">2.5292</span>  <span class="mf">5.3845</span>  <span class="mf">2.5123</span>  <span class="mf">1.7060</span>  <span class="mf">0.2932</span> <span class="o">-</span><span class="mf">3.0669</span>  <span class="mf">0.3523</span>  <span class="mf">1.6898</span>
-<span class="o">-</span><span class="mf">2.0419</span> <span class="o">-</span><span class="mf">1.6922</span> <span class="o">-</span><span class="mf">0.8991</span>  <span class="mf">2.4344</span>  <span class="mf">2.5416</span> <span class="o">-</span><span class="mf">0.0239</span>  <span class="mf">1.7074</span> <span class="o">-</span><span class="mf">1.8995</span>
- <span class="mf">0.2719</span>  <span class="mf">0.2121</span>  <span class="mf">0.4291</span> <span class="o">-</span><span class="mf">0.9746</span>  <span class="mf">2.8081</span>  <span class="mf">0.2306</span> <span class="o">-</span><span class="mf">3.9822</span> <span class="o">-</span><span class="mf">4.2363</span>
- <span class="mf">0.6453</span> <span class="o">-</span><span class="mf">1.3840</span>  <span class="mf">5.3821</span>  <span class="mf">0.8932</span>  <span class="mf">4.8692</span> <span class="o">-</span><span class="mf">1.6831</span> <span class="o">-</span><span class="mf">3.5371</span> <span class="o">-</span><span class="mf">1.1993</span>
- <span class="mf">1.4583</span>  <span class="mf">0.4707</span>  <span class="mf">2.1705</span>  <span class="mf">1.0944</span> <span class="o">-</span><span class="mf">2.9527</span> <span class="o">-</span><span class="mf">3.7852</span> <span class="o">-</span><span class="mf">4.7504</span> <span class="o">-</span><span class="mf">2.7370</span>
-<span class="o">-</span><span class="mf">2.1909</span>  <span class="mf">0.0043</span>  <span class="mf">0.3310</span>  <span class="mf">2.4525</span>  <span class="mf">0.8645</span> <span class="o">-</span><span class="mf">0.9133</span> <span class="o">-</span><span class="mf">4.8286</span> <span class="o">-</span><span class="mf">2.8165</span>
-<span class="o">-</span><span class="mf">2.0130</span>  <span class="mf">1.9545</span> <span class="o">-</span><span class="mf">0.2791</span>  <span class="mf">2.7784</span> <span class="o">-</span><span class="mf">1.8112</span> <span class="o">-</span><span class="mf">3.2720</span> <span class="o">-</span><span class="mf">1.2373</span> <span class="o">-</span><span class="mf">0.9273</span>
-<span class="o">-</span><span class="mf">1.2573</span>  <span class="mf">0.9751</span>  <span class="mf">4.6656</span>  <span class="mf">4.8634</span> <span class="o">-</span><span class="mf">2.3609</span> <span class="o">-</span><span class="mf">3.2552</span>  <span class="mf">2.7251</span> <span class="o">-</span><span class="mf">2.6172</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">8</span><span class="n">x8</span><span class="p">]</span>
+<p><strong>Check the gradients:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">torch.autograd.gradcheck</span> <span class="kn">import</span> <span class="n">gradcheck</span>
 
-<span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mf">0.1840</span> <span class="o">-</span><span class="mf">0.0294</span>  <span class="mf">0.5629</span>  <span class="mf">0.0257</span>  <span class="mf">0.8659</span>  <span class="mf">0.7704</span>  <span class="mf">0.1189</span>  <span class="mf">0.7143</span> <span class="o">-</span><span class="mf">1.2799</span> <span class="o">-</span><span class="mf">0.0068</span>
- <span class="mf">0.3699</span> <span class="o">-</span><span class="mf">0.3189</span> <span class="o">-</span><span class="mf">0.2198</span> <span class="o">-</span><span class="mf">0.7108</span> <span class="o">-</span><span class="mf">0.8149</span>  <span class="mf">1.1956</span> <span class="o">-</span><span class="mf">1.1774</span>  <span class="mf">1.3095</span> <span class="o">-</span><span class="mf">1.3870</span> <span class="o">-</span><span class="mf">0.3208</span>
- <span class="mf">0.5438</span>  <span class="mf">0.1727</span> <span class="o">-</span><span class="mf">0.6845</span>  <span class="mf">2.1376</span>  <span class="mf">1.4744</span>  <span class="mf">3.7935</span> <span class="o">-</span><span class="mf">3.3866</span> <span class="o">-</span><span class="mf">1.2313</span>  <span class="mf">1.3526</span> <span class="o">-</span><span class="mf">1.5007</span>
-<span class="o">-</span><span class="mf">0.4945</span>  <span class="mf">0.3311</span> <span class="o">-</span><span class="mf">4.2904</span>  <span class="mf">0.9139</span>  <span class="mf">1.4910</span>  <span class="mf">4.7046</span> <span class="o">-</span><span class="mf">2.6968</span> <span class="o">-</span><span class="mf">2.4633</span>  <span class="mf">0.6011</span>  <span class="mf">0.0815</span>
-<span class="o">-</span><span class="mf">1.8851</span>  <span class="mf">4.0057</span>  <span class="mf">1.8046</span> <span class="o">-</span><span class="mf">0.0302</span>  <span class="mf">0.7356</span>  <span class="mf">1.3570</span>  <span class="mf">0.7272</span> <span class="o">-</span><span class="mf">2.1649</span> <span class="o">-</span><span class="mf">0.4821</span>  <span class="mf">1.5796</span>
-<span class="o">-</span><span class="mf">2.1101</span>  <span class="mf">0.5638</span> <span class="o">-</span><span class="mf">0.3341</span> <span class="o">-</span><span class="mf">1.7821</span> <span class="o">-</span><span class="mf">2.6282</span> <span class="o">-</span><span class="mf">1.4133</span>  <span class="mf">0.3636</span> <span class="o">-</span><span class="mf">2.8445</span>  <span class="mf">0.6943</span>  <span class="mf">0.3106</span>
- <span class="mf">0.2548</span> <span class="o">-</span><span class="mf">0.5406</span> <span class="o">-</span><span class="mf">2.5517</span> <span class="o">-</span><span class="mf">1.7037</span> <span class="o">-</span><span class="mf">0.7230</span>  <span class="mf">2.0527</span>  <span class="mf">1.4838</span> <span class="o">-</span><span class="mf">0.4078</span> <span class="o">-</span><span class="mf">0.5459</span> <span class="o">-</span><span class="mf">1.3875</span>
-<span class="o">-</span><span class="mf">3.4917</span> <span class="o">-</span><span class="mf">1.0278</span> <span class="o">-</span><span class="mf">3.1806</span> <span class="o">-</span><span class="mf">1.7807</span>  <span class="mf">3.1320</span> <span class="o">-</span><span class="mf">3.9973</span> <span class="o">-</span><span class="mf">0.7726</span>  <span class="mf">3.8712</span>  <span class="mf">0.5966</span>  <span class="mf">0.1608</span>
-<span class="o">-</span><span class="mf">2.7756</span>  <span class="mf">0.8781</span> <span class="o">-</span><span class="mf">1.2200</span>  <span class="mf">2.9019</span>  <span class="mf">1.5007</span>  <span class="mf">1.3835</span> <span class="o">-</span><span class="mf">0.1510</span> <span class="o">-</span><span class="mf">2.9587</span>  <span class="mf">0.1377</span>  <span class="mf">1.2194</span>
-<span class="o">-</span><span class="mf">2.0159</span>  <span class="mf">2.9220</span>  <span class="mf">2.1916</span> <span class="o">-</span><span class="mf">2.0630</span> <span class="o">-</span><span class="mf">1.3939</span>  <span class="mf">2.0322</span>  <span class="mf">1.8727</span>  <span class="mf">0.9909</span> <span class="o">-</span><span class="mf">0.4869</span> <span class="o">-</span><span class="mf">0.6182</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">10</span><span class="n">x10</span><span class="p">]</span>
+<span class="n">moduleConv</span> <span class="o">=</span> <span class="n">ScipyConv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">input</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">double</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">gradcheck</span><span class="p">(</span><span class="n">moduleConv</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Are the gradients correct: &quot;</span><span class="p">,</span> <span class="n">test</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.002 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-advanced-numpy-extensions-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/numpy_extensions_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">numpy_extensions_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/numpy_extensions_tutorial.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">numpy_extensions_tutorial.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="http://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -733,8 +724,7 @@ did not verify it’s correctness</em></p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

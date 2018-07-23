@@ -66,9 +66,9 @@ plt.ion()   # interactive mode
 landmarks_frame = pd.read_csv('faces/face_landmarks.csv')
 
 n = 65
-img_name = landmarks_frame.ix[n, 0]
-landmarks = landmarks_frame.ix[n, 1:].as_matrix().astype('float')
-landmarks = landmarks.reshape(-1, 2)
+img_name = landmarks_frame.iloc[n, 0]
+landmarks = landmarks_frame.iloc[n, 1:].as_matrix()
+landmarks = landmarks.astype('float').reshape(-1, 2)
 
 print('Image name: {}'.format(img_name))
 print('Landmarks shape: {}'.format(landmarks.shape))
@@ -136,10 +136,11 @@ class FaceLandmarksDataset(Dataset):
         return len(self.landmarks_frame)
 
     def __getitem__(self, idx):
-        img_name = os.path.join(self.root_dir, self.landmarks_frame.ix[idx, 0])
+        img_name = os.path.join(self.root_dir,
+                                self.landmarks_frame.iloc[idx, 0])
         image = io.imread(img_name)
-        landmarks = self.landmarks_frame.ix[idx, 1:].as_matrix().astype('float')
-        landmarks = landmarks.reshape(-1, 2)
+        landmarks = self.landmarks_frame.iloc[idx, 1:].as_matrix()
+        landmarks = landmarks.astype('float').reshape(-1, 2)
         sample = {'image': image, 'landmarks': landmarks}
 
         if self.transform:
@@ -178,7 +179,7 @@ for i in range(len(face_dataset)):
 # Transforms
 # ----------
 #
-# One issue we can see from the above is that the samples are not of the 
+# One issue we can see from the above is that the samples are not of the
 # same size. Most neural networks expect the images of a fixed size.
 # Therefore, we will need to write some prepocessing code.
 # Let's create three transforms:
@@ -191,7 +192,7 @@ for i in range(len(face_dataset)):
 #
 # We will write them as callable classes instead of simple functions so
 # that parameters of the transform need not be passed everytime it's
-# called. For this, we just need to implement ``__call__`` method and 
+# called. For this, we just need to implement ``__call__`` method and
 # if required, ``__init__`` method. We can then use a transform like this:
 #
 # ::
@@ -207,7 +208,7 @@ class Rescale(object):
     """Rescale the image in a sample to a given size.
 
     Args:
-        output_size (tuple or tuple): Desired output size. If tuple, output is
+        output_size (tuple or int): Desired output size. If tuple, output is
             matched to output_size. If int, smaller of image edges is matched
             to output_size keeping aspect ratio the same.
     """
@@ -277,7 +278,7 @@ class ToTensor(object):
 
     def __call__(self, sample):
         image, landmarks = sample['image'], sample['landmarks']
- 
+
         # swap color axis because
         # numpy image: H x W x C
         # torch image: C X H X W
@@ -323,7 +324,7 @@ plt.show()
 # -----------------------------
 #
 # Let's put this all together to create a dataset with composed
-# transforms. 
+# transforms.
 # To summarize, every time this dataset is sampled:
 #
 # -  An image is read from the file on the fly

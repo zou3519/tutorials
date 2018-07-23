@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Loading and Processing Tutorial &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Data Loading and Processing Tutorial &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../index.html"/>
         <link rel="next" title="Deep Learning for NLP with Pytorch" href="deep_learning_nlp_tutorial.html"/>
         <link rel="prev" title="Transfer Learning tutorial" href="transfer_learning_tutorial.html"/> 
 
@@ -75,7 +75,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -108,16 +108,16 @@
 <li class="toctree-l4"><a class="reference internal" href="blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -198,7 +198,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -282,7 +282,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="nlp/deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="nlp/deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -442,9 +442,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +533,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-loading-and-processing-tutorial">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-beginner-data-loading-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="data-loading-and-processing-tutorial">
 <span id="sphx-glr-beginner-data-loading-tutorial-py"></span><h1>Data Loading and Processing Tutorial<a class="headerlink" href="#data-loading-and-processing-tutorial" title="Permalink to this headline">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://chsasank.github.io">Sasank Chilamkurthy</a></p>
 <p>A lot of effort in solving any machine learning problem goes in to
@@ -567,9 +594,9 @@ is the number of landmarks.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">landmarks_frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;faces/face_landmarks.csv&#39;</span><span class="p">)</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="mi">65</span>
-<span class="n">img_name</span> <span class="o">=</span> <span class="n">landmarks_frame</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">landmarks</span> <span class="o">=</span> <span class="n">landmarks_frame</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
-<span class="n">landmarks</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">img_name</span> <span class="o">=</span> <span class="n">landmarks_frame</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">landmarks</span> <span class="o">=</span> <span class="n">landmarks_frame</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
+<span class="n">landmarks</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Image name: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">img_name</span><span class="p">))</span>
 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Landmarks shape: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">landmarks</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
@@ -577,12 +604,12 @@ is the number of landmarks.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Image</span> <span class="n">name</span><span class="p">:</span> <span class="n">person</span><span class="o">-</span><span class="mf">7.</span><span class="n">jpg</span>
-<span class="n">Landmarks</span> <span class="n">shape</span><span class="p">:</span> <span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">First</span> <span class="mi">4</span> <span class="n">Landmarks</span><span class="p">:</span> <span class="p">[[</span> <span class="mf">32.</span>  <span class="mf">65.</span><span class="p">]</span>
- <span class="p">[</span> <span class="mf">33.</span>  <span class="mf">76.</span><span class="p">]</span>
- <span class="p">[</span> <span class="mf">34.</span>  <span class="mf">86.</span><span class="p">]</span>
- <span class="p">[</span> <span class="mf">34.</span>  <span class="mf">97.</span><span class="p">]]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>Image name: person-7.jpg
+Landmarks shape: (68, 2)
+First 4 Landmarks: [[ 32.  65.]
+ [ 33.  76.]
+ [ 34.  86.]
+ [ 34.  97.]]
 </pre></div>
 </div>
 <p>Let’s write a simple helper function to show an image and its landmarks
@@ -599,7 +626,7 @@ and use it to show a sample.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_data_loading_tutorial_001.png" class="align-center" src="../_images/sphx_glr_data_loading_tutorial_001.png" />
+<img alt="../_images/sphx_glr_data_loading_tutorial_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_data_loading_tutorial_001.png" />
 <div class="section" id="dataset-class">
 <h2>Dataset class<a class="headerlink" href="#dataset-class" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal"><span class="pre">torch.utils.data.Dataset</span></code> is an abstract class representing a
@@ -639,10 +666,11 @@ next section.</p>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">landmarks_frame</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-        <span class="n">img_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">landmarks_frame</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">img_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_dir</span><span class="p">,</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">landmarks_frame</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
         <span class="n">image</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">img_name</span><span class="p">)</span>
-        <span class="n">landmarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">landmarks_frame</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span>
-        <span class="n">landmarks</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">landmarks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">landmarks_frame</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">as_matrix</span><span class="p">()</span>
+        <span class="n">landmarks</span> <span class="o">=</span> <span class="n">landmarks</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
         <span class="n">sample</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;image&#39;</span><span class="p">:</span> <span class="n">image</span><span class="p">,</span> <span class="s1">&#39;landmarks&#39;</span><span class="p">:</span> <span class="n">landmarks</span><span class="p">}</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
@@ -674,12 +702,12 @@ will print the sizes of first 4 samples and show their landmarks.</p>
         <span class="k">break</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_data_loading_tutorial_002.png" class="align-center" src="../_images/sphx_glr_data_loading_tutorial_002.png" />
+<img alt="../_images/sphx_glr_data_loading_tutorial_002.png" class="sphx-glr-single-img" src="../_images/sphx_glr_data_loading_tutorial_002.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="p">(</span><span class="mi">324</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">1</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">333</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">2</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">258</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mi">3</span> <span class="p">(</span><span class="mi">434</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>0 (324, 215, 3) (68, 2)
+1 (500, 333, 3) (68, 2)
+2 (250, 258, 3) (68, 2)
+3 (434, 290, 3) (68, 2)
 </pre></div>
 </div>
 </div>
@@ -710,7 +738,7 @@ landmarks.</p>
     <span class="sd">&quot;&quot;&quot;Rescale the image in a sample to a given size.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        output_size (tuple or tuple): Desired output size. If tuple, output is</span>
+<span class="sd">        output_size (tuple or int): Desired output size. If tuple, output is</span>
 <span class="sd">            matched to output_size. If int, smaller of image edges is matched</span>
 <span class="sd">            to output_size keeping aspect ratio the same.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -816,7 +844,7 @@ to do this.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_data_loading_tutorial_003.png" class="align-center" src="../_images/sphx_glr_data_loading_tutorial_003.png" />
+<img alt="../_images/sphx_glr_data_loading_tutorial_003.png" class="sphx-glr-single-img" src="../_images/sphx_glr_data_loading_tutorial_003.png" />
 </div>
 </div>
 <div class="section" id="iterating-through-the-dataset">
@@ -850,10 +878,10 @@ loop as before.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="mi">1</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="mi">2</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="mi">3</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>0 torch.Size([3, 224, 224]) torch.Size([68, 2])
+1 torch.Size([3, 224, 224]) torch.Size([68, 2])
+2 torch.Size([3, 224, 224]) torch.Size([68, 2])
+3 torch.Size([3, 224, 224]) torch.Size([68, 2])
 </pre></div>
 </div>
 <p>However, we are losing a lot of features by using a simple <code class="docutils literal"><span class="pre">for</span></code> loop to
@@ -904,12 +932,12 @@ fine for most use cases.</p>
         <span class="k">break</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_data_loading_tutorial_004.png" class="align-center" src="../_images/sphx_glr_data_loading_tutorial_004.png" />
+<img alt="../_images/sphx_glr_data_loading_tutorial_004.png" class="sphx-glr-single-img" src="../_images/sphx_glr_data_loading_tutorial_004.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="mi">1</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="mi">2</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="mi">3</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">])</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>0 torch.Size([4, 3, 224, 224]) torch.Size([4, 68, 2])
+1 torch.Size([4, 3, 224, 224]) torch.Size([4, 68, 2])
+2 torch.Size([4, 3, 224, 224]) torch.Size([4, 68, 2])
+3 torch.Size([4, 3, 224, 224]) torch.Size([4, 68, 2])
 </pre></div>
 </div>
 </div>
@@ -953,14 +981,14 @@ are also avaiable. You can use these to write a dataloader like this:</p>
 </div>
 <p>For an example with training code, please see
 <a class="reference internal" href="transfer_learning_tutorial.html"><span class="doc">Transfer Learning tutorial</span></a>.</p>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  14.012 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  12.608 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-beginner-data-loading-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/data_loading_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">data_loading_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/data_loading_tutorial.ipynb" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">data_loading_tutorial.ipynb</span></code></a></div>
 </div>
-<p class="sphx-glr-signature"><a class="reference external" href="http://sphinx-gallery.readthedocs.io">Generated by Sphinx-Gallery</a></p>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
 </div>
 
@@ -1008,8 +1036,7 @@ are also avaiable. You can use these to write a dataloader like this:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

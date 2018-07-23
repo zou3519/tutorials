@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_beginner_examples_nn_dynamic_net.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_beginner_examples_nn_dynamic_net.py:
 
@@ -17,7 +21,6 @@ weights multiple times to compute the innermost hidden layers.
 
     import random
     import torch
-    from torch.autograd import Variable
 
 
     class DynamicNet(torch.nn.Module):
@@ -56,9 +59,9 @@ weights multiple times to compute the innermost hidden layers.
     # H is hidden dimension; D_out is output dimension.
     N, D_in, H, D_out = 64, 1000, 100, 10
 
-    # Create random Tensors to hold inputs and outputs, and wrap them in Variables
-    x = Variable(torch.randn(N, D_in))
-    y = Variable(torch.randn(N, D_out), requires_grad=False)
+    # Create random Tensors to hold inputs and outputs
+    x = torch.randn(N, D_in)
+    y = torch.randn(N, D_out)
 
     # Construct our model by instantiating the class defined above
     model = DynamicNet(D_in, H, D_out)
@@ -73,7 +76,7 @@ weights multiple times to compute the innermost hidden layers.
 
         # Compute and print loss
         loss = criterion(y_pred, y)
-        print(t, loss.data[0])
+        print(t, loss.item())
 
         # Zero gradients, perform a backward pass, and update the weights.
         optimizer.zero_grad()
@@ -83,10 +86,14 @@ weights multiple times to compute the innermost hidden layers.
 **Total running time of the script:** ( 0 minutes  0.000 seconds)
 
 
+.. _sphx_glr_download_beginner_examples_nn_dynamic_net.py:
+
 
 .. only :: html
 
  .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download

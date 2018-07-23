@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Neural Transfer with PyTorch &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Neural Transfer with PyTorch &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../index.html"/>
         <link rel="next" title="Creating extensions using numpy and scipy" href="numpy_extensions_tutorial.html"/>
         <link rel="prev" title="Spatial Transformer Networks Tutorial" href="../intermediate/spatial_transformer_tutorial.html"/> 
 
@@ -75,7 +75,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -108,16 +108,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -198,7 +198,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -282,7 +282,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -442,9 +442,32 @@
 <li class="toctree-l2"><a class="reference internal" href="super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +533,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="neural-transfer-with-pytorch">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-advanced-neural-style-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="neural-transfer-with-pytorch">
 <span id="sphx-glr-advanced-neural-style-tutorial-py"></span><h1>Neural Transfer with PyTorch<a class="headerlink" href="#neural-transfer-with-pytorch" title="Permalink to this headline">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://alexis-jacq.github.io">Alexis Jacq</a></p>
 <div class="section" id="introduction">
@@ -521,7 +548,7 @@ by Leon A. Gatys, Alexander S. Ecker and Matthias Bethge.</p>
 <div class="section" id="neural-what">
 <h3>Neural what?<a class="headerlink" href="#neural-what" title="Permalink to this headline">¶</a></h3>
 <p>The Neural-Style, or Neural-Transfer, is an algorithm that takes as
-input a content-image (e.g. a tortle), a style-image (e.g. artistic
+input a content-image (e.g. a turtle), a style-image (e.g. artistic
 waves) and return the content of the content-image as if it was
 ‘painted’ using the artistic style of the style-image:</p>
 <div class="figure">
@@ -594,7 +621,7 @@ explained.</p>
 we need: indeed, with PyTorch, all the gradients are automatically and
 dynamically computed for you (while you use functions from the library).
 This is why the implementation of this algorithm becomes very
-confortable with PyTorch.</p>
+comfortable with PyTorch.</p>
 </div>
 </div>
 </div>
@@ -610,8 +637,6 @@ PyTorch</span></a>.</p>
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">torch</span></code>, <code class="docutils literal"><span class="pre">torch.nn</span></code>, <code class="docutils literal"><span class="pre">numpy</span></code> (indispensables packages for
 neural networks with PyTorch)</li>
-<li><code class="docutils literal"><span class="pre">torch.autograd.Variable</span></code> (dynamic computation of the gradient wrt
-a variable)</li>
 <li><code class="docutils literal"><span class="pre">torch.optim</span></code> (efficient gradient descents)</li>
 <li><code class="docutils literal"><span class="pre">PIL</span></code>, <code class="docutils literal"><span class="pre">PIL.Image</span></code>, <code class="docutils literal"><span class="pre">matplotlib.pyplot</span></code> (load and display
 images)</li>
@@ -624,7 +649,7 @@ tensors)</li>
 
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="kn">as</span> <span class="nn">nn</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="kn">as</span> <span class="nn">F</span>
 <span class="kn">import</span> <span class="nn">torch.optim</span> <span class="kn">as</span> <span class="nn">optim</span>
 
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -642,14 +667,12 @@ tensors)</li>
 <p>If you have a GPU on your computer, it is preferable to run the
 algorithm on it, especially if you want to try larger networks (like
 VGG). For this, we have <code class="docutils literal"><span class="pre">torch.cuda.is_available()</span></code> that returns
-<code class="docutils literal"><span class="pre">True</span></code> if you computer has an available GPU. Then, we can use method
-<code class="docutils literal"><span class="pre">.cuda()</span></code> that moves allocated proccesses associated with a module
-from the CPU to the GPU. When we want to move back this module to the
-CPU (e.g. to use numpy), we use the <code class="docutils literal"><span class="pre">.cpu()</span></code> method. Finally,
-<code class="docutils literal"><span class="pre">.type(dtype)</span></code> will be use to convert a <code class="docutils literal"><span class="pre">torch.FloatTensor</span></code> into
-<code class="docutils literal"><span class="pre">torch.cuda.FloatTensor</span></code> to feed GPU processes.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">use_cuda</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
-<span class="n">dtype</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="k">if</span> <span class="n">use_cuda</span> <span class="k">else</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span>
+<code class="docutils literal"><span class="pre">True</span></code> if you computer has an available GPU. Then, we can set the
+<code class="docutils literal"><span class="pre">torch.device</span></code> that will be used in this script. Then, we will use
+the method <code class="docutils literal"><span class="pre">.to(device)</span></code> that moves a tensor or a module to the desired
+device. When we want to move back this tensor or module to the
+CPU (e.g. to use numpy), we can use the <code class="docutils literal"><span class="pre">.cpu()</span></code> method.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -669,29 +692,28 @@ Download these two images and add them to a directory
 with name <code class="docutils literal"><span class="pre">images</span></code></p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># desired size of the output image</span>
-<span class="n">imsize</span> <span class="o">=</span> <span class="mi">512</span> <span class="k">if</span> <span class="n">use_cuda</span> <span class="k">else</span> <span class="mi">128</span>  <span class="c1"># use small size if no gpu</span>
+<span class="n">imsize</span> <span class="o">=</span> <span class="mi">512</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="mi">128</span>  <span class="c1"># use small size if no gpu</span>
 
 <span class="n">loader</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
-    <span class="n">transforms</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">imsize</span><span class="p">),</span>  <span class="c1"># scale imported image</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="n">imsize</span><span class="p">),</span>  <span class="c1"># scale imported image</span>
     <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()])</span>  <span class="c1"># transform it into a torch tensor</span>
 
 
 <span class="k">def</span> <span class="nf">image_loader</span><span class="p">(</span><span class="n">image_name</span><span class="p">):</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_name</span><span class="p">)</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">loader</span><span class="p">(</span><span class="n">image</span><span class="p">))</span>
     <span class="c1"># fake batch dimension required to fit network&#39;s input dimensions</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">image</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">loader</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 
 
-<span class="n">style_img</span> <span class="o">=</span> <span class="n">image_loader</span><span class="p">(</span><span class="s2">&quot;images/picasso.jpg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
-<span class="n">content_img</span> <span class="o">=</span> <span class="n">image_loader</span><span class="p">(</span><span class="s2">&quot;images/dancing.jpg&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">style_img</span> <span class="o">=</span> <span class="n">image_loader</span><span class="p">(</span><span class="s2">&quot;images/picasso.jpg&quot;</span><span class="p">)</span>
+<span class="n">content_img</span> <span class="o">=</span> <span class="n">image_loader</span><span class="p">(</span><span class="s2">&quot;images/dancing.jpg&quot;</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="n">style_img</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">content_img</span><span class="o">.</span><span class="n">size</span><span class="p">(),</span> \
     <span class="s2">&quot;we need to import style and content images of the same size&quot;</span>
 </pre></div>
 </div>
-<p>Imported PIL images has values between 0 and 255. Transformed into torch
+<p>Imported PIL images have values between 0 and 255. Transformed into torch
 tensors, their values are between 0 and 1. This is an important detail:
 neural networks from torch library are trained with 0-1 tensor image. If
 you try to feed the networks with 0-255 tensor images the activated
@@ -708,8 +730,8 @@ reconvert them into PIL images:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ion</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">imshow</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">tensor</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>  <span class="c1"># we clone the tensor to not do changes on it</span>
-    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">imsize</span><span class="p">,</span> <span class="n">imsize</span><span class="p">)</span>  <span class="c1"># remove the fake batch dimension</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">tensor</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>  <span class="c1"># we clone the tensor to not do changes on it</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>      <span class="c1"># remove the fake batch dimension</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">unloader</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">title</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
@@ -718,24 +740,18 @@ reconvert them into PIL images:</p>
 
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">style_img</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Style Image&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">style_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Style Image&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">content_img</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Content Image&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">content_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Content Image&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="sphx-glr-horizontal">
-<li><a class="first reference internal image-reference" href="../_images/sphx_glr_neural_style_tutorial_001.png"><img alt="../_images/sphx_glr_neural_style_tutorial_001.png" src="../_images/sphx_glr_neural_style_tutorial_001.png" style="width: 300.79999999999995px; height: 225.6px;" /></a>
-</li>
-<li><a class="first reference internal image-reference" href="../_images/sphx_glr_neural_style_tutorial_002.png"><img alt="../_images/sphx_glr_neural_style_tutorial_002.png" src="../_images/sphx_glr_neural_style_tutorial_002.png" style="width: 300.79999999999995px; height: 225.6px;" /></a>
-</li>
-</ul>
 </div>
 <div class="section" id="content-loss">
 <h3>Content loss<a class="headerlink" href="#content-loss" title="Permalink to this headline">¶</a></h3>
 <p>The content loss is a function that takes as input the feature maps
 <span class="math">\(F_{XL}\)</span> at a layer <span class="math">\(L\)</span> in a network fed by <span class="math">\(X\)</span> and
-return the weigthed content distance <span class="math">\(w_{CL}.D_C^L(X,C)\)</span> between
+returns the weigthed content distance <span class="math">\(w_{CL}.D_C^L(X,C)\)</span> between
 this image and the content image. Hence, the weight <span class="math">\(w_{CL}\)</span> and
 the target content <span class="math">\(F_{CL}\)</span> are parameters of the function. We
 implement this function as a torch module with a constructor that takes
@@ -750,31 +766,24 @@ computed. For that, we just need to make the <code class="docutils literal"><spa
 module returning the input: the module becomes a ‘’transparent layer’’
 of the neural network. The computed loss is saved as a parameter of the
 module.</p>
-<p>Finally, we define a fake <code class="docutils literal"><span class="pre">backward</span></code> method, that just call the
+<p>Finally, we define a fake <code class="docutils literal"><span class="pre">backward</span></code> method that just calls the
 backward method of <code class="docutils literal"><span class="pre">nn.MSELoss</span></code> in order to reconstruct the gradient.
 This method returns the computed loss: this will be useful when running
 the gradient descent in order to display the evolution of style and
 content losses.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ContentLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">ContentLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="c1"># we &#39;detach&#39; the target content from the tree used</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">*</span> <span class="n">weight</span>
         <span class="c1"># to dynamically compute the gradient: this is a stated value,</span>
         <span class="c1"># not a variable. Otherwise the forward method of the criterion</span>
         <span class="c1"># will throw an error.</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span><span class="p">(</span><span class="nb">input</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="nb">input</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span>
-
-    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retain_graph</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">retain_graph</span><span class="o">=</span><span class="n">retain_graph</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">input</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -798,49 +807,38 @@ feature map <span class="math">\(F_{XL}^k\)</span>. The <span class="math">\(k^{
 <span class="math">\(\hat{F}_{XL}\)</span> is <span class="math">\(F_{XL}^k\)</span>. We let you check that
 <span class="math">\(\hat{F}_{XL} \cdot \hat{F}_{XL}^T = G_{XL}\)</span>. Given that, it
 becomes easy to implement our module:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">GramMatrix</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gram_matrix</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>  <span class="c1"># a=batch size(=1)</span>
+    <span class="c1"># b=number of feature maps</span>
+    <span class="c1"># (c,d)=dimensions of a f. map (N=c*d)</span>
 
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-        <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>  <span class="c1"># a=batch size(=1)</span>
-        <span class="c1"># b=number of feature maps</span>
-        <span class="c1"># (c,d)=dimensions of a f. map (N=c*d)</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># resise F_XL into \hat F_XL</span>
 
-        <span class="n">features</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>  <span class="c1"># resise F_XL into \hat F_XL</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mm</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">t</span><span class="p">())</span>  <span class="c1"># compute the gram product</span>
 
-        <span class="n">G</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mm</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">features</span><span class="o">.</span><span class="n">t</span><span class="p">())</span>  <span class="c1"># compute the gram product</span>
-
-        <span class="c1"># we &#39;normalize&#39; the values of the gram matrix</span>
-        <span class="c1"># by dividing by the number of element in each feature maps.</span>
-        <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+    <span class="c1"># we &#39;normalize&#39; the values of the gram matrix</span>
+    <span class="c1"># by dividing by the number of element in each feature maps.</span>
+    <span class="k">return</span> <span class="n">G</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The longer is the feature maps dimension <span class="math">\(N\)</span>, the bigger are the
-values of the gram matrix. Therefore, if we don’t normalize by <span class="math">\(N\)</span>,
+values of the Gram matrix. Therefore, if we don’t normalize by <span class="math">\(N\)</span>,
 the loss computed at the first layers (before pooling layers) will have
 much more importance during the gradient descent. We dont want that,
 since the most interesting style features are in the deepest layers!</p>
 <p>Then, the style loss module is implemented exactly the same way than the
-content loss module, but we have to add the <code class="docutils literal"><span class="pre">gramMatrix</span></code> as a
-parameter:</p>
+content loss module, but it compares the difference in Gram matrices of target
+and input</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StyleLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_feature</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">StyleLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span> <span class="o">*</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gram</span> <span class="o">=</span> <span class="n">GramMatrix</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">gram_matrix</span><span class="p">(</span><span class="n">target_feature</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="nb">input</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gram</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span>
-
-    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">retain_graph</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">retain_graph</span><span class="o">=</span><span class="n">retain_graph</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">gram_matrix</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">mse_loss</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">input</span>
 </pre></div>
 </div>
 </div>
@@ -851,91 +849,105 @@ are going to use a pretrained VGG network with 19 layers (VGG19).</p>
 <p>PyTorch’s implementation of VGG is a module divided in two child
 <code class="docutils literal"><span class="pre">Sequential</span></code> modules: <code class="docutils literal"><span class="pre">features</span></code> (containing convolution and pooling
 layers) and <code class="docutils literal"><span class="pre">classifier</span></code> (containing fully connected layers). We are
-just interested by <code class="docutils literal"><span class="pre">features</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cnn</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">vgg19</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">features</span>
+just interested by <code class="docutils literal"><span class="pre">features</span></code>:
+Some layers have different behavior in training and in evaluation. Since we
+are using it as a feature extractor. We will use <code class="docutils literal"><span class="pre">.eval()</span></code> to set the
+network in evaluation mode.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cnn</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">vgg19</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Additionally, VGG networks are trained on images with each channel normalized
+by mean=[0.485, 0.456, 0.406] and std=[0.229, 0.224, 0.225]. We will use them
+to normalize the image before sending into the network.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">cnn_normalization_mean</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">cnn_normalization_std</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
-<span class="c1"># move it to the GPU if possible:</span>
-<span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-    <span class="n">cnn</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="c1"># create a module to normalize input image so we can easily put it in a</span>
+<span class="c1"># nn.Sequential</span>
+<span class="k">class</span> <span class="nc">Normalization</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Normalization</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="c1"># .view the mean and std to make them [C x 1 x 1] so that they can</span>
+        <span class="c1"># directly work with image Tensor of shape [B x C x H x W].</span>
+        <span class="c1"># B is batch size. C is number of channels. H is height and W is width.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mean</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">std</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">std</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">img</span><span class="p">):</span>
+        <span class="c1"># normalize img</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">img</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">std</span>
 </pre></div>
 </div>
 <p>A <code class="docutils literal"><span class="pre">Sequential</span></code> module contains an ordered list of child modules. For
 instance, <code class="docutils literal"><span class="pre">vgg19.features</span></code> contains a sequence (Conv2d, ReLU,
-Maxpool2d, Conv2d, ReLU…) aligned in the right order of depth. As we
+MaxPool2d, Conv2d, ReLU…) aligned in the right order of depth. As we
 said in <em>Content loss</em> section, we wand to add our style and content
 loss modules as additive ‘transparent’ layers in our network, at desired
-depths. For that, we construct a new <code class="docutils literal"><span class="pre">Sequential</span></code> module, in wich we
+depths. For that, we construct a new <code class="docutils literal"><span class="pre">Sequential</span></code> module, in which we
 are going to add modules from <code class="docutils literal"><span class="pre">vgg19</span></code> and our loss modules in the
 right order:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># desired depth layers to compute style/content losses :</span>
 <span class="n">content_layers_default</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conv_4&#39;</span><span class="p">]</span>
 <span class="n">style_layers_default</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;conv_1&#39;</span><span class="p">,</span> <span class="s1">&#39;conv_2&#39;</span><span class="p">,</span> <span class="s1">&#39;conv_3&#39;</span><span class="p">,</span> <span class="s1">&#39;conv_4&#39;</span><span class="p">,</span> <span class="s1">&#39;conv_5&#39;</span><span class="p">]</span>
 
-
-<span class="k">def</span> <span class="nf">get_style_model_and_losses</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">style_img</span><span class="p">,</span> <span class="n">content_img</span><span class="p">,</span>
-                               <span class="n">style_weight</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">content_weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">get_style_model_and_losses</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">normalization_mean</span><span class="p">,</span> <span class="n">normalization_std</span><span class="p">,</span>
+                               <span class="n">style_img</span><span class="p">,</span> <span class="n">content_img</span><span class="p">,</span>
                                <span class="n">content_layers</span><span class="o">=</span><span class="n">content_layers_default</span><span class="p">,</span>
                                <span class="n">style_layers</span><span class="o">=</span><span class="n">style_layers_default</span><span class="p">):</span>
     <span class="n">cnn</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">cnn</span><span class="p">)</span>
+
+    <span class="c1"># normalization module</span>
+    <span class="n">normalization</span> <span class="o">=</span> <span class="n">Normalization</span><span class="p">(</span><span class="n">normalization_mean</span><span class="p">,</span> <span class="n">normalization_std</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
     <span class="c1"># just in order to have an iterable access to or list of content/syle</span>
     <span class="c1"># losses</span>
     <span class="n">content_losses</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">style_losses</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">()</span>  <span class="c1"># the new Sequential module network</span>
-    <span class="n">gram</span> <span class="o">=</span> <span class="n">GramMatrix</span><span class="p">()</span>  <span class="c1"># we need a gram module in order to compute style targets</span>
+    <span class="c1"># assuming that cnn is a nn.Sequential, so we make a new nn.Sequential</span>
+    <span class="c1"># to put in modules that are supposed to be activated sequentially</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="n">normalization</span><span class="p">)</span>
 
-    <span class="c1"># move these modules to the GPU if possible:</span>
-    <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-        <span class="n">gram</span> <span class="o">=</span> <span class="n">gram</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">cnn</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># increment every time we see a conv</span>
+    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">cnn</span><span class="o">.</span><span class="n">children</span><span class="p">():</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">):</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;conv_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">content_layers</span><span class="p">:</span>
-                <span class="c1"># add content loss:</span>
-                <span class="n">target</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">content_img</span><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-                <span class="n">content_loss</span> <span class="o">=</span> <span class="n">ContentLoss</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">content_weight</span><span class="p">)</span>
-                <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;content_loss_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">content_loss</span><span class="p">)</span>
-                <span class="n">content_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">content_loss</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">style_layers</span><span class="p">:</span>
-                <span class="c1"># add style loss:</span>
-                <span class="n">target_feature</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">style_img</span><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-                <span class="n">target_feature_gram</span> <span class="o">=</span> <span class="n">gram</span><span class="p">(</span><span class="n">target_feature</span><span class="p">)</span>
-                <span class="n">style_loss</span> <span class="o">=</span> <span class="n">StyleLoss</span><span class="p">(</span><span class="n">target_feature_gram</span><span class="p">,</span> <span class="n">style_weight</span><span class="p">)</span>
-                <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;style_loss_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">style_loss</span><span class="p">)</span>
-                <span class="n">style_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">style_loss</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">):</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;relu_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">content_layers</span><span class="p">:</span>
-                <span class="c1"># add content loss:</span>
-                <span class="n">target</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">content_img</span><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-                <span class="n">content_loss</span> <span class="o">=</span> <span class="n">ContentLoss</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">content_weight</span><span class="p">)</span>
-                <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;content_loss_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">content_loss</span><span class="p">)</span>
-                <span class="n">content_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">content_loss</span><span class="p">)</span>
-
-            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">style_layers</span><span class="p">:</span>
-                <span class="c1"># add style loss:</span>
-                <span class="n">target_feature</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">style_img</span><span class="p">)</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-                <span class="n">target_feature_gram</span> <span class="o">=</span> <span class="n">gram</span><span class="p">(</span><span class="n">target_feature</span><span class="p">)</span>
-                <span class="n">style_loss</span> <span class="o">=</span> <span class="n">StyleLoss</span><span class="p">(</span><span class="n">target_feature_gram</span><span class="p">,</span> <span class="n">style_weight</span><span class="p">)</span>
-                <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;style_loss_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">style_loss</span><span class="p">)</span>
-                <span class="n">style_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">style_loss</span><span class="p">)</span>
-
             <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;conv_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;relu_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="c1"># The in-place version doesn&#39;t play very nicely with the ContentLoss</span>
+            <span class="c1"># and StyleLoss we insert below. So we replace with out-of-place</span>
+            <span class="c1"># ones here.</span>
+            <span class="n">layer</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;pool_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">):</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;bn_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Unrecognized layer: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
 
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">layer</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">):</span>
-            <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;pool_&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-            <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>  <span class="c1"># ***</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">content_layers</span><span class="p">:</span>
+            <span class="c1"># add content loss:</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">content_img</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+            <span class="n">content_loss</span> <span class="o">=</span> <span class="n">ContentLoss</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;content_loss_{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">content_loss</span><span class="p">)</span>
+            <span class="n">content_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">content_loss</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">style_layers</span><span class="p">:</span>
+            <span class="c1"># add style loss:</span>
+            <span class="n">target_feature</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">style_img</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+            <span class="n">style_loss</span> <span class="o">=</span> <span class="n">StyleLoss</span><span class="p">(</span><span class="n">target_feature</span><span class="p">)</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">add_module</span><span class="p">(</span><span class="s2">&quot;style_loss_{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">style_loss</span><span class="p">)</span>
+            <span class="n">style_losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">style_loss</span><span class="p">)</span>
+
+    <span class="c1"># now we trim off the layers after the last content and style losses</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">model</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ContentLoss</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">StyleLoss</span><span class="p">):</span>
+            <span class="k">break</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">[:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
 
     <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">style_losses</span><span class="p">,</span> <span class="n">content_losses</span>
 </pre></div>
@@ -961,14 +973,13 @@ dimensions than content and style images. This image can be a white
 noise, or it can also be a copy of the content-image.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">input_img</span> <span class="o">=</span> <span class="n">content_img</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
 <span class="c1"># if you want to use a white noise instead uncomment the below line:</span>
-<span class="c1"># input_img = Variable(torch.randn(content_img.data.size())).type(dtype)</span>
+<span class="c1"># input_img = torch.randn(content_img.data.size(), device=device)</span>
 
 <span class="c1"># add the original input image to the figure:</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">imshow</span><span class="p">(</span><span class="n">input_img</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Input Image&#39;</span><span class="p">)</span>
+<span class="n">imshow</span><span class="p">(</span><span class="n">input_img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Input Image&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_neural_style_tutorial_003.png" class="align-center" src="../_images/sphx_glr_neural_style_tutorial_003.png" />
 </div>
 <div class="section" id="gradient-descent">
 <h3>Gradient descent<a class="headerlink" href="#gradient-descent" title="Permalink to this headline">¶</a></h3>
@@ -977,19 +988,13 @@ noise, or it can also be a copy of the content-image.</p>
 we will use L-BFGS algorithm to run our gradient descent. Unlike
 training a network, we want to train the input image in order to
 minimise the content/style losses. We would like to simply create a
-PyTorch  L-BFGS optimizer, passing our image as the variable to optimize.
-But <code class="docutils literal"><span class="pre">optim.LBFGS</span></code> takes as first argument a list of PyTorch
-<code class="docutils literal"><span class="pre">Variable</span></code> that require gradient. Our input image is a <code class="docutils literal"><span class="pre">Variable</span></code>
-but is not a leaf of the tree that requires computation of gradients. In
-order to show that this variable requires a gradient, a possibility is
-to construct a <code class="docutils literal"><span class="pre">Parameter</span></code> object from the input image. Then, we just
-give a list containing this <code class="docutils literal"><span class="pre">Parameter</span></code> to the optimizer’s
-constructor:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input_param_optimizer</span><span class="p">(</span><span class="n">input_img</span><span class="p">):</span>
+PyTorch  L-BFGS optimizer <code class="docutils literal"><span class="pre">optim.LBFGS</span></code>, passing our image as the
+Tensor to optimize. We use <code class="docutils literal"><span class="pre">.requires_grad_()</span></code> to make sure that this
+image requires gradient.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_input_optimizer</span><span class="p">(</span><span class="n">input_img</span><span class="p">):</span>
     <span class="c1"># this line to show that input is a parameter that requires a gradient</span>
-    <span class="n">input_param</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Parameter</span><span class="p">(</span><span class="n">input_img</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">LBFGS</span><span class="p">([</span><span class="n">input_param</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">input_param</span><span class="p">,</span> <span class="n">optimizer</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">LBFGS</span><span class="p">([</span><span class="n">input_img</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">()])</span>
+    <span class="k">return</span> <span class="n">optimizer</span>
 </pre></div>
 </div>
 <p><strong>Last step</strong>: the loop of gradient descent. At each step, we must feed
@@ -1005,13 +1010,14 @@ values. In fact, we must perform an optimization under constraints in
 order to keep having right vaues into our input image. There is a simple
 solution: at each step, to correct the image to maintain its values into
 the 0-1 interval.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_style_transfer</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">content_img</span><span class="p">,</span> <span class="n">style_img</span><span class="p">,</span> <span class="n">input_img</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
-                       <span class="n">style_weight</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">content_weight</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_style_transfer</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">normalization_mean</span><span class="p">,</span> <span class="n">normalization_std</span><span class="p">,</span>
+                       <span class="n">content_img</span><span class="p">,</span> <span class="n">style_img</span><span class="p">,</span> <span class="n">input_img</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+                       <span class="n">style_weight</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">content_weight</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Run the style transfer.&quot;&quot;&quot;</span>
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Building the style transfer model..&#39;</span><span class="p">)</span>
     <span class="n">model</span><span class="p">,</span> <span class="n">style_losses</span><span class="p">,</span> <span class="n">content_losses</span> <span class="o">=</span> <span class="n">get_style_model_and_losses</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span>
-        <span class="n">style_img</span><span class="p">,</span> <span class="n">content_img</span><span class="p">,</span> <span class="n">style_weight</span><span class="p">,</span> <span class="n">content_weight</span><span class="p">)</span>
-    <span class="n">input_param</span><span class="p">,</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">get_input_param_optimizer</span><span class="p">(</span><span class="n">input_img</span><span class="p">)</span>
+        <span class="n">normalization_mean</span><span class="p">,</span> <span class="n">normalization_std</span><span class="p">,</span> <span class="n">style_img</span><span class="p">,</span> <span class="n">content_img</span><span class="p">)</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">get_input_optimizer</span><span class="p">(</span><span class="n">input_img</span><span class="p">)</span>
 
     <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Optimizing..&#39;</span><span class="p">)</span>
     <span class="n">run</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -1019,23 +1025,29 @@ the 0-1 interval.</p>
 
         <span class="k">def</span> <span class="nf">closure</span><span class="p">():</span>
             <span class="c1"># correct the values of updated input image</span>
-            <span class="n">input_param</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">clamp_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">input_img</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">clamp_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
             <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-            <span class="n">model</span><span class="p">(</span><span class="n">input_param</span><span class="p">)</span>
+            <span class="n">model</span><span class="p">(</span><span class="n">input_img</span><span class="p">)</span>
             <span class="n">style_score</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">content_score</span> <span class="o">=</span> <span class="mi">0</span>
 
             <span class="k">for</span> <span class="n">sl</span> <span class="ow">in</span> <span class="n">style_losses</span><span class="p">:</span>
-                <span class="n">style_score</span> <span class="o">+=</span> <span class="n">sl</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+                <span class="n">style_score</span> <span class="o">+=</span> <span class="n">sl</span><span class="o">.</span><span class="n">loss</span>
             <span class="k">for</span> <span class="n">cl</span> <span class="ow">in</span> <span class="n">content_losses</span><span class="p">:</span>
-                <span class="n">content_score</span> <span class="o">+=</span> <span class="n">cl</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+                <span class="n">content_score</span> <span class="o">+=</span> <span class="n">cl</span><span class="o">.</span><span class="n">loss</span>
+
+            <span class="n">style_score</span> <span class="o">*=</span> <span class="n">style_weight</span>
+            <span class="n">content_score</span> <span class="o">*=</span> <span class="n">content_weight</span>
+
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">style_score</span> <span class="o">+</span> <span class="n">content_score</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
 
             <span class="n">run</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">if</span> <span class="n">run</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="k">print</span><span class="p">(</span><span class="s2">&quot;run {}:&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">run</span><span class="p">))</span>
                 <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Style Loss : {:4f} Content Loss: {:4f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                    <span class="n">style_score</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">content_score</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+                    <span class="n">style_score</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span> <span class="n">content_score</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
                 <span class="k">print</span><span class="p">()</span>
 
             <span class="k">return</span> <span class="n">style_score</span> <span class="o">+</span> <span class="n">content_score</span>
@@ -1043,13 +1055,14 @@ the 0-1 interval.</p>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">closure</span><span class="p">)</span>
 
     <span class="c1"># a last correction...</span>
-    <span class="n">input_param</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">clamp_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">input_img</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">clamp_</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">input_param</span><span class="o">.</span><span class="n">data</span>
+    <span class="k">return</span> <span class="n">input_img</span>
 </pre></div>
 </div>
 <p>Finally, run the algorithm</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">run_style_transfer</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">content_img</span><span class="p">,</span> <span class="n">style_img</span><span class="p">,</span> <span class="n">input_img</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">output</span> <span class="o">=</span> <span class="n">run_style_transfer</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">cnn_normalization_mean</span><span class="p">,</span> <span class="n">cnn_normalization_std</span><span class="p">,</span>
+                            <span class="n">content_img</span><span class="p">,</span> <span class="n">style_img</span><span class="p">,</span> <span class="n">input_img</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">imshow</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Output Image&#39;</span><span class="p">)</span>
@@ -1059,31 +1072,8 @@ the 0-1 interval.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_neural_style_tutorial_004.png" class="align-center" src="../_images/sphx_glr_neural_style_tutorial_004.png" />
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Building</span> <span class="n">the</span> <span class="n">style</span> <span class="n">transfer</span> <span class="n">model</span><span class="o">..</span>
-<span class="n">Optimizing</span><span class="o">..</span>
-<span class="n">run</span> <span class="p">[</span><span class="mi">50</span><span class="p">]:</span>
-<span class="n">Style</span> <span class="n">Loss</span> <span class="p">:</span> <span class="mf">0.147848</span> <span class="n">Content</span> <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.470452</span>
-
-<span class="n">run</span> <span class="p">[</span><span class="mi">100</span><span class="p">]:</span>
-<span class="n">Style</span> <span class="n">Loss</span> <span class="p">:</span> <span class="mf">0.043477</span> <span class="n">Content</span> <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.343297</span>
-
-<span class="n">run</span> <span class="p">[</span><span class="mi">150</span><span class="p">]:</span>
-<span class="n">Style</span> <span class="n">Loss</span> <span class="p">:</span> <span class="mf">0.035841</span> <span class="n">Content</span> <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.315429</span>
-
-<span class="n">run</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span>
-<span class="n">Style</span> <span class="n">Loss</span> <span class="p">:</span> <span class="mf">0.031865</span> <span class="n">Content</span> <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.306764</span>
-
-<span class="n">run</span> <span class="p">[</span><span class="mi">250</span><span class="p">]:</span>
-<span class="n">Style</span> <span class="n">Loss</span> <span class="p">:</span> <span class="mf">0.030837</span> <span class="n">Content</span> <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.302101</span>
-
-<span class="n">run</span> <span class="p">[</span><span class="mi">300</span><span class="p">]:</span>
-<span class="n">Style</span> <span class="n">Loss</span> <span class="p">:</span> <span class="mf">0.030777</span> <span class="n">Content</span> <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.299595</span>
-</pre></div>
-</div>
-<p><strong>Total running time of the script:</strong> ( 1 minutes  36.006 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-advanced-neural-style-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/neural_style_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">neural_style_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -1138,8 +1128,7 @@ the 0-1 interval.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

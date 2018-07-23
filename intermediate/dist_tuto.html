@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Writing Distributed Applications with PyTorch &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Writing Distributed Applications with PyTorch &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../index.html"/>
         <link rel="next" title="Spatial Transformer Networks Tutorial" href="spatial_transformer_tutorial.html"/>
         <link rel="prev" title="Reinforcement Learning (DQN) tutorial" href="reinforcement_q_learning.html"/> 
 
@@ -75,7 +75,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -108,16 +108,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -198,7 +198,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -282,7 +282,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -442,9 +442,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -737,6 +760,7 @@ result is stored in all processes.</li>
 from all processes in <code class="docutils literal"><span class="pre">dst</span></code>.</li>
 <li><code class="docutils literal"><span class="pre">dist.all_gather(tensor_list,</span> <span class="pre">tensor,</span> <span class="pre">group)</span></code>: Copies <code class="docutils literal"><span class="pre">tensor</span></code>
 from all processes to <code class="docutils literal"><span class="pre">tensor_list</span></code>, on all processes.</li>
+<li><code class="docutils literal"><span class="pre">dist.barrier(group)</span></code>: block all processes in <cite>group</cite> until each one has entered this function.</li>
 </ul>
 </div>
 <div class="section" id="distributed-training">
@@ -828,26 +852,25 @@ following is largely inspired from the official <a class="reference external" hr
 example</a>.)</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot; Distributed Synchronous SGD Example &quot;&quot;&quot;</span>
 <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">rank</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
-        <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
-        <span class="n">train_set</span><span class="p">,</span> <span class="n">bsz</span> <span class="o">=</span> <span class="n">partition_dataset</span><span class="p">()</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
-        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
-                              <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+    <span class="n">train_set</span><span class="p">,</span> <span class="n">bsz</span> <span class="o">=</span> <span class="n">partition_dataset</span><span class="p">()</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span>
+                          <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
-        <span class="n">num_batches</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_set</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">bsz</span><span class="p">))</span>
-        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-            <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-            <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">train_set</span><span class="p">:</span>
-                <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">Variable</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-                <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-                <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-                <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-                <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-                <span class="n">average_gradients</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-                <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rank &#39;</span><span class="p">,</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">(),</span> <span class="s1">&#39;, epoch &#39;</span><span class="p">,</span>
-                  <span class="n">epoch</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="n">num_batches</span><span class="p">)</span>
+    <span class="n">num_batches</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_set</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">bsz</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">train_set</span><span class="p">:</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+            <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">average_gradients</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rank &#39;</span><span class="p">,</span> <span class="n">dist</span><span class="o">.</span><span class="n">get_rank</span><span class="p">(),</span> <span class="s1">&#39;, epoch &#39;</span><span class="p">,</span>
+              <span class="n">epoch</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="n">epoch_loss</span> <span class="o">/</span> <span class="n">num_batches</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It remains to implement the <code class="docutils literal"><span class="pre">average_gradients(model)</span></code> function, which
@@ -905,9 +928,9 @@ slightly different signature than the ones in PyTorch. It takes a
 <code class="docutils literal"><span class="pre">recv</span></code> tensor and will store the sum of all <code class="docutils literal"><span class="pre">send</span></code> tensors in it. As
 an exercise left to the reader, there is still one difference between
 our version and the one in DeepSpeech: their implementation divide the
-gradient tensor into <em>chunks</em>, so as to optimially utilize the
+gradient tensor into <em>chunks</em>, so as to optimally utilize the
 communication bandwidth. (Hint:
-<a class="reference external" href="http://pytorch.org/docs/master/torch.html#torch.chunk">toch.chunk</a>)</p>
+<a class="reference external" href="http://pytorch.org/docs/master/torch.html#torch.chunk">torch.chunk</a>)</p>
 </div>
 </div>
 <div class="section" id="advanced-topics">
@@ -929,7 +952,7 @@ there are currently three backends implemented in PyTorch: TCP, MPI, and
 Gloo. They each have different specifications and tradeoffs, depending
 on the desired use-case. A comparative table of supported functions can
 be found
-<a class="reference external" href="http://pytorch.org/docs/master/distributed.html#module-torch.distributed">here</a>.</p>
+<a class="reference external" href="http://pytorch.org/docs/master/distributed.html#module-torch.distributed">here</a>. Note that a fourth backend, NCCL, has been added since the creation of this tutorial.  See <a class="reference external" href="https://pytorch.org/docs/master/distributed.html#multi-gpu-collective-functions">this section</a> of the <code class="docutils literal"><span class="pre">torch.distributed</span></code> docs for more information about its use and value.</p>
 <p><strong>TCP Backend</strong></p>
 <p>So far we have made extensive usage of the TCP backend. It is quite
 handy as a development platform, as it is guaranteed to work on most
@@ -957,11 +980,10 @@ modifications:</p>
 <ol class="arabic simple" start="0">
 <li><code class="docutils literal"><span class="pre">init_processes(rank,</span> <span class="pre">size,</span> <span class="pre">fn,</span> <span class="pre">backend='tcp')</span></code> <span class="math">\(\rightarrow\)</span>
 <code class="docutils literal"><span class="pre">init_processes(rank,</span> <span class="pre">size,</span> <span class="pre">fn,</span> <span class="pre">backend='gloo')</span></code></li>
-<li><code class="docutils literal"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">Net()</span></code> <span class="math">\(\rightarrow\)</span> <code class="docutils literal"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">Net().cuda(rank)</span></code></li>
-<li><code class="docutils literal"><span class="pre">data,</span> <span class="pre">target</span> <span class="pre">=</span> <span class="pre">Variable(data),</span> <span class="pre">Variable(target)</span></code>
-<span class="math">\(\rightarrow\)</span>
-<code class="docutils literal"><span class="pre">data,</span> <span class="pre">target</span> <span class="pre">=</span> <span class="pre">Variable(data.cuda(rank)),</span> <span class="pre">Variable(target.cuda(rank))</span></code></li>
 </ol>
+<p>1.  Use <code class="docutils literal"><span class="pre">device</span> <span class="pre">=</span> <span class="pre">torch.device(&quot;cuda:{}&quot;.format(rank))</span>
+<span class="pre">1.</span> <span class="pre">``model</span> <span class="pre">=</span> <span class="pre">Net()</span></code> <span class="math">\(\rightarrow\)</span> <code class="docutils literal"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">Net().to(device)</span></code>
+2.  Use <code class="docutils literal"><span class="pre">data,</span> <span class="pre">target</span> <span class="pre">=</span> <span class="pre">data.to(device),</span> <span class="pre">target.to(device)</span></code></p>
 <p>With the above modifications, our model is now training on two GPUs and
 you can monitor their utilization with <code class="docutils literal"><span class="pre">watch</span> <span class="pre">nvidia-smi</span></code>.</p>
 <p><strong>MPI Backend</strong></p>
@@ -984,7 +1006,7 @@ and we’ll have to recompile it by hand. Fortunately, this process is
 fairly simple given that upon compilation, PyTorch will look <em>by itself</em>
 for an available MPI implementation. The following steps install the MPI
 backend, by installing PyTorch <a class="reference external" href="https://github.com/pytorch/pytorch#from-source">from
-sources</a>.</p>
+source</a>.</p>
 <ol class="arabic simple">
 <li>Create and activate your Anaconda environment, install all the
 pre-requisites following <a class="reference external" href="https://github.com/pytorch/pytorch#from-source">the
@@ -1177,8 +1199,7 @@ and answering questions on early drafts.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

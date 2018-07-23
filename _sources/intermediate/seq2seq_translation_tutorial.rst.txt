@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_intermediate_seq2seq_translation_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_intermediate_seq2seq_translation_tutorial.py:
 
@@ -39,7 +43,7 @@ another. An encoder network condenses an input sequence into a vector,
 and a decoder network unfolds that vector into a new sequence.
 
 .. figure:: /_static/img/seq-seq-images/seq2seq.png
-   :alt: 
+   :alt:
 
 To improve upon this model we'll use an `attention
 mechanism <https://arxiv.org/abs/1409.0473>`__, which lets the decoder
@@ -99,11 +103,10 @@ And for more, read the papers that introduced these topics:
 
     import torch
     import torch.nn as nn
-    from torch.autograd import Variable
     from torch import optim
     import torch.nn.functional as F
 
-    use_cuda = torch.cuda.is_available()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 
@@ -130,7 +133,7 @@ separated list of translation pairs:
 
 ::
 
-    I am cold.    Je suis froid.
+    I am cold.    J'ai froid.
 
 .. Note::
    Download the data from
@@ -347,7 +350,9 @@ The full process for preparing the data is:
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     Reading lines...
     Read 135842 sentence pairs
@@ -356,7 +361,7 @@ The full process for preparing the data is:
     Counted words:
     fra 4489
     eng 2925
-    ['il a environ trente ans .', 'he is about thirty .']
+    ['c est un joueur .', 'he s a gambler .']
 
 
 The Seq2Seq Model
@@ -413,9 +418,8 @@ next input word.
 
 
     class EncoderRNN(nn.Module):
-        def __init__(self, input_size, hidden_size, n_layers=1):
+        def __init__(self, input_size, hidden_size):
             super(EncoderRNN, self).__init__()
-            self.n_layers = n_layers
             self.hidden_size = hidden_size
 
             self.embedding = nn.Embedding(input_size, hidden_size)
@@ -424,16 +428,11 @@ next input word.
         def forward(self, input, hidden):
             embedded = self.embedding(input).view(1, 1, -1)
             output = embedded
-            for i in range(self.n_layers):
-                output, hidden = self.gru(output, hidden)
+            output, hidden = self.gru(output, hidden)
             return output, hidden
 
         def initHidden(self):
-            result = Variable(torch.zeros(1, 1, self.hidden_size))
-            if use_cuda:
-                return result.cuda()
-            else:
-                return result
+            return torch.zeros(1, 1, self.hidden_size, device=device)
 
 
 
@@ -473,30 +472,24 @@ last hidden state).
 
 
     class DecoderRNN(nn.Module):
-        def __init__(self, hidden_size, output_size, n_layers=1):
+        def __init__(self, hidden_size, output_size):
             super(DecoderRNN, self).__init__()
-            self.n_layers = n_layers
             self.hidden_size = hidden_size
 
             self.embedding = nn.Embedding(output_size, hidden_size)
             self.gru = nn.GRU(hidden_size, hidden_size)
             self.out = nn.Linear(hidden_size, output_size)
-            self.softmax = nn.LogSoftmax()
+            self.softmax = nn.LogSoftmax(dim=1)
 
         def forward(self, input, hidden):
             output = self.embedding(input).view(1, 1, -1)
-            for i in range(self.n_layers):
-                output = F.relu(output)
-                output, hidden = self.gru(output, hidden)
+            output = F.relu(output)
+            output, hidden = self.gru(output, hidden)
             output = self.softmax(self.out(output[0]))
             return output, hidden
 
         def initHidden(self):
-            result = Variable(torch.zeros(1, 1, self.hidden_size))
-            if use_cuda:
-                return result.cuda()
-            else:
-                return result
+            return torch.zeros(1, 1, self.hidden_size, device=device)
 
 
 
@@ -546,11 +539,10 @@ while shorter sentences will only use the first few.
 
 
     class AttnDecoderRNN(nn.Module):
-        def __init__(self, hidden_size, output_size, n_layers=1, dropout_p=0.1, max_length=MAX_LENGTH):
+        def __init__(self, hidden_size, output_size, dropout_p=0.1, max_length=MAX_LENGTH):
             super(AttnDecoderRNN, self).__init__()
             self.hidden_size = hidden_size
             self.output_size = output_size
-            self.n_layers = n_layers
             self.dropout_p = dropout_p
             self.max_length = max_length
 
@@ -561,31 +553,26 @@ while shorter sentences will only use the first few.
             self.gru = nn.GRU(self.hidden_size, self.hidden_size)
             self.out = nn.Linear(self.hidden_size, self.output_size)
 
-        def forward(self, input, hidden, encoder_output, encoder_outputs):
+        def forward(self, input, hidden, encoder_outputs):
             embedded = self.embedding(input).view(1, 1, -1)
             embedded = self.dropout(embedded)
 
             attn_weights = F.softmax(
-                self.attn(torch.cat((embedded[0], hidden[0]), 1)))
+                self.attn(torch.cat((embedded[0], hidden[0]), 1)), dim=1)
             attn_applied = torch.bmm(attn_weights.unsqueeze(0),
                                      encoder_outputs.unsqueeze(0))
 
             output = torch.cat((embedded[0], attn_applied[0]), 1)
             output = self.attn_combine(output).unsqueeze(0)
 
-            for i in range(self.n_layers):
-                output = F.relu(output)
-                output, hidden = self.gru(output, hidden)
+            output = F.relu(output)
+            output, hidden = self.gru(output, hidden)
 
-            output = F.log_softmax(self.out(output[0]))
+            output = F.log_softmax(self.out(output[0]), dim=1)
             return output, hidden, attn_weights
 
         def initHidden(self):
-            result = Variable(torch.zeros(1, 1, self.hidden_size))
-            if use_cuda:
-                return result.cuda()
-            else:
-                return result
+            return torch.zeros(1, 1, self.hidden_size, device=device)
 
 
 
@@ -620,20 +607,16 @@ EOS token to both sequences.
         return [lang.word2index[word] for word in sentence.split(' ')]
 
 
-    def variableFromSentence(lang, sentence):
+    def tensorFromSentence(lang, sentence):
         indexes = indexesFromSentence(lang, sentence)
         indexes.append(EOS_token)
-        result = Variable(torch.LongTensor(indexes).view(-1, 1))
-        if use_cuda:
-            return result.cuda()
-        else:
-            return result
+        return torch.tensor(indexes, dtype=torch.long, device=device).view(-1, 1)
 
 
-    def variablesFromPair(pair):
-        input_variable = variableFromSentence(input_lang, pair[0])
-        target_variable = variableFromSentence(output_lang, pair[1])
-        return (input_variable, target_variable)
+    def tensorsFromPair(pair):
+        input_tensor = tensorFromSentence(input_lang, pair[0])
+        target_tensor = tensorFromSentence(output_lang, pair[1])
+        return (input_tensor, target_tensor)
 
 
 
@@ -676,28 +659,26 @@ choose to use teacher forcing or not with a simple if statement. Turn
     teacher_forcing_ratio = 0.5
 
 
-    def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
+    def train(input_tensor, target_tensor, encoder, decoder, encoder_optimizer, decoder_optimizer, criterion, max_length=MAX_LENGTH):
         encoder_hidden = encoder.initHidden()
 
         encoder_optimizer.zero_grad()
         decoder_optimizer.zero_grad()
 
-        input_length = input_variable.size()[0]
-        target_length = target_variable.size()[0]
-    
-        encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
-        encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
-   
+        input_length = input_tensor.size(0)
+        target_length = target_tensor.size(0)
+
+        encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
+
         loss = 0
 
         for ei in range(input_length):
             encoder_output, encoder_hidden = encoder(
-                input_variable[ei], encoder_hidden)
-            encoder_outputs[ei] = encoder_output[0][0]
+                input_tensor[ei], encoder_hidden)
+            encoder_outputs[ei] = encoder_output[0, 0]
 
-        decoder_input = Variable(torch.LongTensor([[SOS_token]]))
-        decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-    
+        decoder_input = torch.tensor([[SOS_token]], device=device)
+
         decoder_hidden = encoder_hidden
 
         use_teacher_forcing = True if random.random() < teacher_forcing_ratio else False
@@ -706,23 +687,20 @@ choose to use teacher forcing or not with a simple if statement. Turn
             # Teacher forcing: Feed the target as the next input
             for di in range(target_length):
                 decoder_output, decoder_hidden, decoder_attention = decoder(
-                    decoder_input, decoder_hidden, encoder_output, encoder_outputs)
-                loss += criterion(decoder_output, target_variable[di])
-                decoder_input = target_variable[di]  # Teacher forcing
+                    decoder_input, decoder_hidden, encoder_outputs)
+                loss += criterion(decoder_output, target_tensor[di])
+                decoder_input = target_tensor[di]  # Teacher forcing
 
         else:
             # Without teacher forcing: use its own predictions as the next input
             for di in range(target_length):
                 decoder_output, decoder_hidden, decoder_attention = decoder(
-                    decoder_input, decoder_hidden, encoder_output, encoder_outputs)
-                topv, topi = decoder_output.data.topk(1)
-                ni = topi[0][0]
-            
-                decoder_input = Variable(torch.LongTensor([[ni]]))
-                decoder_input = decoder_input.cuda() if use_cuda else decoder_input
-            
-                loss += criterion(decoder_output, target_variable[di])
-                if ni == EOS_token:
+                    decoder_input, decoder_hidden, encoder_outputs)
+                topv, topi = decoder_output.topk(1)
+                decoder_input = topi.squeeze().detach()  # detach from history as input
+
+                loss += criterion(decoder_output, target_tensor[di])
+                if decoder_input.item() == EOS_token:
                     break
 
         loss.backward()
@@ -730,7 +708,7 @@ choose to use teacher forcing or not with a simple if statement. Turn
         encoder_optimizer.step()
         decoder_optimizer.step()
 
-        return loss.data[0] / target_length
+        return loss.item() / target_length
 
 
 
@@ -796,16 +774,16 @@ of examples, time so far, estimated time) and average loss.
 
         encoder_optimizer = optim.SGD(encoder.parameters(), lr=learning_rate)
         decoder_optimizer = optim.SGD(decoder.parameters(), lr=learning_rate)
-        training_pairs = [variablesFromPair(random.choice(pairs))
+        training_pairs = [tensorsFromPair(random.choice(pairs))
                           for i in range(n_iters)]
         criterion = nn.NLLLoss()
 
         for iter in range(1, n_iters + 1):
             training_pair = training_pairs[iter - 1]
-            input_variable = training_pair[0]
-            target_variable = training_pair[1]
- 
-            loss = train(input_variable, target_variable, encoder,
+            input_tensor = training_pair[0]
+            target_tensor = training_pair[1]
+
+            loss = train(input_tensor, target_tensor, encoder,
                          decoder, encoder_optimizer, decoder_optimizer, criterion)
             print_loss_total += loss
             plot_loss_total += loss
@@ -843,6 +821,7 @@ Plotting is done with matplotlib, using the array of loss values
 
 
     import matplotlib.pyplot as plt
+    plt.switch_backend('agg')
     import matplotlib.ticker as ticker
     import numpy as np
 
@@ -878,42 +857,39 @@ attention outputs for display later.
 
 
     def evaluate(encoder, decoder, sentence, max_length=MAX_LENGTH):
-        input_variable = variableFromSentence(input_lang, sentence)
-        input_length = input_variable.size()[0]
-        encoder_hidden = encoder.initHidden()
+        with torch.no_grad():
+            input_tensor = tensorFromSentence(input_lang, sentence)
+            input_length = input_tensor.size()[0]
+            encoder_hidden = encoder.initHidden()
 
-        encoder_outputs = Variable(torch.zeros(max_length, encoder.hidden_size))
-        encoder_outputs = encoder_outputs.cuda() if use_cuda else encoder_outputs
+            encoder_outputs = torch.zeros(max_length, encoder.hidden_size, device=device)
 
-        for ei in range(input_length):
-            encoder_output, encoder_hidden = encoder(input_variable[ei],
-                                                     encoder_hidden)
-            encoder_outputs[ei] = encoder_outputs[ei] + encoder_output[0][0]
+            for ei in range(input_length):
+                encoder_output, encoder_hidden = encoder(input_tensor[ei],
+                                                         encoder_hidden)
+                encoder_outputs[ei] += encoder_output[0, 0]
 
-        decoder_input = Variable(torch.LongTensor([[SOS_token]]))  # SOS
-        decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+            decoder_input = torch.tensor([[SOS_token]], device=device)  # SOS
 
-        decoder_hidden = encoder_hidden
+            decoder_hidden = encoder_hidden
 
-        decoded_words = []
-        decoder_attentions = torch.zeros(max_length, max_length)
+            decoded_words = []
+            decoder_attentions = torch.zeros(max_length, max_length)
 
-        for di in range(max_length):
-            decoder_output, decoder_hidden, decoder_attention = decoder(
-                decoder_input, decoder_hidden, encoder_output, encoder_outputs)
-            decoder_attentions[di] = decoder_attention.data
-            topv, topi = decoder_output.data.topk(1)
-            ni = topi[0][0]
-            if ni == EOS_token:
-                decoded_words.append('<EOS>')
-                break
-            else:
-                decoded_words.append(output_lang.index2word[ni])
-        
-            decoder_input = Variable(torch.LongTensor([[ni]]))
-            decoder_input = decoder_input.cuda() if use_cuda else decoder_input
+            for di in range(max_length):
+                decoder_output, decoder_hidden, decoder_attention = decoder(
+                    decoder_input, decoder_hidden, encoder_outputs)
+                decoder_attentions[di] = decoder_attention.data
+                topv, topi = decoder_output.data.topk(1)
+                if topi.item() == EOS_token:
+                    decoded_words.append('<EOS>')
+                    break
+                else:
+                    decoded_words.append(output_lang.index2word[topi.item()])
 
-        return decoded_words, decoder_attentions[:di + 1]
+                decoder_input = topi.squeeze().detach()
+
+            return decoded_words, decoder_attentions[:di + 1]
 
 
 
@@ -952,7 +928,7 @@ Training and Evaluating
 =======================
 
 With all these helper functions in place (it looks like extra work, but
-it's easier to run multiple experiments easier) we can actually
+it makes it easier to run multiple experiments) we can actually
 initialize a network and start training.
 
 Remember that the input sentences were heavily filtered. For this small
@@ -960,7 +936,7 @@ dataset we can use relatively small networks of 256 hidden nodes and a
 single GRU layer. After about 40 minutes on a MacBook CPU we'll get some
 reasonable results.
 
-.. Note:: 
+.. Note::
    If you run this notebook you can train, interrupt the kernel,
    evaluate, and continue training later. Comment out the lines where the
    encoder and decoder are initialized and run ``trainIters`` again.
@@ -972,13 +948,8 @@ reasonable results.
 
 
     hidden_size = 256
-    encoder1 = EncoderRNN(input_lang.n_words, hidden_size)
-    attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.n_words,
-                                   1, dropout_p=0.1)
-
-    if use_cuda:
-        encoder1 = encoder1.cuda()
-        attn_decoder1 = attn_decoder1.cuda()
+    encoder1 = EncoderRNN(input_lang.n_words, hidden_size).to(device)
+    attn_decoder1 = AttnDecoderRNN(hidden_size, output_lang.n_words, dropout_p=0.1).to(device)
 
     trainIters(encoder1, attn_decoder1, 75000, print_every=5000)
 
@@ -991,33 +962,35 @@ reasonable results.
     *
 
       .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_001.png
-            :scale: 47
+            :class: sphx-glr-multi-img
 
     *
 
       .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_002.png
-            :scale: 47
+            :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    3m 48s (- 53m 16s) (5000 6%) 2.8845
-    6m 19s (- 41m 4s) (10000 13%) 2.3247
-    8m 54s (- 35m 38s) (15000 20%) 2.0045
-    11m 30s (- 31m 39s) (20000 26%) 1.7451
-    14m 6s (- 28m 13s) (25000 33%) 1.5862
-    16m 43s (- 25m 5s) (30000 40%) 1.4182
-    19m 21s (- 22m 7s) (35000 46%) 1.2685
-    21m 57s (- 19m 12s) (40000 53%) 1.1267
-    24m 33s (- 16m 22s) (45000 60%) 1.0257
-    27m 4s (- 13m 32s) (50000 66%) 0.9344
-    29m 40s (- 10m 47s) (55000 73%) 0.8550
-    32m 16s (- 8m 4s) (60000 80%) 0.7688
-    34m 53s (- 5m 22s) (65000 86%) 0.7051
-    37m 29s (- 2m 40s) (70000 93%) 0.6536
-    40m 4s (- 0m 0s) (75000 100%) 0.5912
+ .. code-block:: none
+
+    4m 40s (- 65m 25s) (5000 6%) 2.8960
+    9m 1s (- 58m 41s) (10000 13%) 2.3517
+    13m 14s (- 52m 59s) (15000 20%) 2.0518
+    17m 18s (- 47m 34s) (20000 26%) 1.8075
+    21m 44s (- 43m 28s) (25000 33%) 1.5880
+    25m 58s (- 38m 57s) (30000 40%) 1.4469
+    30m 16s (- 34m 35s) (35000 46%) 1.3038
+    34m 29s (- 30m 10s) (40000 53%) 1.1665
+    38m 35s (- 25m 43s) (45000 60%) 1.0815
+    42m 45s (- 21m 22s) (50000 66%) 0.9682
+    47m 5s (- 17m 7s) (55000 73%) 0.8828
+    51m 28s (- 12m 52s) (60000 80%) 0.8047
+    55m 23s (- 8m 31s) (65000 86%) 0.7361
+    59m 12s (- 4m 13s) (70000 93%) 0.6751
+    63m 1s (- 0m 0s) (75000 100%) 0.6288
 
 
 
@@ -1033,47 +1006,49 @@ reasonable results.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    > il est force de remarquer votre erreur .
-    = he s bound to notice your mistake .
-    < he s bound to notice your mistake . <EOS>
+ .. code-block:: none
 
-    > je te vire .
-    = i m firing you .
-    < i m letting you go . <EOS>
+    > ils sont chanteurs .
+    = they are singers .
+    < they are singers . <EOS>
 
-    > elle ecrit constamment des lettres .
-    = she is constantly writing letters .
-    < she is making making mistakes . <EOS>
+    > c est un homme de parole .
+    = he is a man of his word .
+    < he s a man of his word . <EOS>
 
-    > tu n y es pas bonne .
-    = you re not good at this .
-    < you re not good at this . <EOS>
+    > je vais a la station .
+    = i m going to the station .
+    < i m going to the the . <EOS>
 
-    > je suis desole a propos d hier .
-    = i m sorry about yesterday .
-    < i m sorry about last . <EOS>
+    > tu es chanceuse d avoir un travail .
+    = you re lucky that you have a job .
+    < you re lucky that you have a job . <EOS>
 
-    > je suis affame !
-    = i m famished .
-    < i m sleepy . <EOS>
+    > tu es fort attirant .
+    = you re very attractive .
+    < you re very attractive . <EOS>
 
-    > il est irrealiste .
-    = he is unrealistic .
-    < he is a . <EOS>
+    > nous sommes tous convaincus de son innocence .
+    = we are all convinced of his innocence .
+    < we are all convinced of his innocence . <EOS>
 
-    > c est une gentille fille .
-    = she is a kind girl .
-    < she s a sweet girl . <EOS>
+    > ils sont miens .
+    = they re mine .
+    < they re mine . <EOS>
 
-    > il a honte de son attitude .
-    = he is ashamed of his behavior .
-    < he s ashamed of his failure . <EOS>
+    > il sait nager comme un poisson .
+    = he is able to swim like a fish .
+    < he is just like a gentleman . <EOS>
 
-    > c est toi qui me le dis .
-    = you re telling me .
-    < you re the one who trained me . <EOS>
+    > elle est de mauvaise humeur .
+    = she s in a bad mood .
+    < she s in a bad mood . <EOS>
+
+    > tu es libre .
+    = you re free .
+    < you re free . <EOS>
 
 
 Visualizing Attention
@@ -1103,7 +1078,7 @@ output steps:
 
 
 .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_003.png
-    :align: center
+    :class: sphx-glr-single-img
 
 
 
@@ -1162,36 +1137,38 @@ and labels:
     *
 
       .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_004.png
-            :scale: 47
+            :class: sphx-glr-multi-img
 
     *
 
       .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_005.png
-            :scale: 47
+            :class: sphx-glr-multi-img
 
     *
 
       .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_006.png
-            :scale: 47
+            :class: sphx-glr-multi-img
 
     *
 
       .. image:: /intermediate/images/sphx_glr_seq2seq_translation_tutorial_007.png
-            :scale: 47
+            :class: sphx-glr-multi-img
 
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     input = elle a cinq ans de moins que moi .
     output = she s five years younger than me . <EOS>
     input = elle est trop petit .
-    output = she is too busy . <EOS>
+    output = she is too by her . <EOS>
     input = je ne crains pas de mourir .
-    output = i m not dying . <EOS>
+    output = i m not scared of dying . <EOS>
     input = c est un jeune directeur plein de talent .
-    output = he s a talented young talented . <EOS>
+    output = he s a young young young . <EOS>
 
 
 Exercises
@@ -1218,11 +1195,17 @@ Exercises
 
 
 
-**Total running time of the script:** ( 40 minutes  10.679 seconds)
+**Total running time of the script:** ( 63 minutes  8.916 seconds)
 
 
+.. _sphx_glr_download_intermediate_seq2seq_translation_tutorial.py:
 
-.. container:: sphx-glr-footer
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download
@@ -1235,6 +1218,9 @@ Exercises
 
      :download:`Download Jupyter notebook: seq2seq_translation_tutorial.ipynb <seq2seq_translation_tutorial.ipynb>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <http://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

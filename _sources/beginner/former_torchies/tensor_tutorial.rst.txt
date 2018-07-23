@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_beginner_former_torchies_tensor_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_beginner_former_torchies_tensor_tutorial.py:
 
@@ -18,7 +22,7 @@ Create a tensor of size (5 x 7) with uninitialized memory:
 
 
     import torch
-    a = torch.FloatTensor(5, 7)
+    a = torch.empty(5, 7, dtype=torch.float)
 
 
 
@@ -26,14 +30,15 @@ Create a tensor of size (5 x 7) with uninitialized memory:
 
 
 
-Initialize a tensor randomized with a normal distribution with mean=0, var=1:
+Initialize a double tensor randomized with a normal distribution with mean=0,
+var=1:
 
 
 
 .. code-block:: python
 
 
-    a = torch.randn(5, 7)
+    a = torch.randn(5, 7, dtype=torch.double)
     print(a)
     print(a.size())
 
@@ -43,15 +48,16 @@ Initialize a tensor randomized with a normal distribution with mean=0, var=1:
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    0.6608  0.0584 -1.9318  1.6068 -1.0049  1.3115 -0.3893
-     0.5118  1.7707 -0.3681  0.2345 -0.0295  2.0229  0.2815
-     1.2753 -1.2878  1.3112 -0.0965  1.4672  0.5731  2.7306
-     1.2824  0.5972  1.4461  1.1568  0.1307  0.0381 -1.1927
-     0.7658  0.1555  0.2385  1.0136 -0.6666 -0.3318 -0.8383
-    [torch.FloatTensor of size 5x7]
+ .. code-block:: none
 
+    tensor([[-1.8675,  1.5862, -1.5316,  0.7547,  0.4655, -0.3554,  1.3599],
+            [-0.3973, -1.1840,  0.5557, -0.8298, -0.4939, -0.4188, -0.6415],
+            [-0.2319, -0.4494,  1.2106,  0.5374,  0.0791,  0.8186,  0.1163],
+            [ 1.8324, -2.3646,  0.1657, -0.4009,  0.6520, -1.2023,  0.2810],
+            [-1.4696,  0.0522, -0.2229, -0.0378, -0.4284,  0.5798,  1.3393]],
+           dtype=torch.float64)
     torch.Size([5, 7])
 
 
@@ -85,21 +91,21 @@ out-of-place version, and ``add_`` is the in-place version.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    3.5000  3.5000  3.5000  3.5000  3.5000  3.5000  3.5000
-     3.5000  3.5000  3.5000  3.5000  3.5000  3.5000  3.5000
-     3.5000  3.5000  3.5000  3.5000  3.5000  3.5000  3.5000
-     3.5000  3.5000  3.5000  3.5000  3.5000  3.5000  3.5000
-     3.5000  3.5000  3.5000  3.5000  3.5000  3.5000  3.5000
-    [torch.FloatTensor of size 5x7]
- 
-     7.5000  7.5000  7.5000  7.5000  7.5000  7.5000  7.5000
-     7.5000  7.5000  7.5000  7.5000  7.5000  7.5000  7.5000
-     7.5000  7.5000  7.5000  7.5000  7.5000  7.5000  7.5000
-     7.5000  7.5000  7.5000  7.5000  7.5000  7.5000  7.5000
-     7.5000  7.5000  7.5000  7.5000  7.5000  7.5000  7.5000
-    [torch.FloatTensor of size 5x7]
+ .. code-block:: none
+
+    tensor([[3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000],
+            [3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000],
+            [3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000],
+            [3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000],
+            [3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000, 3.5000]],
+           dtype=torch.float64) tensor([[7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000],
+            [7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000],
+            [7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000],
+            [7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000],
+            [7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000, 7.5000]],
+           dtype=torch.float64)
 
 
 Some operations like ``narrow`` do not have in-place versions, and
@@ -162,21 +168,22 @@ anymore. For example ``indexAdd`` is now called ``index_add_``
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    1  1  1  1  1
-     1  1  1  1  1
-     1  1  1  1  1
-     1  1  1  1  1
-     1  1  1  1  1
-    [torch.FloatTensor of size 5x5]
+ .. code-block:: none
+
+    tensor([[1., 1., 1., 1., 1.],
+            [1., 1., 1., 1., 1.],
+            [1., 1., 1., 1., 1.],
+            [1., 1., 1., 1., 1.],
+            [1., 1., 1., 1., 1.]])
 
 
 
 .. code-block:: python
 
 
-    z = torch.Tensor(5, 2)
+    z = torch.empty(5, 2)
     z[:, 0] = 10
     z[:, 1] = 100
     print(z)
@@ -187,20 +194,21 @@ anymore. For example ``indexAdd`` is now called ``index_add_``
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    10  100
-      10  100
-      10  100
-      10  100
-      10  100
-    [torch.FloatTensor of size 5x2]
+ .. code-block:: none
+
+    tensor([[ 10., 100.],
+            [ 10., 100.],
+            [ 10., 100.],
+            [ 10., 100.],
+            [ 10., 100.]])
 
 
 
 .. code-block:: python
 
-    x.index_add_(1, torch.LongTensor([4, 0]), z)
+    x.index_add_(1, torch.tensor([4, 0], dtype=torch.long), z)
     print(x)
 
 
@@ -209,14 +217,15 @@ anymore. For example ``indexAdd`` is now called ``index_add_``
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    101    1    1    1   11
-     101    1    1    1   11
-     101    1    1    1   11
-     101    1    1    1   11
-     101    1    1    1   11
-    [torch.FloatTensor of size 5x5]
+ .. code-block:: none
+
+    tensor([[101.,   1.,   1.,   1.,  11.],
+            [101.,   1.,   1.,   1.,  11.],
+            [101.,   1.,   1.,   1.,  11.],
+            [101.,   1.,   1.,   1.,  11.],
+            [101.,   1.,   1.,   1.,  11.]])
 
 
 Numpy Bridge
@@ -243,14 +252,11 @@ Converting torch Tensor to numpy Array
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    1
-     1
-     1
-     1
-     1
-    [torch.FloatTensor of size 5]
+ .. code-block:: none
+
+    tensor([1., 1., 1., 1., 1.])
 
 
 
@@ -266,7 +272,9 @@ Converting torch Tensor to numpy Array
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     [ 1.  1.  1.  1.  1.]
 
@@ -285,15 +293,11 @@ Converting torch Tensor to numpy Array
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    2
-     2
-     2
-     2
-     2
-    [torch.FloatTensor of size 5]
+ .. code-block:: none
 
+    tensor([2., 2., 2., 2., 2.])
     [ 2.  2.  2.  2.  2.]
 
 
@@ -318,16 +322,12 @@ Converting numpy Array to torch Tensor
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     [ 2.  2.  2.  2.  2.]
-
-     2
-     2
-     2
-     2
-     2
-    [torch.DoubleTensor of size 5]
+    tensor([2., 2., 2., 2., 2.], dtype=torch.float64)
 
 
 All the Tensors on the CPU except a CharTensor support converting to
@@ -346,29 +346,31 @@ from the CPU to GPU will retain its underlying type.
 
     # let us run this cell only if CUDA is available
     if torch.cuda.is_available():
+
         # creates a LongTensor and transfers it
         # to GPU as torch.cuda.LongTensor
-        a = torch.LongTensor(10).fill_(3).cuda()
+        a = torch.full((10,), 3, device=torch.device("cuda"))
         print(type(a))
-        b = a.cpu()
+        b = a.to(torch.device("cpu"))
         # transfers it to CPU, back to
         # being a torch.LongTensor
 
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    <class 'torch.cuda.LongTensor'>
 
 
-**Total running time of the script:** ( 0 minutes  0.002 seconds)
+**Total running time of the script:** ( 0 minutes  0.006 seconds)
 
 
+.. _sphx_glr_download_beginner_former_torchies_tensor_tutorial.py:
 
-.. container:: sphx-glr-footer
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download
@@ -381,6 +383,9 @@ from the CPU to GPU will retain its underlying type.
 
      :download:`Download Jupyter notebook: tensor_tutorial.ipynb <tensor_tutorial.ipynb>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <http://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

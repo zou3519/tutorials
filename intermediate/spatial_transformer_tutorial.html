@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Spatial Transformer Networks Tutorial &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Spatial Transformer Networks Tutorial &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../index.html"/>
         <link rel="next" title="Neural Transfer with PyTorch" href="../advanced/neural_style_tutorial.html"/>
         <link rel="prev" title="Writing Distributed Applications with PyTorch" href="dist_tuto.html"/> 
 
@@ -75,7 +75,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -108,16 +108,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -198,7 +198,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../beginner/pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -217,7 +217,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -282,7 +282,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../beginner/nlp/deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -442,9 +442,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +533,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="spatial-transformer-networks-tutorial">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-intermediate-spatial-transformer-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="spatial-transformer-networks-tutorial">
 <span id="sphx-glr-intermediate-spatial-transformer-tutorial-py"></span><h1>Spatial Transformer Networks Tutorial<a class="headerlink" href="#spatial-transformer-networks-tutorial" title="Permalink to this headline">¶</a></h1>
 <p><strong>Author</strong>: <a class="reference external" href="https://github.com/GHamrouni">Ghassen HAMROUNI</a></p>
 <div class="figure">
@@ -519,18 +546,18 @@
 <p>In this tutorial, you will learn how to augment your network using
 a visual attention mechanism called spatial transformer
 networks. You can read more about the spatial transformer
-networks in <a class="reference external" href="https://arxiv.org/abs/1506.02025">DeepMind paper</a></p>
+networks in the <a class="reference external" href="https://arxiv.org/abs/1506.02025">DeepMind paper</a></p>
 <p>Spatial transformer networks are a generalization of differentiable
 attention to any spatial transformation. Spatial transformer networks
-(STN for short) allows a neural network to learn how to do spatial
-transformations to the input image in order to enhance the geometric
+(STN for short) allow a neural network to learn how to perform spatial
+transformations on the input image in order to enhance the geometric
 invariance of the model.
-For example it can crop a region of interest, scale and correct
-the orientation of an image. It can be a useful mechanism because CNN
-are not invariant to rotation and scale and more generally : affine
+For example, it can crop a region of interest, scale and correct
+the orientation of an image. It can be a useful mechanism because CNNs
+are not invariant to rotation and scale and more general affine
 transformations.</p>
 <p>One of the best things about STN is the ability to simply plug it into
-any existing CNN with very little modifications.</p>
+any existing CNN with very little modification.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># License: BSD</span>
 <span class="c1"># Author: Ghassen Hamrouni</span>
 
@@ -541,7 +568,6 @@ any existing CNN with very little modifications.</p>
 <span class="kn">import</span> <span class="nn">torch.optim</span> <span class="kn">as</span> <span class="nn">optim</span>
 <span class="kn">import</span> <span class="nn">torchvision</span>
 <span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">datasets</span><span class="p">,</span> <span class="n">transforms</span>
-<span class="kn">from</span> <span class="nn">torch.autograd</span> <span class="kn">import</span> <span class="n">Variable</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 
@@ -553,7 +579,7 @@ any existing CNN with very little modifications.</p>
 <p>In this post we experiment with the classic MNIST dataset. Using a
 standard convolutional network augmented with a spatial transformer
 network.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">use_cuda</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
 
 <span class="c1"># Training dataset</span>
 <span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
@@ -570,15 +596,6 @@ network.</p>
     <span class="p">])),</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span>Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
-Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
-Processing...
-Done!
-</pre></div>
-</div>
 </div>
 <div class="section" id="depicting-spatial-transformer-networks">
 <h2>Depicting spatial transformer networks<a class="headerlink" href="#depicting-spatial-transformer-networks" title="Permalink to this headline">¶</a></h2>
@@ -590,7 +607,7 @@ explicitly from this dataset, instead the network learns automatically
 the spatial transformations that enhances the global accuracy.</li>
 <li>The grid generator generates a grid of coordinates in the input
 image corresponding to each pixel from the output image.</li>
-<li>The sampler uses the parameters of the transformation and apply
+<li>The sampler uses the parameters of the transformation and applies
 it to the input image.</li>
 </ul>
 <div class="figure">
@@ -628,8 +645,8 @@ affine_grid and grid_sample modules.</p>
         <span class="p">)</span>
 
         <span class="c1"># Initialize the weights/bias with identity transformation</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fc_loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">fill_</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fc_loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc_loc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">bias</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">copy_</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">))</span>
 
     <span class="c1"># Spatial transformer network forward function</span>
     <span class="k">def</span> <span class="nf">stn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -647,19 +664,17 @@ affine_grid and grid_sample modules.</p>
         <span class="c1"># transform the input</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-        <span class="c1"># Perform the usual froward pass</span>
+        <span class="c1"># Perform the usual forward pass</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv1</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">F</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2_drop</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conv2</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="mi">2</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">320</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">training</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">training</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">F</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 
-<span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span>
-<span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Net</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -674,10 +689,8 @@ the model is learning STN automatically in an end-to-end fashion.</p>
 <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-            <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cuda</span><span class="p">(),</span> <span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
-        <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">Variable</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
         <span class="n">loss</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
@@ -686,32 +699,31 @@ the model is learning STN automatically in an end-to-end fashion.</p>
         <span class="k">if</span> <span class="n">batch_idx</span> <span class="o">%</span> <span class="mi">500</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Train Epoch: {} [{}/{} ({:.0f}%)]</span><span class="se">\t</span><span class="s1">Loss: {:.6f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">epoch</span><span class="p">,</span> <span class="n">batch_idx</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">),</span>
-                <span class="mf">100.</span> <span class="o">*</span> <span class="n">batch_idx</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">),</span> <span class="n">loss</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+                <span class="mf">100.</span> <span class="o">*</span> <span class="n">batch_idx</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">),</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
 <span class="c1">#</span>
 <span class="c1"># A simple test procedure to measure STN the performances on MNIST.</span>
 <span class="c1">#</span>
 
 
 <span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-    <span class="n">test_loss</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-            <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cuda</span><span class="p">(),</span> <span class="n">target</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
-        <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span> <span class="n">Variable</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">test_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+            <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-        <span class="c1"># sum up batch loss</span>
-        <span class="n">test_loss</span> <span class="o">+=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">size_average</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="c1"># get the index of the max log-probability</span>
-        <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">correct</span> <span class="o">+=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">view_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+            <span class="c1"># sum up batch loss</span>
+            <span class="n">test_loss</span> <span class="o">+=</span> <span class="n">F</span><span class="o">.</span><span class="n">nll_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">size_average</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="c1"># get the index of the max log-probability</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">correct</span> <span class="o">+=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">view_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 
-    <span class="n">test_loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)</span><span class="se">\n</span><span class="s1">&#39;</span>
-          <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">,</span> <span class="n">correct</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">),</span>
-                  <span class="mf">100.</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)))</span>
+        <span class="n">test_loss</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)</span><span class="se">\n</span><span class="s1">&#39;</span>
+              <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">test_loss</span><span class="p">,</span> <span class="n">correct</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">),</span>
+                      <span class="mf">100.</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -736,29 +748,26 @@ transformations while training.</p>
 
 
 <span class="k">def</span> <span class="nf">visualize_stn</span><span class="p">():</span>
-    <span class="c1"># Get a batch of training data</span>
-    <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">test_loader</span><span class="p">))</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">volatile</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="c1"># Get a batch of training data</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">test_loader</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">use_cuda</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
+        <span class="n">transformed_input_tensor</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">stn</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
 
-    <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
-    <span class="n">transformed_input_tensor</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">stn</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">in_grid</span> <span class="o">=</span> <span class="n">convert_image_np</span><span class="p">(</span>
+            <span class="n">torchvision</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_grid</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">))</span>
 
-    <span class="n">in_grid</span> <span class="o">=</span> <span class="n">convert_image_np</span><span class="p">(</span>
-        <span class="n">torchvision</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_grid</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">))</span>
+        <span class="n">out_grid</span> <span class="o">=</span> <span class="n">convert_image_np</span><span class="p">(</span>
+            <span class="n">torchvision</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_grid</span><span class="p">(</span><span class="n">transformed_input_tensor</span><span class="p">))</span>
 
-    <span class="n">out_grid</span> <span class="o">=</span> <span class="n">convert_image_np</span><span class="p">(</span>
-        <span class="n">torchvision</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">make_grid</span><span class="p">(</span><span class="n">transformed_input_tensor</span><span class="p">))</span>
+        <span class="c1"># Plot the results side-by-side</span>
+        <span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">axarr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">in_grid</span><span class="p">)</span>
+        <span class="n">axarr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Dataset Images&#39;</span><span class="p">)</span>
 
-    <span class="c1"># Plot the results side-by-side</span>
-    <span class="n">f</span><span class="p">,</span> <span class="n">axarr</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="n">axarr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">in_grid</span><span class="p">)</span>
-    <span class="n">axarr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Dataset Images&#39;</span><span class="p">)</span>
-
-    <span class="n">axarr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">out_grid</span><span class="p">)</span>
-    <span class="n">axarr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Transformed Images&#39;</span><span class="p">)</span>
+        <span class="n">axarr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">out_grid</span><span class="p">)</span>
+        <span class="n">axarr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Transformed Images&#39;</span><span class="p">)</span>
 
 
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -772,111 +781,111 @@ transformations while training.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../_images/sphx_glr_spatial_transformer_tutorial_001.png" class="align-center" src="../_images/sphx_glr_spatial_transformer_tutorial_001.png" />
+<img alt="../_images/sphx_glr_spatial_transformer_tutorial_001.png" class="sphx-glr-single-img" src="../_images/sphx_glr_spatial_transformer_tutorial_001.png" />
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">2.316680</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.915944</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>Train Epoch: 1 [0/60000 (0%)]   Loss: 2.325661
+Train Epoch: 1 [32000/60000 (53%)]      Loss: 0.978859
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.2849</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9174</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">92</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.2137, Accuracy: 9399/10000 (94%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">2</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.494003</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">2</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.307739</span>
+Train Epoch: 2 [0/60000 (0%)]   Loss: 0.294056
+Train Epoch: 2 [32000/60000 (53%)]      Loss: 0.261601
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.1113</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9669</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">97</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.1143, Accuracy: 9664/10000 (97%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.324201</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">3</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.415912</span>
+Train Epoch: 3 [0/60000 (0%)]   Loss: 0.156465
+Train Epoch: 3 [32000/60000 (53%)]      Loss: 0.169026
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0964</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9700</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">97</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.1003, Accuracy: 9705/10000 (97%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">4</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.244328</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">4</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.143516</span>
+Train Epoch: 4 [0/60000 (0%)]   Loss: 0.111927
+Train Epoch: 4 [32000/60000 (53%)]      Loss: 0.233227
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0757</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9763</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0817, Accuracy: 9749/10000 (97%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">5</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.371837</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">5</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.264903</span>
+Train Epoch: 5 [0/60000 (0%)]   Loss: 0.169531
+Train Epoch: 5 [32000/60000 (53%)]      Loss: 0.156852
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0772</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9758</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0707, Accuracy: 9775/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">6</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.235697</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">6</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.198383</span>
+Train Epoch: 6 [0/60000 (0%)]   Loss: 0.196057
+Train Epoch: 6 [32000/60000 (53%)]      Loss: 0.109949
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0655</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9794</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0635, Accuracy: 9804/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">7</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.141787</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">7</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.095184</span>
+Train Epoch: 7 [0/60000 (0%)]   Loss: 0.084733
+Train Epoch: 7 [32000/60000 (53%)]      Loss: 0.185184
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0598</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9809</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0807, Accuracy: 9740/10000 (97%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">8</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.221511</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">8</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.149709</span>
+Train Epoch: 8 [0/60000 (0%)]   Loss: 0.136646
+Train Epoch: 8 [32000/60000 (53%)]      Loss: 0.183015
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0469</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9857</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0599, Accuracy: 9806/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">9</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>   <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.396147</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">9</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>      <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.188054</span>
+Train Epoch: 9 [0/60000 (0%)]   Loss: 0.097133
+Train Epoch: 9 [32000/60000 (53%)]      Loss: 0.096547
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0574</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9825</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0541, Accuracy: 9834/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">10</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.134353</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">10</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.053522</span>
+Train Epoch: 10 [0/60000 (0%)]  Loss: 0.083365
+Train Epoch: 10 [32000/60000 (53%)]     Loss: 0.102245
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0615</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9805</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0508, Accuracy: 9840/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">11</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.091511</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">11</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.077700</span>
+Train Epoch: 11 [0/60000 (0%)]  Loss: 0.151296
+Train Epoch: 11 [32000/60000 (53%)]     Loss: 0.110331
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0404</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9876</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0575, Accuracy: 9821/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">12</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.045463</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">12</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.020756</span>
+Train Epoch: 12 [0/60000 (0%)]  Loss: 0.164372
+Train Epoch: 12 [32000/60000 (53%)]     Loss: 0.058907
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0403</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9868</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0432, Accuracy: 9866/10000 (99%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">13</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.019118</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">13</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.021535</span>
+Train Epoch: 13 [0/60000 (0%)]  Loss: 0.200766
+Train Epoch: 13 [32000/60000 (53%)]     Loss: 0.174947
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0601</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9816</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">98</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0503, Accuracy: 9839/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">14</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.117381</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">14</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.049683</span>
+Train Epoch: 14 [0/60000 (0%)]  Loss: 0.077395
+Train Epoch: 14 [32000/60000 (53%)]     Loss: 0.108225
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0464</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9862</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0666, Accuracy: 9800/10000 (98%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">15</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.030192</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">15</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.087893</span>
+Train Epoch: 15 [0/60000 (0%)]  Loss: 0.099966
+Train Epoch: 15 [32000/60000 (53%)]     Loss: 0.259893
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0416</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9876</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0472, Accuracy: 9861/10000 (99%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">16</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.029896</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">16</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.047947</span>
+Train Epoch: 16 [0/60000 (0%)]  Loss: 0.134691
+Train Epoch: 16 [32000/60000 (53%)]     Loss: 0.088260
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0470</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9855</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0447, Accuracy: 9870/10000 (99%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">17</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.146504</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">17</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.063095</span>
+Train Epoch: 17 [0/60000 (0%)]  Loss: 0.106715
+Train Epoch: 17 [32000/60000 (53%)]     Loss: 0.133920
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0362</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9894</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0426, Accuracy: 9859/10000 (99%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">18</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.229595</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">18</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.065047</span>
+Train Epoch: 18 [0/60000 (0%)]  Loss: 0.189744
+Train Epoch: 18 [32000/60000 (53%)]     Loss: 0.165204
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0468</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9867</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0423, Accuracy: 9858/10000 (99%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">19</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.117012</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">19</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.038908</span>
+Train Epoch: 19 [0/60000 (0%)]  Loss: 0.124765
+Train Epoch: 19 [32000/60000 (53%)]     Loss: 0.147097
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.1120</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9681</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">97</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0420, Accuracy: 9865/10000 (99%)
 
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">20</span> <span class="p">[</span><span class="mi">0</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">0</span><span class="o">%</span><span class="p">)]</span>  <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.312182</span>
-<span class="n">Train</span> <span class="n">Epoch</span><span class="p">:</span> <span class="mi">20</span> <span class="p">[</span><span class="mi">32000</span><span class="o">/</span><span class="mi">60000</span> <span class="p">(</span><span class="mi">53</span><span class="o">%</span><span class="p">)]</span>     <span class="n">Loss</span><span class="p">:</span> <span class="mf">0.171513</span>
+Train Epoch: 20 [0/60000 (0%)]  Loss: 0.031103
+Train Epoch: 20 [32000/60000 (53%)]     Loss: 0.044662
 
-<span class="n">Test</span> <span class="nb">set</span><span class="p">:</span> <span class="n">Average</span> <span class="n">loss</span><span class="p">:</span> <span class="mf">0.0440</span><span class="p">,</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mi">9882</span><span class="o">/</span><span class="mi">10000</span> <span class="p">(</span><span class="mi">99</span><span class="o">%</span><span class="p">)</span>
+Test set: Average loss: 0.0410, Accuracy: 9871/10000 (99%)
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 2 minutes  54.559 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 15 minutes  9.697 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-intermediate-spatial-transformer-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../_downloads/spatial_transformer_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">spatial_transformer_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -930,8 +939,7 @@ transformations while training.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Introduction to PyTorch &mdash; PyTorch Tutorials 0.2.0_4 documentation</title>
+  <title>Introduction to PyTorch &mdash; PyTorch Tutorials 0.5.0a0+11fc16d documentation</title>
   
 
   
@@ -41,7 +41,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="PyTorch Tutorials 0.2.0_4 documentation" href="../../index.html"/>
+    <link rel="top" title="PyTorch Tutorials 0.5.0a0+11fc16d documentation" href="../../index.html"/>
         <link rel="up" title="Deep Learning for NLP with Pytorch" href="../deep_learning_nlp_tutorial.html"/>
         <link rel="next" title="Deep Learning with PyTorch" href="deep_learning_tutorial.html"/>
         <link rel="prev" title="Deep Learning for NLP with Pytorch" href="../deep_learning_nlp_tutorial.html"/> 
@@ -76,7 +76,7 @@
             
             
               <div class="version">
-                0.2.0_4
+                0.5.0a0+11fc16d
               </div>
             
           
@@ -109,16 +109,16 @@
 <li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#operations">Operations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#numpy-bridge">Numpy Bridge</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-torch-tensor-to-numpy-array">Converting torch Tensor to numpy Array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting numpy Array to torch Tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#numpy-bridge">NumPy Bridge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-a-torch-tensor-to-a-numpy-array">Converting a Torch Tensor to a NumPy Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../blitz/tensor_tutorial.html#converting-numpy-array-to-torch-tensor">Converting NumPy Array to Torch Tensor</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../blitz/tensor_tutorial.html#cuda-tensors">CUDA Tensors</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../blitz/autograd_tutorial.html">Autograd: automatic differentiation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#tensor">Tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../blitz/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -175,7 +175,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../former_torchies/autograd_tutorial.html">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#variable">Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#tensors-that-track-history">Tensors that track history</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../former_torchies/autograd_tutorial.html#gradients">Gradients</a></li>
 </ul>
 </li>
@@ -199,7 +199,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../pytorch_with_examples.html#autograd">Autograd</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-variables-and-autograd">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-tensors-and-autograd">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#pytorch-defining-new-autograd-functions">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#tensorflow-static-graphs">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -218,7 +218,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../pytorch_with_examples.html#id2">Autograd</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_autograd.html">PyTorch: Variables and autograd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_autograd.html">PyTorch: Tensors and autograd</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../examples_autograd/two_layer_net_custom_function.html">PyTorch: Defining new autograd functions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../examples_autograd/tf_two_layer_net.html">TensorFlow: Static Graphs</a></li>
 </ul>
@@ -283,7 +283,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#optimization-and-training">Optimization and Training</a></li>
-<li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in Pytorch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="deep_learning_tutorial.html#creating-network-components-in-pytorch">Creating Network Components in PyTorch</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="deep_learning_tutorial.html#example-logistic-regression-bag-of-words-classifier">Example: Logistic Regression Bag-of-Words classifier</a></li>
 </ul>
 </li>
@@ -443,9 +443,32 @@
 <li class="toctree-l2"><a class="reference internal" href="../../advanced/super_resolution_with_caffe2.html#running-the-model-on-mobile-devices">Running the model on mobile devices</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced/c_extension.html">Custom C extensions for pytorch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../advanced/c_extension.html#step-1-prepare-your-c-code">Step 1. prepare your C code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../advanced/c_extension.html#step-2-include-it-in-your-python-code">Step 2: Include it in your Python code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/cpp_extension.html">Custom C++ and CUDA Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#motivation-and-example">Motivation and Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-a-c-extension">Writing a C++ Extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#building-with-setuptools">Building with <code class="docutils literal"><span class="pre">setuptools</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-the-c-op">Writing the C++ Op</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#forward-pass">Forward Pass</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#backward-pass">Backward Pass</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#binding-to-python">Binding to Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#using-your-extension">Using Your Extension</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#performance-comparison">Performance Comparison</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#performance-on-gpu-devices">Performance on GPU Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#jit-compiling-extensions">JIT Compiling Extensions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#writing-a-mixed-c-cuda-extension">Writing a Mixed C++/CUDA extension</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../advanced/cpp_extension.html#integrating-a-c-cuda-operation-with-pytorch">Integrating a C++/CUDA Operation with PyTorch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../advanced/cpp_extension.html#id2">Performance Comparison</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/cpp_extension.html#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -513,7 +536,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="introduction-to-pytorch">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-beginner-nlp-pytorch-tutorial-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="introduction-to-pytorch">
 <span id="sphx-glr-beginner-nlp-pytorch-tutorial-py"></span><h1>Introduction to PyTorch<a class="headerlink" href="#introduction-to-pytorch" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction-to-torch-s-tensor-library">
 <h2>Introduction to Torch’s tensor library<a class="headerlink" href="#introduction-to-torch-s-tensor-library" title="Permalink to this headline">¶</a></h2>
@@ -536,43 +563,32 @@ lets look what we can do with tensors.</p>
 <h3>Creating Tensors<a class="headerlink" href="#creating-tensors" title="Permalink to this headline">¶</a></h3>
 <p>Tensors can be created from Python lists with the torch.Tensor()
 function.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Create a torch.Tensor object with the given data.  It is a 1D vector</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># torch.tensor(data) creates a torch.Tensor object with the given data.</span>
 <span class="n">V_data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">V_data</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">V_data</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
 
 <span class="c1"># Creates a matrix</span>
 <span class="n">M_data</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">M_data</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">M_data</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
 
 <span class="c1"># Create a 3D tensor of size 2x2x2.</span>
 <span class="n">T_data</span> <span class="o">=</span> <span class="p">[[[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]],</span>
           <span class="p">[[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]]]</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">(</span><span class="n">T_data</span><span class="p">)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">T_data</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([1., 2., 3.])
+tensor([[1., 2., 3.],
+        [4., 5., 6.]])
+tensor([[[1., 2.],
+         [3., 4.]],
 
-
- <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>
- <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x3</span><span class="p">]</span>
-
-
-<span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mi">1</span>  <span class="mi">2</span>
-  <span class="mi">3</span>  <span class="mi">4</span>
-
-<span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mi">5</span>  <span class="mi">6</span>
-  <span class="mi">7</span>  <span class="mi">8</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x2x2</span><span class="p">]</span>
+        [[5., 6.],
+         [7., 8.]]])
 </pre></div>
 </div>
 <p>What is a 3D tensor anyway? Think about it like this. If you have a
@@ -584,8 +600,10 @@ when I say “tensor” in this tutorial, it refers
 to any torch.Tensor object. Matrices and vectors are special cases of
 torch.Tensors, where their dimension is 1 and 2 respectively. When I am
 talking about 3D tensors, I will explicitly use the term “3D tensor”.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Index into V and get a scalar</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Index into V and get a scalar (0 dimensional tensor)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># Get a Python number from it</span>
+<span class="k">print</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
 
 <span class="c1"># Index into M and get a vector</span>
 <span class="k">print</span><span class="p">(</span><span class="n">M</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -595,17 +613,11 @@ talking about 3D tensors, I will explicitly use the term “3D tensor”.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.0</span>
-
- <span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
-
-
- <span class="mi">1</span>  <span class="mi">2</span>
- <span class="mi">3</span>  <span class="mi">4</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x2</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor(1.)
+1.0
+tensor([1., 2., 3.])
+tensor([[1., 2.],
+        [3., 4.]])
 </pre></div>
 </div>
 <p>You can also create tensors of other datatypes. The default, as you can
@@ -619,41 +631,34 @@ with torch.randn()</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
- <span class="o">-</span><span class="mf">2.9718</span>  <span class="mf">1.7070</span> <span class="o">-</span><span class="mf">0.4305</span> <span class="o">-</span><span class="mf">2.2820</span>  <span class="mf">0.5237</span>
-  <span class="mf">0.0004</span> <span class="o">-</span><span class="mf">1.2039</span>  <span class="mf">3.5283</span>  <span class="mf">0.4434</span>  <span class="mf">0.5848</span>
-  <span class="mf">0.8407</span>  <span class="mf">0.5510</span>  <span class="mf">0.3863</span>  <span class="mf">0.9124</span> <span class="o">-</span><span class="mf">0.8410</span>
-  <span class="mf">1.2282</span> <span class="o">-</span><span class="mf">1.8661</span>  <span class="mf">1.4146</span> <span class="o">-</span><span class="mf">1.8781</span> <span class="o">-</span><span class="mf">0.4674</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[[-1.5256, -0.7502, -0.6540, -1.6095, -0.1002],
+         [-0.6092, -0.9798, -1.6091, -0.7121,  0.3037],
+         [-0.7773, -0.2515, -0.2223,  1.6871,  0.2284],
+         [ 0.4676, -0.6970, -1.1608,  0.6995,  0.1991]],
 
-<span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
- <span class="o">-</span><span class="mf">0.7576</span>  <span class="mf">0.4215</span> <span class="o">-</span><span class="mf">0.4827</span> <span class="o">-</span><span class="mf">1.1198</span>  <span class="mf">0.3056</span>
-  <span class="mf">1.0386</span>  <span class="mf">0.5206</span> <span class="o">-</span><span class="mf">0.5006</span>  <span class="mf">1.2182</span>  <span class="mf">0.2117</span>
- <span class="o">-</span><span class="mf">1.0613</span> <span class="o">-</span><span class="mf">1.9441</span> <span class="o">-</span><span class="mf">0.9596</span>  <span class="mf">0.5489</span> <span class="o">-</span><span class="mf">0.9901</span>
- <span class="o">-</span><span class="mf">0.3826</span>  <span class="mf">1.5037</span>  <span class="mf">1.8267</span>  <span class="mf">0.5561</span>  <span class="mf">1.6445</span>
+        [[ 0.8657,  0.2444, -0.6629,  0.8073,  1.1017],
+         [-0.1759, -2.2456, -1.4465,  0.0612, -0.6177],
+         [-0.7981, -0.1316,  1.8793, -0.0721,  0.1578],
+         [-0.7735,  0.1991,  0.0457,  0.1530, -0.4757]],
 
-<span class="p">(</span><span class="mi">2</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.4973</span> <span class="o">-</span><span class="mf">1.5067</span>  <span class="mf">1.7661</span> <span class="o">-</span><span class="mf">0.3569</span> <span class="o">-</span><span class="mf">0.1713</span>
-  <span class="mf">0.4068</span> <span class="o">-</span><span class="mf">0.4284</span> <span class="o">-</span><span class="mf">1.1299</span>  <span class="mf">1.4274</span> <span class="o">-</span><span class="mf">1.4027</span>
-  <span class="mf">1.4825</span> <span class="o">-</span><span class="mf">1.1559</span>  <span class="mf">1.6190</span>  <span class="mf">0.9581</span>  <span class="mf">0.7747</span>
-  <span class="mf">0.1940</span>  <span class="mf">0.1687</span>  <span class="mf">0.3061</span>  <span class="mf">1.0743</span> <span class="o">-</span><span class="mf">1.0327</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="n">x4x5</span><span class="p">]</span>
+        [[-0.1110,  0.2927, -0.1578, -0.0288,  0.4533],
+         [ 1.1422,  0.2486, -1.7754, -0.0255, -1.0233],
+         [-0.5962, -1.0055,  0.4285,  1.4761, -1.7869],
+         [ 1.6103, -0.7040, -0.1853, -0.9962, -0.8313]]])
 </pre></div>
 </div>
 </div>
 <div class="section" id="operations-with-tensors">
 <h3>Operations with Tensors<a class="headerlink" href="#operations-with-tensors" title="Permalink to this headline">¶</a></h3>
 <p>You can operate on tensors in the ways you would expect.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">])</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">])</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 <span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">5</span>
- <span class="mi">7</span>
- <span class="mi">9</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([5., 7., 9.])
 </pre></div>
 </div>
 <p>See <a class="reference external" href="http://pytorch.org/docs/torch.html">the documentation</a> for a
@@ -678,17 +683,13 @@ expand beyond just mathematical operations.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mf">1.0930</span>  <span class="mf">0.7769</span> <span class="o">-</span><span class="mf">1.3128</span>  <span class="mf">0.7099</span>  <span class="mf">0.9944</span>
-<span class="o">-</span><span class="mf">0.2694</span> <span class="o">-</span><span class="mf">0.6491</span> <span class="o">-</span><span class="mf">0.1373</span> <span class="o">-</span><span class="mf">0.2954</span> <span class="o">-</span><span class="mf">0.7725</span>
-<span class="o">-</span><span class="mf">0.2215</span>  <span class="mf">0.5074</span> <span class="o">-</span><span class="mf">0.6794</span> <span class="o">-</span><span class="mf">1.6115</span>  <span class="mf">0.5230</span>
-<span class="o">-</span><span class="mf">0.8890</span>  <span class="mf">0.2620</span>  <span class="mf">0.0302</span>  <span class="mf">0.0013</span> <span class="o">-</span><span class="mf">1.3987</span>
- <span class="mf">1.4666</span> <span class="o">-</span><span class="mf">0.1028</span> <span class="o">-</span><span class="mf">0.0097</span> <span class="o">-</span><span class="mf">0.8420</span> <span class="o">-</span><span class="mf">0.2067</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">5</span><span class="n">x5</span><span class="p">]</span>
-
-
- <span class="mf">1.0672</span>  <span class="mf">0.1732</span> <span class="o">-</span><span class="mf">0.6873</span>  <span class="mf">0.3620</span>  <span class="mf">0.3776</span> <span class="o">-</span><span class="mf">0.2443</span> <span class="o">-</span><span class="mf">0.5850</span>  <span class="mf">2.0812</span>
- <span class="mf">0.3111</span>  <span class="mf">0.2358</span> <span class="o">-</span><span class="mf">1.0658</span> <span class="o">-</span><span class="mf">0.1186</span>  <span class="mf">0.4903</span>  <span class="mf">0.8349</span>  <span class="mf">0.8894</span>  <span class="mf">0.4148</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x8</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[-0.8029,  0.2366,  0.2857,  0.6898, -0.6331],
+        [ 0.8795, -0.6842,  0.4533,  0.2912, -0.8317],
+        [-0.5525,  0.6355, -0.3968, -0.6571, -1.6428],
+        [ 0.9803, -0.0421, -0.8206,  0.3133, -1.1352],
+        [ 0.3773, -0.2824, -2.5667, -1.4303,  0.5009]])
+tensor([[ 0.5438, -0.4057,  1.1341, -0.1473,  0.6272,  1.0935,  0.0939,  1.2381],
+        [-1.1115,  0.3501, -0.7703, -1.3459,  0.5119, -0.6933, -0.1668, -0.9999]])
 </pre></div>
 </div>
 </div>
@@ -706,38 +707,21 @@ to the component.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">0</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
-  <span class="mf">0.0507</span> <span class="o">-</span><span class="mf">0.9644</span> <span class="o">-</span><span class="mf">2.0111</span>  <span class="mf">0.5245</span>
-  <span class="mf">2.1332</span> <span class="o">-</span><span class="mf">0.0822</span>  <span class="mf">0.8388</span> <span class="o">-</span><span class="mf">1.3233</span>
-  <span class="mf">0.0701</span>  <span class="mf">1.2200</span>  <span class="mf">0.4251</span> <span class="o">-</span><span class="mf">1.2328</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([[[ 0.4175, -0.2127, -0.8400, -0.4200],
+         [-0.6240, -0.9773,  0.8748,  0.9873],
+         [-0.0594, -2.4919,  0.2423,  0.2883]],
 
-<span class="p">(</span><span class="mi">1</span> <span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="o">.</span><span class="p">)</span> <span class="o">=</span>
- <span class="o">-</span><span class="mf">0.6195</span>  <span class="mf">1.5133</span>  <span class="mf">1.9954</span> <span class="o">-</span><span class="mf">0.6585</span>
- <span class="o">-</span><span class="mf">0.4139</span> <span class="o">-</span><span class="mf">0.2250</span> <span class="o">-</span><span class="mf">0.6890</span>  <span class="mf">0.9882</span>
-  <span class="mf">0.7404</span> <span class="o">-</span><span class="mf">2.0990</span>  <span class="mf">1.2582</span> <span class="o">-</span><span class="mf">0.3990</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x3x4</span><span class="p">]</span>
-
-
-
-<span class="n">Columns</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">9</span>
- <span class="mf">0.0507</span> <span class="o">-</span><span class="mf">0.9644</span> <span class="o">-</span><span class="mf">2.0111</span>  <span class="mf">0.5245</span>  <span class="mf">2.1332</span> <span class="o">-</span><span class="mf">0.0822</span>  <span class="mf">0.8388</span> <span class="o">-</span><span class="mf">1.3233</span>  <span class="mf">0.0701</span>  <span class="mf">1.2200</span>
-<span class="o">-</span><span class="mf">0.6195</span>  <span class="mf">1.5133</span>  <span class="mf">1.9954</span> <span class="o">-</span><span class="mf">0.6585</span> <span class="o">-</span><span class="mf">0.4139</span> <span class="o">-</span><span class="mf">0.2250</span> <span class="o">-</span><span class="mf">0.6890</span>  <span class="mf">0.9882</span>  <span class="mf">0.7404</span> <span class="o">-</span><span class="mf">2.0990</span>
-
-<span class="n">Columns</span> <span class="mi">10</span> <span class="n">to</span> <span class="mi">11</span>
- <span class="mf">0.4251</span> <span class="o">-</span><span class="mf">1.2328</span>
- <span class="mf">1.2582</span> <span class="o">-</span><span class="mf">0.3990</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x12</span><span class="p">]</span>
-
-
-
-<span class="n">Columns</span> <span class="mi">0</span> <span class="n">to</span> <span class="mi">9</span>
- <span class="mf">0.0507</span> <span class="o">-</span><span class="mf">0.9644</span> <span class="o">-</span><span class="mf">2.0111</span>  <span class="mf">0.5245</span>  <span class="mf">2.1332</span> <span class="o">-</span><span class="mf">0.0822</span>  <span class="mf">0.8388</span> <span class="o">-</span><span class="mf">1.3233</span>  <span class="mf">0.0701</span>  <span class="mf">1.2200</span>
-<span class="o">-</span><span class="mf">0.6195</span>  <span class="mf">1.5133</span>  <span class="mf">1.9954</span> <span class="o">-</span><span class="mf">0.6585</span> <span class="o">-</span><span class="mf">0.4139</span> <span class="o">-</span><span class="mf">0.2250</span> <span class="o">-</span><span class="mf">0.6890</span>  <span class="mf">0.9882</span>  <span class="mf">0.7404</span> <span class="o">-</span><span class="mf">2.0990</span>
-
-<span class="n">Columns</span> <span class="mi">10</span> <span class="n">to</span> <span class="mi">11</span>
- <span class="mf">0.4251</span> <span class="o">-</span><span class="mf">1.2328</span>
- <span class="mf">1.2582</span> <span class="o">-</span><span class="mf">0.3990</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">2</span><span class="n">x12</span><span class="p">]</span>
+        [[-0.1095,  0.3126,  1.5038,  0.5038],
+         [ 0.6223, -0.4481, -0.2856,  0.3880],
+         [-1.1435, -0.6512, -0.1032,  0.6937]]])
+tensor([[ 0.4175, -0.2127, -0.8400, -0.4200, -0.6240, -0.9773,  0.8748,  0.9873,
+         -0.0594, -2.4919,  0.2423,  0.2883],
+        [-0.1095,  0.3126,  1.5038,  0.5038,  0.6223, -0.4481, -0.2856,  0.3880,
+         -1.1435, -0.6512, -0.1032,  0.6937]])
+tensor([[ 0.4175, -0.2127, -0.8400, -0.4200, -0.6240, -0.9773,  0.8748,  0.9873,
+         -0.0594, -2.4919,  0.2423,  0.2883],
+        [-0.1095,  0.3126,  1.5038,  0.5038,  0.6223, -0.4481, -0.2856,  0.3880,
+         -1.1435, -0.6512, -0.1032,  0.6937]])
 </pre></div>
 </div>
 </div>
@@ -750,8 +734,8 @@ back propagation gradients yourself. A computation graph is simply a
 specification of how your data is combined to give you the output. Since
 the graph totally specifies what parameters were involved with which
 operations, it contains enough information to compute derivatives. This
-probably sounds vague, so lets see what is going on using the
-fundamental class of Pytorch: autograd.Variable.</p>
+probably sounds vague, so let’s see what is going on using the
+fundamental flag <code class="docutils literal"><span class="pre">requires_grad</span></code>.</p>
 <p>First, think from a programmers perspective. What is stored in the
 torch.Tensor objects we were creating above? Obviously the data and the
 shape, and maybe a few other things. But when we added two tensors
@@ -759,38 +743,27 @@ together, we got an output tensor. All this output tensor knows is its
 data and shape. It has no idea that it was the sum of two other tensors
 (it could have been read in from a file, it could be the result of some
 other operation, etc.)</p>
-<p>The Variable class keeps track of how it was created. Lets see it in
-action.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Variables wrap tensor objects</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="c1"># You can access the data with the .data attribute</span>
-<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<p>If <code class="docutils literal"><span class="pre">requires_grad=True</span></code>, the Tensor object keeps track of how it was
+created. Lets see it in action.</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># Tensor factory methods have a ``requires_grad`` flag</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="c1"># You can also do all the same operations you did with tensors with Variables.</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">6</span><span class="p">]),</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># With requires_grad=True, you can still do all the operations you previously</span>
+<span class="c1"># could</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
 <span class="c1"># BUT z knows something extra.</span>
 <span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="mi">1</span>
- <span class="mi">2</span>
- <span class="mi">3</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
-
-
- <span class="mi">5</span>
- <span class="mi">7</span>
- <span class="mi">9</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
-
-<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">AddBackward</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fb3c29b68b8</span><span class="o">&gt;</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([5., 7., 9.], grad_fn=&lt;ThAddBackward&gt;)
+&lt;ThAddBackward object at 0x11640bc18&gt;
 </pre></div>
 </div>
-<p>So Variables know what created them. z knows that it wasn’t read in from
+<p>So Tensors know what created them. z knows that it wasn’t read in from
 a file, it wasn’t the result of a multiplication or exponential or
 whatever. And if you keep following z.grad_fn, you will find yourself at
 x and y.</p>
@@ -802,11 +775,8 @@ x and y.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mi">21</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">1</span><span class="p">]</span>
-
-<span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">SumBackward</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fb3c0dcf4f8</span><span class="o">&gt;</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor(21., grad_fn=&lt;SumBackward0&gt;)
+&lt;SumBackward0 object at 0x115f8f978&gt;
 </pre></div>
 </div>
 <p>So now, what is the derivative of this sum with respect to the first
@@ -836,57 +806,68 @@ property, since for many models this is very convenient.)</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="n">Variable</span> <span class="n">containing</span><span class="p">:</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
- <span class="mi">1</span>
-<span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">3</span><span class="p">]</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>tensor([1., 1., 1.])
 </pre></div>
 </div>
 <p>Understanding what is going on in the block below is crucial for being a
 successful programmer in deep learning.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c1"># These are Tensor types, and backprop would not be possible</span>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># By default, user created Tensors have ``requires_grad=False``</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="c1"># So you can&#39;t backprop through z</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
 
-<span class="n">var_x</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">var_y</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="c1"># var_z contains enough information to compute gradients, as we saw above</span>
-<span class="n">var_z</span> <span class="o">=</span> <span class="n">var_x</span> <span class="o">+</span> <span class="n">var_y</span>
-<span class="k">print</span><span class="p">(</span><span class="n">var_z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
+<span class="c1"># ``.requires_grad_( ... )`` changes an existing Tensor&#39;s ``requires_grad``</span>
+<span class="c1"># flag in-place. The input flag defaults to ``True`` if not given.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">requires_grad_</span><span class="p">()</span>
+<span class="c1"># z contains enough information to compute gradients, as we saw above</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
+<span class="c1"># If any input to an operation has ``requires_grad=True``, so will the output</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
 
-<span class="n">var_z_data</span> <span class="o">=</span> <span class="n">var_z</span><span class="o">.</span><span class="n">data</span>  <span class="c1"># Get the wrapped Tensor object out of var_z...</span>
-<span class="c1"># Re-wrap the tensor in a new variable</span>
-<span class="n">new_var_z</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">var_z_data</span><span class="p">)</span>
+<span class="c1"># Now z has the computation history that relates itself to x and y</span>
+<span class="c1"># Can we just take its values, and **detach** it from its history?</span>
+<span class="n">new_z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
 
-<span class="c1"># ... does new_var_z have information to backprop to x and y?</span>
+<span class="c1"># ... does new_z have information to backprop to x and y?</span>
 <span class="c1"># NO!</span>
-<span class="k">print</span><span class="p">(</span><span class="n">new_var_z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
-<span class="c1"># And how could it?  We yanked the tensor out of var_z (that is</span>
-<span class="c1"># what var_z.data is).  This tensor doesn&#39;t know anything about</span>
-<span class="c1"># how it was computed.  We pass it into new_var_z, and this is all the</span>
-<span class="c1"># information new_var_z gets.  If var_z_data doesn&#39;t know how it was</span>
-<span class="c1"># computed, theres no way new_var_z will.</span>
-<span class="c1"># In essence, we have broken the variable away from its past history</span>
+<span class="k">print</span><span class="p">(</span><span class="n">new_z</span><span class="o">.</span><span class="n">grad_fn</span><span class="p">)</span>
+<span class="c1"># And how could it? ``z.detach()`` returns a tensor that shares the same storage</span>
+<span class="c1"># as ``z``, but with the computation history forgotten. It doesn&#39;t know anything</span>
+<span class="c1"># about how it was computed.</span>
+<span class="c1"># In essence, we have broken the Tensor away from its past history</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">torch</span><span class="o">.</span><span class="n">autograd</span><span class="o">.</span><span class="n">function</span><span class="o">.</span><span class="n">AddBackward</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fb3c0dcf318</span><span class="o">&gt;</span>
-<span class="kc">None</span>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>False False
+None
+&lt;ThAddBackward object at 0x11b501518&gt;
+True
+None
 </pre></div>
 </div>
-<p>Here is the basic, extremely important rule for computing with
-autograd.Variables (note this is more general than Pytorch. There is an
-equivalent object in every major deep learning toolkit):</p>
-<p><strong>If you want the error from your loss function to backpropagate to a
-component of your network, you MUST NOT break the Variable chain from
-that component to your loss Variable. If you do, the loss will have no
-idea your component exists, and its parameters can’t be updated.</strong></p>
-<p>I say this in bold, because this error can creep up on you in very
-subtle ways (I will show some such ways below), and it will not cause
-your code to crash or complain, so you must be careful.</p>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.011 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p>You can also stop autograd from tracking history on Tensors
+with <code class="docutils literal"><span class="pre">.requires_grad``=True</span> <span class="pre">by</span> <span class="pre">wrapping</span> <span class="pre">the</span> <span class="pre">code</span> <span class="pre">block</span> <span class="pre">in</span>
+<span class="pre">``with</span> <span class="pre">torch.no_grad():</span></code></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
+<span class="k">print</span><span class="p">((</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">((</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none"><div class="highlight"><pre><span></span>True
+True
+False
+</pre></div>
+</div>
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.008 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-beginner-nlp-pytorch-tutorial-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/pytorch_tutorial.py" download=""><code class="xref download docutils literal"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">pytorch_tutorial.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -940,8 +921,7 @@ your code to crash or complain, so you must be careful.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.2.0_4',
-            LANGUAGE:'None',
+            VERSION:'0.5.0a0+11fc16d',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

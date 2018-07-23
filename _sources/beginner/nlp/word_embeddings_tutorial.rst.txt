@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_beginner_nlp_word_embeddings_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_beginner_nlp_word_embeddings_tutorial.py:
 
@@ -123,7 +127,7 @@ that the word embeddings will probably not be interpretable. That is,
 although with our hand-crafted vectors above we can see that
 mathematicians and physicists are similar in that they both like coffee,
 if we allow a neural network to learn the embeddings and see that both
-mathematicians and physicisits have a large value in the second
+mathematicians and physicists have a large value in the second
 dimension, it is not clear what that means. They are similar in some
 latent semantic dimension, but this probably has no interpretation to
 us.
@@ -166,7 +170,6 @@ indices are integers, not floats).
     # Author: Robert Guthrie
 
     import torch
-    import torch.autograd as autograd
     import torch.nn as nn
     import torch.nn.functional as F
     import torch.optim as optim
@@ -185,8 +188,8 @@ indices are integers, not floats).
 
     word_to_ix = {"hello": 0, "world": 1}
     embeds = nn.Embedding(2, 5)  # 2 words in vocab, 5 dimensional embeddings
-    lookup_tensor = torch.LongTensor([word_to_ix["hello"]])
-    hello_embed = embeds(autograd.Variable(lookup_tensor))
+    lookup_tensor = torch.tensor([word_to_ix["hello"]], dtype=torch.long)
+    hello_embed = embeds(lookup_tensor)
     print(hello_embed)
 
 
@@ -196,11 +199,11 @@ indices are integers, not floats).
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-    -2.9718  1.7070 -0.4305 -2.2820  0.5237
-    [torch.FloatTensor of size 1x5]
+ .. code-block:: none
+
+    tensor([[ 0.6614,  0.2669,  0.0617,  0.6213, -0.4519]], grad_fn=<EmbeddingBackward>)
 
 
 An Example: N-Gram Language Modeling
@@ -262,7 +265,7 @@ examples and update the parameters with backpropagation.
             embeds = self.embeddings(inputs).view((1, -1))
             out = F.relu(self.linear1(embeds))
             out = self.linear2(out)
-            log_probs = F.log_softmax(out)
+            log_probs = F.log_softmax(out, dim=1)
             return log_probs
 
 
@@ -272,13 +275,12 @@ examples and update the parameters with backpropagation.
     optimizer = optim.SGD(model.parameters(), lr=0.001)
 
     for epoch in range(10):
-        total_loss = torch.Tensor([0])
+        total_loss = 0
         for context, target in trigrams:
 
             # Step 1. Prepare the inputs to be passed to the model (i.e, turn the words
-            # into integer indices and wrap them in variables)
-            context_idxs = [word_to_ix[w] for w in context]
-            context_var = autograd.Variable(torch.LongTensor(context_idxs))
+            # into integer indices and wrap them in tensors)
+            context_idxs = torch.tensor([word_to_ix[w] for w in context], dtype=torch.long)
 
             # Step 2. Recall that torch *accumulates* gradients. Before passing in a
             # new instance, you need to zero out the gradients from the old
@@ -287,18 +289,18 @@ examples and update the parameters with backpropagation.
 
             # Step 3. Run the forward pass, getting log probabilities over next
             # words
-            log_probs = model(context_var)
+            log_probs = model(context_idxs)
 
             # Step 4. Compute your loss function. (Again, Torch wants the target
-            # word wrapped in a variable)
-            loss = loss_function(log_probs, autograd.Variable(
-                torch.LongTensor([word_to_ix[target]])))
+            # word wrapped in a tensor)
+            loss = loss_function(log_probs, torch.tensor([word_to_ix[target]], dtype=torch.long))
 
             # Step 5. Do the backward pass and update the gradient
             loss.backward()
             optimizer.step()
 
-            total_loss += loss.data
+            # Get the Python number from a 1-element Tensor by calling tensor.item()
+            total_loss += loss.item()
         losses.append(total_loss)
     print(losses)  # The loss decreased every iteration over the training data!
 
@@ -309,40 +311,12 @@ examples and update the parameters with backpropagation.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     [(['When', 'forty'], 'winters'), (['forty', 'winters'], 'shall'), (['winters', 'shall'], 'besiege')]
-    [
-     515.8066
-    [torch.FloatTensor of size 1]
-    , 
-     513.3784
-    [torch.FloatTensor of size 1]
-    , 
-     510.9676
-    [torch.FloatTensor of size 1]
-    , 
-     508.5739
-    [torch.FloatTensor of size 1]
-    , 
-     506.1965
-    [torch.FloatTensor of size 1]
-    , 
-     503.8344
-    [torch.FloatTensor of size 1]
-    , 
-     501.4880
-    [torch.FloatTensor of size 1]
-    , 
-     499.1561
-    [torch.FloatTensor of size 1]
-    , 
-     496.8385
-    [torch.FloatTensor of size 1]
-    , 
-     494.5331
-    [torch.FloatTensor of size 1]
-    ]
+    [523.4760098457336, 520.8744840621948, 518.2884106636047, 515.7171995639801, 513.1607172489166, 510.61677980422974, 508.0845158100128, 505.5630929470062, 503.050843000412, 500.54833245277405]
 
 
 Exercise: Computing Word Embeddings: Continuous Bag-of-Words
@@ -416,8 +390,7 @@ tips:
 
     def make_context_vector(context, word_to_ix):
         idxs = [word_to_ix[w] for w in context]
-        tensor = torch.LongTensor(idxs)
-        return autograd.Variable(tensor)
+        return torch.tensor(idxs, dtype=torch.long)
 
 
     make_context_vector(data[0][0], word_to_ix)  # example
@@ -427,16 +400,24 @@ tips:
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     [(['We', 'are', 'to', 'study'], 'about'), (['are', 'about', 'study', 'the'], 'to'), (['about', 'to', 'the', 'idea'], 'study'), (['to', 'study', 'idea', 'of'], 'the'), (['study', 'the', 'of', 'a'], 'idea')]
 
 
-**Total running time of the script:** ( 0 minutes  0.880 seconds)
+**Total running time of the script:** ( 0 minutes  0.459 seconds)
 
 
+.. _sphx_glr_download_beginner_nlp_word_embeddings_tutorial.py:
 
-.. container:: sphx-glr-footer
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download
@@ -449,6 +430,9 @@ tips:
 
      :download:`Download Jupyter notebook: word_embeddings_tutorial.ipynb <word_embeddings_tutorial.ipynb>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <http://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_

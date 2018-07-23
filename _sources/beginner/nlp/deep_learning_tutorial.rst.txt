@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_beginner_nlp_deep_learning_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_beginner_nlp_deep_learning_tutorial.py:
 
@@ -28,7 +32,7 @@ learned here are :math:`A` and :math:`b`. Often, :math:`b` is refered to
 as the *bias* term.
 
 
-Pytorch and most other deep learning frameworks do things a little
+PyTorch and most other deep learning frameworks do things a little
 differently than traditional linear algebra. It maps the rows of the
 input instead of the columns. That is, the :math:`i`'th row of the
 output below is the mapping of the :math:`i`'th row of the input under
@@ -43,7 +47,6 @@ output below is the mapping of the :math:`i`'th row of the input under
     # Author: Robert Guthrie
 
     import torch
-    import torch.autograd as autograd
     import torch.nn as nn
     import torch.nn.functional as F
     import torch.optim as optim
@@ -63,7 +66,7 @@ output below is the mapping of the :math:`i`'th row of the input under
 
     lin = nn.Linear(5, 3)  # maps from R^5 to R^3, parameters A, b
     # data is 2x5.  A maps from 5 to 3... can we map "data" under A?
-    data = autograd.Variable(torch.randn(2, 5))
+    data = torch.randn(2, 5)
     print(lin(data))  # yes
 
 
@@ -73,12 +76,12 @@ output below is the mapping of the :math:`i`'th row of the input under
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-     0.3130  0.2576  1.3546
-     1.0007  0.6433  0.4951
-    [torch.FloatTensor of size 2x3]
+ .. code-block:: none
+
+    tensor([[ 0.1755, -0.3268, -0.5069],
+            [-0.6602,  0.2260,  0.1089]], grad_fn=<ThAddmmBackward>)
 
 
 Non-Linearities
@@ -126,7 +129,7 @@ tanh or ReLU.
     # In pytorch, most non-linearities are in torch.functional (we have it imported as F)
     # Note that non-linearites typically don't have parameters like affine maps do.
     # That is, they don't have weights that are updated during training.
-    data = autograd.Variable(torch.randn(2, 2))
+    data = torch.randn(2, 2)
     print(data)
     print(F.relu(data))
 
@@ -137,17 +140,14 @@ tanh or ReLU.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-     1.2182  0.2117
-    -1.0613 -1.9441
-    [torch.FloatTensor of size 2x2]
+ .. code-block:: none
 
-    Variable containing:
-     1.2182  0.2117
-     0.0000  0.0000
-    [torch.FloatTensor of size 2x2]
+    tensor([[-0.5404, -2.2102],
+            [ 2.1130, -0.0040]])
+    tensor([[0.0000, 0.0000],
+            [2.1130, 0.0000]])
 
 
 Softmax and Probabilities
@@ -177,11 +177,11 @@ then dividing by the normalization constant.
 
 
     # Softmax is also in torch.nn.functional
-    data = autograd.Variable(torch.randn(5))
+    data = torch.randn(5)
     print(data)
-    print(F.softmax(data))
-    print(F.softmax(data).sum())  # Sums to 1 because it is a distribution!
-    print(F.log_softmax(data))  # theres also log_softmax
+    print(F.softmax(data, dim=0))
+    print(F.softmax(data, dim=0).sum())  # Sums to 1 because it is a distribution!
+    print(F.log_softmax(data, dim=0))  # theres also log_softmax
 
 
 
@@ -190,35 +190,14 @@ then dividing by the normalization constant.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-    -0.9596
-     0.5489
-    -0.9901
-    -0.3826
-     1.5037
-    [torch.FloatTensor of size 5]
+ .. code-block:: none
 
-    Variable containing:
-     0.0500
-     0.2258
-     0.0485
-     0.0890
-     0.5868
-    [torch.FloatTensor of size 5]
-
-    Variable containing:
-     1
-    [torch.FloatTensor of size 1]
-
-    Variable containing:
-    -2.9964
-    -1.4880
-    -3.0269
-    -2.4195
-    -0.5331
-    [torch.FloatTensor of size 5]
+    tensor([ 1.3800, -1.3505,  0.3455,  0.5046,  1.8213])
+    tensor([0.2948, 0.0192, 0.1048, 0.1228, 0.4584])
+    tensor(1.)
+    tensor([-1.2214, -3.9519, -2.2560, -2.0969, -0.7801])
 
 
 Objective Functions
@@ -249,9 +228,9 @@ Optimization and Training
 =========================
 
 So what we can compute a loss function for an instance? What do we do
-with that? We saw earlier that autograd.Variable's know how to compute
-gradients with respect to the things that were used to compute it. Well,
-since our loss is an autograd.Variable, we can compute gradients with
+with that? We saw earlier that Tensors know how to compute gradients
+with respect to the things that were used to compute it. Well,
+since our loss is an Tensor, we can compute gradients with
 respect to all of the parameters used to compute it! Then we can perform
 standard gradient updates. Let :math:`\theta` be our parameters,
 :math:`L(\theta)` the loss function, and :math:`\eta` a positive
@@ -274,21 +253,22 @@ boost performance noticably.
 
 
 
-Creating Network Components in Pytorch
+Creating Network Components in PyTorch
 ======================================
 
 Before we move on to our focus on NLP, lets do an annotated example of
-building a network in Pytorch using only affine maps and
+building a network in PyTorch using only affine maps and
 non-linearities. We will also see how to compute a loss function, using
-Pytorch's built in negative log likelihood, and update parameters by
+PyTorch's built in negative log likelihood, and update parameters by
 backpropagation.
 
 All network components should inherit from nn.Module and override the
 forward() method. That is about it, as far as the boilerplate is
 concerned. Inheriting from nn.Module provides functionality to your
 component. For example, it makes it keep track of its trainable
-parameters, you can swap it between CPU and GPU with the .cuda() or
-.cpu() functions, etc.
+parameters, you can swap it between CPU and GPU with the ``.to(device)``
+method, where device can be a CPU device ``torch.device("cpu")`` or CUDA
+device ``torch.device("cuda:0")``.
 
 Let's write an annotated example of a network that takes in a sparse
 bag-of-words representation and outputs a probability distribution over
@@ -300,7 +280,7 @@ regression.
 Example: Logistic Regression Bag-of-Words classifier
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our model will map a sparse BOW representation to log probabilities over
+Our model will map a sparse BoW representation to log probabilities over
 labels. We assign each word in the vocab an index. For example, say our
 entire vocab is two words "hello" and "world", with indices 0 and 1
 respectively. The BoW vector for the sentence "hello hello hello hello"
@@ -371,7 +351,7 @@ softmax.
             # Pass the input through the linear layer,
             # then pass that through log_softmax.
             # Many non-linearities and other functions are in torch.nn.functional
-            return F.log_softmax(self.linear(bow_vec))
+            return F.log_softmax(self.linear(bow_vec), dim=1)
 
 
     def make_bow_vector(sentence, word_to_ix):
@@ -391,16 +371,18 @@ softmax.
     # Whenever you assign a component to a class variable in the __init__ function
     # of a module, which was done with the line
     # self.linear = nn.Linear(...)
-    # Then through some Python magic from the Pytorch devs, your module
+    # Then through some Python magic from the PyTorch devs, your module
     # (in this case, BoWClassifier) will store knowledge of the nn.Linear's parameters
     for param in model.parameters():
         print(param)
 
-    # To run the model, pass in a BoW vector, but wrapped in an autograd.Variable
-    sample = data[0]
-    bow_vector = make_bow_vector(sample[0], word_to_ix)
-    log_probs = model(autograd.Variable(bow_vector))
-    print(log_probs)
+    # To run the model, pass in a BoW vector
+    # Here we don't need to train, so the code is wrapped in torch.no_grad()
+    with torch.no_grad():
+        sample = data[0]
+        bow_vector = make_bow_vector(sample[0], word_to_ix)
+        log_probs = model(bow_vector)
+        print(log_probs)
 
 
 
@@ -409,33 +391,23 @@ softmax.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    {'cafeteria': 5, 'on': 25, 'Yo': 23, 'get': 20, 'en': 3, 'la': 4, 'sea': 12, 'No': 9, 'creo': 10, 'to': 8, 'comer': 2, 'me': 0, 'it': 7, 'is': 16, 'not': 17, 'good': 19, 'una': 13, 'buena': 14, 'lost': 21, 'que': 11, 'gusta': 1, 'si': 24, 'at': 22, 'a': 18, 'idea': 15, 'Give': 6}
+ .. code-block:: none
+
+    {'me': 0, 'gusta': 1, 'comer': 2, 'en': 3, 'la': 4, 'cafeteria': 5, 'Give': 6, 'it': 7, 'to': 8, 'No': 9, 'creo': 10, 'que': 11, 'sea': 12, 'una': 13, 'buena': 14, 'idea': 15, 'is': 16, 'not': 17, 'a': 18, 'good': 19, 'get': 20, 'lost': 21, 'at': 22, 'Yo': 23, 'si': 24, 'on': 25}
     Parameter containing:
-
-    Columns 0 to 9 
-    -0.1184  0.1092  0.1180  0.0847  0.1837  0.1188 -0.0732 -0.1597  0.0754  0.0071
-     0.1796 -0.0346  0.0130 -0.1186  0.0753 -0.0825 -0.0724 -0.1404  0.0732  0.1111
-
-    Columns 10 to 19 
-     0.1476  0.1432  0.1548  0.1291 -0.1628  0.1293 -0.1808 -0.0890 -0.1295 -0.1729
-     0.1313 -0.0343 -0.1889 -0.1827  0.0981  0.0486  0.1917  0.0630  0.0973 -0.0790
-
-    Columns 20 to 25 
-     0.1483  0.0669 -0.1575  0.0365 -0.0309  0.0673
-    -0.0861 -0.0211  0.1135 -0.1090 -0.1556 -0.1673
-    [torch.FloatTensor of size 2x26]
-
+    tensor([[ 0.1194,  0.0609, -0.1268,  0.1274,  0.1191,  0.1739, -0.1099, -0.0323,
+             -0.0038,  0.0286, -0.1488, -0.1392,  0.1067, -0.0460,  0.0958,  0.0112,
+              0.0644,  0.0431,  0.0713,  0.0972, -0.1816,  0.0987, -0.1379, -0.1480,
+              0.0119, -0.0334],
+            [ 0.1152, -0.1136, -0.1743,  0.1427, -0.0291,  0.1103,  0.0630, -0.1471,
+              0.0394,  0.0471, -0.1313, -0.0931,  0.0669,  0.0351, -0.0834, -0.0594,
+              0.1796, -0.0363,  0.1106,  0.0849, -0.1268, -0.1668,  0.1882,  0.0102,
+              0.1344,  0.0406]], requires_grad=True)
     Parameter containing:
-    1.00000e-02 *
-     -2.0438
-     -1.2066
-    [torch.FloatTensor of size 2]
-
-    Variable containing:
-    -0.4912 -0.9465
-    [torch.FloatTensor of size 1x2]
+    tensor([0.0631, 0.1465], requires_grad=True)
+    tensor([[-0.5378, -0.8771]])
 
 
 Which of the above values corresponds to the log probability of ENGLISH,
@@ -477,10 +449,11 @@ softmax for you.
 
 
     # Run on test data before we train, just to see a before-and-after
-    for instance, label in test_data:
-        bow_vec = autograd.Variable(make_bow_vector(instance, word_to_ix))
-        log_probs = model(bow_vec)
-        print(log_probs)
+    with torch.no_grad():
+        for instance, label in test_data:
+            bow_vec = make_bow_vector(instance, word_to_ix)
+            log_probs = model(bow_vec)
+            print(log_probs)
 
     # Print the matrix column corresponding to "creo"
     print(next(model.parameters())[:, word_to_ix["creo"]])
@@ -493,17 +466,17 @@ softmax for you.
     # two instances.  Usually, somewhere between 5 and 30 epochs is reasonable.
     for epoch in range(100):
         for instance, label in data:
-            # Step 1. Remember that Pytorch accumulates gradients.
+            # Step 1. Remember that PyTorch accumulates gradients.
             # We need to clear them out before each instance
             model.zero_grad()
 
             # Step 2. Make our BOW vector and also we must wrap the target in a
-            # Variable as an integer. For example, if the target is SPANISH, then
+            # Tensor as an integer. For example, if the target is SPANISH, then
             # we wrap the integer 0. The loss function then knows that the 0th
             # element of the log probabilities is the log probability
             # corresponding to SPANISH
-            bow_vec = autograd.Variable(make_bow_vector(instance, word_to_ix))
-            target = autograd.Variable(make_target(label, label_to_ix))
+            bow_vec = make_bow_vector(instance, word_to_ix)
+            target = make_target(label, label_to_ix)
 
             # Step 3. Run our forward pass.
             log_probs = model(bow_vec)
@@ -514,10 +487,11 @@ softmax for you.
             loss.backward()
             optimizer.step()
 
-    for instance, label in test_data:
-        bow_vec = autograd.Variable(make_bow_vector(instance, word_to_ix))
-        log_probs = model(bow_vec)
-        print(log_probs)
+    with torch.no_grad():
+        for instance, label in test_data:
+            bow_vec = make_bow_vector(instance, word_to_ix)
+            log_probs = model(bow_vec)
+            print(log_probs)
 
     # Index corresponding to Spanish goes up, English goes down!
     print(next(model.parameters())[:, word_to_ix["creo"]])
@@ -529,52 +503,39 @@ softmax for you.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-    -0.4910 -0.9467
-    [torch.FloatTensor of size 1x2]
+ .. code-block:: none
 
-    Variable containing:
-    -0.8985 -0.5229
-    [torch.FloatTensor of size 1x2]
-
-    Variable containing:
-     0.1476
-     0.1313
-    [torch.FloatTensor of size 2]
-
-    Variable containing:
-    -0.1126 -2.2399
-    [torch.FloatTensor of size 1x2]
-
-    Variable containing:
-    -2.8425 -0.0600
-    [torch.FloatTensor of size 1x2]
-
-    Variable containing:
-     0.5315
-    -0.2526
-    [torch.FloatTensor of size 2]
+    tensor([[-0.9297, -0.5020]])
+    tensor([[-0.6388, -0.7506]])
+    tensor([-0.1488, -0.1313], grad_fn=<AsStridedBackward>)
+    tensor([[-0.2093, -1.6669]])
+    tensor([[-2.5330, -0.0828]])
+    tensor([ 0.2803, -0.5605], grad_fn=<AsStridedBackward>)
 
 
 We got the right answer! You can see that the log probability for
 Spanish is much higher in the first example, and the log probability for
 English is much higher in the second for the test data, as it should be.
 
-Now you see how to make a Pytorch component, pass some data through it
+Now you see how to make a PyTorch component, pass some data through it
 and do gradient updates. We are ready to dig deeper into what deep NLP
 has to offer.
 
 
 
-**Total running time of the script:** ( 0 minutes  0.745 seconds)
+**Total running time of the script:** ( 0 minutes  0.083 seconds)
 
+
+.. _sphx_glr_download_beginner_nlp_deep_learning_tutorial.py:
 
 
 .. only :: html
 
  .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download

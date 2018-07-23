@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_beginner_nlp_pytorch_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_beginner_nlp_pytorch_tutorial.py:
 
@@ -47,20 +51,20 @@ function.
 .. code-block:: python
 
 
-    # Create a torch.Tensor object with the given data.  It is a 1D vector
+    # torch.tensor(data) creates a torch.Tensor object with the given data.
     V_data = [1., 2., 3.]
-    V = torch.Tensor(V_data)
+    V = torch.tensor(V_data)
     print(V)
 
     # Creates a matrix
     M_data = [[1., 2., 3.], [4., 5., 6]]
-    M = torch.Tensor(M_data)
+    M = torch.tensor(M_data)
     print(M)
 
     # Create a 3D tensor of size 2x2x2.
     T_data = [[[1., 2.], [3., 4.]],
               [[5., 6.], [7., 8.]]]
-    T = torch.Tensor(T_data)
+    T = torch.tensor(T_data)
     print(T)
 
 
@@ -70,27 +74,18 @@ function.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    1
-     2
-     3
-    [torch.FloatTensor of size 3]
+ .. code-block:: none
 
+    tensor([1., 2., 3.])
+    tensor([[1., 2., 3.],
+            [4., 5., 6.]])
+    tensor([[[1., 2.],
+             [3., 4.]],
 
-     1  2  3
-     4  5  6
-    [torch.FloatTensor of size 2x3]
-
-
-    (0 ,.,.) = 
-      1  2
-      3  4
-
-    (1 ,.,.) = 
-      5  6
-      7  8
-    [torch.FloatTensor of size 2x2x2]
+            [[5., 6.],
+             [7., 8.]]])
 
 
 What is a 3D tensor anyway? Think about it like this. If you have a
@@ -110,8 +105,10 @@ talking about 3D tensors, I will explicitly use the term "3D tensor".
 .. code-block:: python
 
 
-    # Index into V and get a scalar
+    # Index into V and get a scalar (0 dimensional tensor)
     print(V[0])
+    # Get a Python number from it
+    print(V[0].item())
 
     # Index into M and get a vector
     print(M[0])
@@ -126,19 +123,15 @@ talking about 3D tensors, I will explicitly use the term "3D tensor".
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
+ .. code-block:: none
+
+    tensor(1.)
     1.0
-
-     1
-     2
-     3
-    [torch.FloatTensor of size 3]
-
-
-     1  2
-     3  4
-    [torch.FloatTensor of size 2x2]
+    tensor([1., 2., 3.])
+    tensor([[1., 2.],
+            [3., 4.]])
 
 
 You can also create tensors of other datatypes. The default, as you can
@@ -167,26 +160,24 @@ with torch.randn()
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    (0 ,.,.) = 
-     -2.9718  1.7070 -0.4305 -2.2820  0.5237
-      0.0004 -1.2039  3.5283  0.4434  0.5848
-      0.8407  0.5510  0.3863  0.9124 -0.8410
-      1.2282 -1.8661  1.4146 -1.8781 -0.4674
+ .. code-block:: none
 
-    (1 ,.,.) = 
-     -0.7576  0.4215 -0.4827 -1.1198  0.3056
-      1.0386  0.5206 -0.5006  1.2182  0.2117
-     -1.0613 -1.9441 -0.9596  0.5489 -0.9901
-     -0.3826  1.5037  1.8267  0.5561  1.6445
+    tensor([[[-1.5256, -0.7502, -0.6540, -1.6095, -0.1002],
+             [-0.6092, -0.9798, -1.6091, -0.7121,  0.3037],
+             [-0.7773, -0.2515, -0.2223,  1.6871,  0.2284],
+             [ 0.4676, -0.6970, -1.1608,  0.6995,  0.1991]],
 
-    (2 ,.,.) = 
-      0.4973 -1.5067  1.7661 -0.3569 -0.1713
-      0.4068 -0.4284 -1.1299  1.4274 -1.4027
-      1.4825 -1.1559  1.6190  0.9581  0.7747
-      0.1940  0.1687  0.3061  1.0743 -1.0327
-    [torch.FloatTensor of size 3x4x5]
+            [[ 0.8657,  0.2444, -0.6629,  0.8073,  1.1017],
+             [-0.1759, -2.2456, -1.4465,  0.0612, -0.6177],
+             [-0.7981, -0.1316,  1.8793, -0.0721,  0.1578],
+             [-0.7735,  0.1991,  0.0457,  0.1530, -0.4757]],
+
+            [[-0.1110,  0.2927, -0.1578, -0.0288,  0.4533],
+             [ 1.1422,  0.2486, -1.7754, -0.0255, -1.0233],
+             [-0.5962, -1.0055,  0.4285,  1.4761, -1.7869],
+             [ 1.6103, -0.7040, -0.1853, -0.9962, -0.8313]]])
 
 
 Operations with Tensors
@@ -199,8 +190,8 @@ You can operate on tensors in the ways you would expect.
 .. code-block:: python
 
 
-    x = torch.Tensor([1., 2., 3.])
-    y = torch.Tensor([4., 5., 6.])
+    x = torch.tensor([1., 2., 3.])
+    y = torch.tensor([4., 5., 6.])
     z = x + y
     print(z)
 
@@ -211,12 +202,11 @@ You can operate on tensors in the ways you would expect.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    5
-     7
-     9
-    [torch.FloatTensor of size 3]
+ .. code-block:: none
+
+    tensor([5., 7., 9.])
 
 
 See `the documentation <http://pytorch.org/docs/torch.html>`__ for a
@@ -254,19 +244,17 @@ One helpful operation that we will make use of later is concatenation.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    1.0930  0.7769 -1.3128  0.7099  0.9944
-    -0.2694 -0.6491 -0.1373 -0.2954 -0.7725
-    -0.2215  0.5074 -0.6794 -1.6115  0.5230
-    -0.8890  0.2620  0.0302  0.0013 -1.3987
-     1.4666 -0.1028 -0.0097 -0.8420 -0.2067
-    [torch.FloatTensor of size 5x5]
+ .. code-block:: none
 
-
-     1.0672  0.1732 -0.6873  0.3620  0.3776 -0.2443 -0.5850  2.0812
-     0.3111  0.2358 -1.0658 -0.1186  0.4903  0.8349  0.8894  0.4148
-    [torch.FloatTensor of size 2x8]
+    tensor([[-0.8029,  0.2366,  0.2857,  0.6898, -0.6331],
+            [ 0.8795, -0.6842,  0.4533,  0.2912, -0.8317],
+            [-0.5525,  0.6355, -0.3968, -0.6571, -1.6428],
+            [ 0.9803, -0.0421, -0.8206,  0.3133, -1.1352],
+            [ 0.3773, -0.2824, -2.5667, -1.4303,  0.5009]])
+    tensor([[ 0.5438, -0.4057,  1.1341, -0.1473,  0.6272,  1.0935,  0.0939,  1.2381],
+            [-1.1115,  0.3501, -0.7703, -1.3459,  0.5119, -0.6933, -0.1668, -0.9999]])
 
 
 Reshaping Tensors
@@ -296,40 +284,25 @@ to the component.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    (0 ,.,.) = 
-      0.0507 -0.9644 -2.0111  0.5245
-      2.1332 -0.0822  0.8388 -1.3233
-      0.0701  1.2200  0.4251 -1.2328
+ .. code-block:: none
 
-    (1 ,.,.) = 
-     -0.6195  1.5133  1.9954 -0.6585
-     -0.4139 -0.2250 -0.6890  0.9882
-      0.7404 -2.0990  1.2582 -0.3990
-    [torch.FloatTensor of size 2x3x4]
+    tensor([[[ 0.4175, -0.2127, -0.8400, -0.4200],
+             [-0.6240, -0.9773,  0.8748,  0.9873],
+             [-0.0594, -2.4919,  0.2423,  0.2883]],
 
-
-
-    Columns 0 to 9 
-     0.0507 -0.9644 -2.0111  0.5245  2.1332 -0.0822  0.8388 -1.3233  0.0701  1.2200
-    -0.6195  1.5133  1.9954 -0.6585 -0.4139 -0.2250 -0.6890  0.9882  0.7404 -2.0990
-
-    Columns 10 to 11 
-     0.4251 -1.2328
-     1.2582 -0.3990
-    [torch.FloatTensor of size 2x12]
-
-
-
-    Columns 0 to 9 
-     0.0507 -0.9644 -2.0111  0.5245  2.1332 -0.0822  0.8388 -1.3233  0.0701  1.2200
-    -0.6195  1.5133  1.9954 -0.6585 -0.4139 -0.2250 -0.6890  0.9882  0.7404 -2.0990
-
-    Columns 10 to 11 
-     0.4251 -1.2328
-     1.2582 -0.3990
-    [torch.FloatTensor of size 2x12]
+            [[-0.1095,  0.3126,  1.5038,  0.5038],
+             [ 0.6223, -0.4481, -0.2856,  0.3880],
+             [-1.1435, -0.6512, -0.1032,  0.6937]]])
+    tensor([[ 0.4175, -0.2127, -0.8400, -0.4200, -0.6240, -0.9773,  0.8748,  0.9873,
+             -0.0594, -2.4919,  0.2423,  0.2883],
+            [-0.1095,  0.3126,  1.5038,  0.5038,  0.6223, -0.4481, -0.2856,  0.3880,
+             -1.1435, -0.6512, -0.1032,  0.6937]])
+    tensor([[ 0.4175, -0.2127, -0.8400, -0.4200, -0.6240, -0.9773,  0.8748,  0.9873,
+             -0.0594, -2.4919,  0.2423,  0.2883],
+            [-0.1095,  0.3126,  1.5038,  0.5038,  0.6223, -0.4481, -0.2856,  0.3880,
+             -1.1435, -0.6512, -0.1032,  0.6937]])
 
 
 Computation Graphs and Automatic Differentiation
@@ -341,8 +314,8 @@ back propagation gradients yourself. A computation graph is simply a
 specification of how your data is combined to give you the output. Since
 the graph totally specifies what parameters were involved with which
 operations, it contains enough information to compute derivatives. This
-probably sounds vague, so lets see what is going on using the
-fundamental class of Pytorch: autograd.Variable.
+probably sounds vague, so let's see what is going on using the
+fundamental flag ``requires_grad``.
 
 First, think from a programmers perspective. What is stored in the
 torch.Tensor objects we were creating above? Obviously the data and the
@@ -352,8 +325,8 @@ data and shape. It has no idea that it was the sum of two other tensors
 (it could have been read in from a file, it could be the result of some
 other operation, etc.)
 
-The Variable class keeps track of how it was created. Lets see it in
-action.
+If ``requires_grad=True``, the Tensor object keeps track of how it was
+created. Lets see it in action.
 
 
 
@@ -361,15 +334,14 @@ action.
 .. code-block:: python
 
 
-    # Variables wrap tensor objects
-    x = autograd.Variable(torch.Tensor([1., 2., 3]), requires_grad=True)
-    # You can access the data with the .data attribute
-    print(x.data)
+    # Tensor factory methods have a ``requires_grad`` flag
+    x = torch.tensor([1., 2., 3], requires_grad=True)
 
-    # You can also do all the same operations you did with tensors with Variables.
-    y = autograd.Variable(torch.Tensor([4., 5., 6]), requires_grad=True)
+    # With requires_grad=True, you can still do all the operations you previously
+    # could
+    y = torch.tensor([4., 5., 6], requires_grad=True)
     z = x + y
-    print(z.data)
+    print(z)
 
     # BUT z knows something extra.
     print(z.grad_fn)
@@ -381,23 +353,15 @@ action.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    1
-     2
-     3
-    [torch.FloatTensor of size 3]
+ .. code-block:: none
 
-
-     5
-     7
-     9
-    [torch.FloatTensor of size 3]
-
-    <torch.autograd.function.AddBackward object at 0x7fb3c29b68b8>
+    tensor([5., 7., 9.], grad_fn=<ThAddBackward>)
+    <ThAddBackward object at 0x11640bc18>
 
 
-So Variables know what created them. z knows that it wasn't read in from
+So Tensors know what created them. z knows that it wasn't read in from
 a file, it wasn't the result of a multiplication or exponential or
 whatever. And if you keep following z.grad_fn, you will find yourself at
 x and y.
@@ -422,13 +386,12 @@ But how does that help us compute a gradient?
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-     21
-    [torch.FloatTensor of size 1]
+ .. code-block:: none
 
-    <torch.autograd.function.SumBackward object at 0x7fb3c0dcf4f8>
+    tensor(21., grad_fn=<SumBackward0>)
+    <SumBackward0 object at 0x115f8f978>
 
 
 So now, what is the derivative of this sum with respect to the first
@@ -480,13 +443,11 @@ property, since for many models this is very convenient.)
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    Variable containing:
-     1
-     1
-     1
-    [torch.FloatTensor of size 3]
+ .. code-block:: none
+
+    tensor([1., 1., 1.])
 
 
 Understanding what is going on in the block below is crucial for being a
@@ -498,29 +459,66 @@ successful programmer in deep learning.
 .. code-block:: python
 
 
-    x = torch.randn((2, 2))
-    y = torch.randn((2, 2))
-    z = x + y  # These are Tensor types, and backprop would not be possible
+    x = torch.randn(2, 2)
+    y = torch.randn(2, 2)
+    # By default, user created Tensors have ``requires_grad=False``
+    print(x.requires_grad, y.requires_grad)
+    z = x + y
+    # So you can't backprop through z
+    print(z.grad_fn)
 
-    var_x = autograd.Variable(x)
-    var_y = autograd.Variable(y)
-    # var_z contains enough information to compute gradients, as we saw above
-    var_z = var_x + var_y
-    print(var_z.grad_fn)
+    # ``.requires_grad_( ... )`` changes an existing Tensor's ``requires_grad``
+    # flag in-place. The input flag defaults to ``True`` if not given.
+    x = x.requires_grad_()
+    y = y.requires_grad_()
+    # z contains enough information to compute gradients, as we saw above
+    z = x + y
+    print(z.grad_fn)
+    # If any input to an operation has ``requires_grad=True``, so will the output
+    print(z.requires_grad)
 
-    var_z_data = var_z.data  # Get the wrapped Tensor object out of var_z...
-    # Re-wrap the tensor in a new variable
-    new_var_z = autograd.Variable(var_z_data)
+    # Now z has the computation history that relates itself to x and y
+    # Can we just take its values, and **detach** it from its history?
+    new_z = z.detach()
 
-    # ... does new_var_z have information to backprop to x and y?
+    # ... does new_z have information to backprop to x and y?
     # NO!
-    print(new_var_z.grad_fn)
-    # And how could it?  We yanked the tensor out of var_z (that is
-    # what var_z.data is).  This tensor doesn't know anything about
-    # how it was computed.  We pass it into new_var_z, and this is all the
-    # information new_var_z gets.  If var_z_data doesn't know how it was
-    # computed, theres no way new_var_z will.
-    # In essence, we have broken the variable away from its past history
+    print(new_z.grad_fn)
+    # And how could it? ``z.detach()`` returns a tensor that shares the same storage
+    # as ``z``, but with the computation history forgotten. It doesn't know anything
+    # about how it was computed.
+    # In essence, we have broken the Tensor away from its past history
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    False False
+    None
+    <ThAddBackward object at 0x11b501518>
+    True
+    None
+
+
+You can also stop autograd from tracking history on Tensors
+with ``.requires_grad``=True by wrapping the code block in
+``with torch.no_grad():``
+
+
+
+.. code-block:: python
+
+    print(x.requires_grad)
+    print((x ** 2).requires_grad)
+
+    with torch.no_grad():
+    	print((x ** 2).requires_grad)
 
 
 
@@ -529,34 +527,26 @@ successful programmer in deep learning.
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
 
-    <torch.autograd.function.AddBackward object at 0x7fb3c0dcf318>
-    None
+ .. code-block:: none
 
-
-Here is the basic, extremely important rule for computing with
-autograd.Variables (note this is more general than Pytorch. There is an
-equivalent object in every major deep learning toolkit):
-
-**If you want the error from your loss function to backpropagate to a
-component of your network, you MUST NOT break the Variable chain from
-that component to your loss Variable. If you do, the loss will have no
-idea your component exists, and its parameters can't be updated.**
-
-I say this in bold, because this error can creep up on you in very
-subtle ways (I will show some such ways below), and it will not cause
-your code to crash or complain, so you must be careful.
+    True
+    True
+    False
 
 
+**Total running time of the script:** ( 0 minutes  0.008 seconds)
 
-**Total running time of the script:** ( 0 minutes  0.011 seconds)
 
+.. _sphx_glr_download_beginner_nlp_pytorch_tutorial.py:
 
 
 .. only :: html
 
  .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download

@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_advanced_numpy_extensions_tutorial.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_advanced_numpy_extensions_tutorial.py:
 
@@ -7,15 +11,17 @@ Creating extensions using numpy and scipy
 =========================================
 **Author**: `Adam Paszke <https://github.com/apaszke>`_
 
+**Updated by**: `Adam Dziedzic` [https://github.com/adam-dziedzic](https://github.com/adam-dziedzic)
+
 In this tutorial, we shall go through two tasks:
 
 1. Create a neural network layer with no parameters.
 
-    -  This calls into **numpy** as part of it’s implementation
+    -  This calls into **numpy** as part of its implementation
 
 2. Create a neural network layer that has learnable weights
 
-    -  This calls into **SciPy** as part of it’s implementation
+    -  This calls into **SciPy** as part of its implementation
 
 
 
@@ -24,12 +30,6 @@ In this tutorial, we shall go through two tasks:
 
     import torch
     from torch.autograd import Function
-    from torch.autograd import Variable
-
-
-
-
-
 
 
 Parameter-less example
@@ -53,14 +53,14 @@ It is aptly named BadFFTFunction
     class BadFFTFunction(Function):
 
         def forward(self, input):
-            numpy_input = input.numpy()
+            numpy_input = input.detach().numpy()
             result = abs(rfft2(numpy_input))
-            return torch.FloatTensor(result)
+            return input.new(result)
 
         def backward(self, grad_output):
             numpy_go = grad_output.numpy()
             result = irfft2(numpy_go)
-            return torch.FloatTensor(result)
+            return grad_output.new(result)
 
     # since this layer does not have any parameters, we can
     # simply declare this as a function, rather than as an nn.Module class
@@ -70,11 +70,6 @@ It is aptly named BadFFTFunction
         return BadFFTFunction()(input)
 
 
-
-
-
-
-
 **Example usage of the created layer:**
 
 
@@ -82,96 +77,69 @@ It is aptly named BadFFTFunction
 .. code-block:: python
 
 
-    input = Variable(torch.randn(8, 8), requires_grad=True)
+    input = torch.randn(8, 8, requires_grad=True)
     result = incorrect_fft(input)
-    print(result.data)
+    print(result)
     result.backward(torch.randn(result.size()))
-    print(input.grad)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    2.1226   3.8993   9.6260   2.7216   4.9073
-      4.3791   9.1649   5.1780   5.9066   4.4092
-     12.3357  10.6545  11.3871   2.9117   7.6938
-      5.9608   3.7098   6.4056   6.7317  10.8145
-      7.0636   8.5997   2.3188   3.7926   3.3744
-      5.9608   9.3499   6.3629   3.1677  10.8145
-     12.3357  14.0751   8.3441  13.6029   7.6938
-      4.3791   6.5583   4.3877   6.7177   4.4092
-    [torch.FloatTensor of size 8x5]
-
-    Variable containing:
-    -0.0009 -0.0995 -0.0298  0.0046 -0.2257  0.0046 -0.0298 -0.0995
-     0.2027 -0.0569 -0.1611 -0.0592 -0.0742 -0.0527  0.0531  0.2552
-     0.0116  0.1221 -0.1790  0.0891  0.0876 -0.1443  0.1612 -0.1856
-     0.2251  0.0971 -0.0973 -0.1555 -0.0310  0.0258  0.0064 -0.1529
-     0.1359  0.0751  0.1883 -0.1253 -0.1023 -0.1253  0.1883  0.0751
-     0.2251 -0.1529  0.0064  0.0258 -0.0310 -0.1555 -0.0973  0.0971
-     0.0116 -0.1856  0.1612 -0.1443  0.0876  0.0891 -0.1790  0.1221
-     0.2027  0.2552  0.0531 -0.0527 -0.0742 -0.0592 -0.1611 -0.0569
-    [torch.FloatTensor of size 8x8]
+    print(input)
 
 
 Parametrized example
 --------------------
 
-This implements a layer with learnable weights.
+In deep learning literature, this layer is confusingly referred
+to as convolution while the actual operation is cross-correlation
+(the only difference is that filter is flipped for convolution,
+which is not the case for cross-correlation).
 
-It implements the Cross-correlation with a learnable kernel.
+Implementation of a layer with learnable weights, where cross-correlation
+has a filter (kernel) that represents weights.
 
-In deep learning literature, it’s confusingly referred to as
-Convolution.
-
-The backward computes the gradients wrt the input and gradients wrt the
-filter.
-
-**Implementation:**
-
-*Please Note that the implementation serves as an illustration, and we
-did not verify it’s correctness*
+The backward pass computes the gradient wrt the input and the gradient wrt the filter.
 
 
 
 .. code-block:: python
 
 
+    from numpy import flip
+    import numpy as np
     from scipy.signal import convolve2d, correlate2d
     from torch.nn.modules.module import Module
     from torch.nn.parameter import Parameter
 
 
     class ScipyConv2dFunction(Function):
-
-        def forward(self, input, filter):
+        @staticmethod
+        def forward(ctx, input, filter, bias):
+            # detach so we can cast to NumPy
+            input, filter, bias = input.detach(), filter.detach(), bias.detach()
             result = correlate2d(input.numpy(), filter.numpy(), mode='valid')
-            self.save_for_backward(input, filter)
-            return torch.FloatTensor(result)
+            result += bias.numpy()
+            ctx.save_for_backward(input, filter, bias)
+            return torch.from_numpy(result)
 
-        def backward(self, grad_output):
-            input, filter = self.saved_tensors
-            grad_input = convolve2d(grad_output.numpy(), filter.t().numpy(), mode='full')
-            grad_filter = convolve2d(input.numpy(), grad_output.numpy(), mode='valid')
-            return torch.FloatTensor(grad_input), torch.FloatTensor(grad_filter)
+        @staticmethod
+        def backward(ctx, grad_output):
+            grad_output = grad_output.detach()
+            input, filter, bias = ctx.saved_tensors
+            grad_output = grad_output.numpy()
+            grad_bias = np.sum(grad_output, keepdims=True)
+            grad_input = convolve2d(grad_output, filter.numpy(), mode='full')
+            # the previous line can be expressed equivalently as:
+            # grad_input = correlate2d(grad_output, flip(flip(filter.numpy(), axis=0), axis=1), mode='full')
+            grad_filter = correlate2d(input.numpy(), grad_output, mode='valid')
+            return torch.from_numpy(grad_input), torch.from_numpy(grad_filter), torch.from_numpy(grad_bias)
 
 
     class ScipyConv2d(Module):
-
-        def __init__(self, kh, kw):
+        def __init__(self, filter_width, filter_height):
             super(ScipyConv2d, self).__init__()
-            self.filter = Parameter(torch.randn(kh, kw))
+            self.filter = Parameter(torch.randn(filter_width, filter_height))
+            self.bias = Parameter(torch.randn(1, 1))
 
         def forward(self, input):
-            return ScipyConv2dFunction()(input, self.filter)
-
-
-
-
+            return ScipyConv2dFunction.apply(input, self.filter, self.bias)
 
 
 
@@ -183,56 +151,40 @@ did not verify it’s correctness*
 
 
     module = ScipyConv2d(3, 3)
-    print(list(module.parameters()))
-    input = Variable(torch.randn(10, 10), requires_grad=True)
+    print("Filter and bias: ", list(module.parameters()))
+    input = torch.randn(10, 10, requires_grad=True)
     output = module(input)
-    print(output)
+    print("Output from the convolution: ", output)
     output.backward(torch.randn(8, 8))
-    print(input.grad)
+    print("Gradient for the input map: ", input.grad)
+
+
+**Check the gradients:**
 
 
 
-
-.. rst-class:: sphx-glr-script-out
-
- Out::
-
-    [Parameter containing:
-     0.4831  0.6467  2.0021
-     0.1193 -0.0037  0.1009
-     0.8712  0.1695 -0.7815
-    [torch.FloatTensor of size 3x3]
-    ]
-    Variable containing:
-     2.5292  5.3845  2.5123  1.7060  0.2932 -3.0669  0.3523  1.6898
-    -2.0419 -1.6922 -0.8991  2.4344  2.5416 -0.0239  1.7074 -1.8995
-     0.2719  0.2121  0.4291 -0.9746  2.8081  0.2306 -3.9822 -4.2363
-     0.6453 -1.3840  5.3821  0.8932  4.8692 -1.6831 -3.5371 -1.1993
-     1.4583  0.4707  2.1705  1.0944 -2.9527 -3.7852 -4.7504 -2.7370
-    -2.1909  0.0043  0.3310  2.4525  0.8645 -0.9133 -4.8286 -2.8165
-    -2.0130  1.9545 -0.2791  2.7784 -1.8112 -3.2720 -1.2373 -0.9273
-    -1.2573  0.9751  4.6656  4.8634 -2.3609 -3.2552  2.7251 -2.6172
-    [torch.FloatTensor of size 8x8]
-
-    Variable containing:
-     0.1840 -0.0294  0.5629  0.0257  0.8659  0.7704  0.1189  0.7143 -1.2799 -0.0068
-     0.3699 -0.3189 -0.2198 -0.7108 -0.8149  1.1956 -1.1774  1.3095 -1.3870 -0.3208
-     0.5438  0.1727 -0.6845  2.1376  1.4744  3.7935 -3.3866 -1.2313  1.3526 -1.5007
-    -0.4945  0.3311 -4.2904  0.9139  1.4910  4.7046 -2.6968 -2.4633  0.6011  0.0815
-    -1.8851  4.0057  1.8046 -0.0302  0.7356  1.3570  0.7272 -2.1649 -0.4821  1.5796
-    -2.1101  0.5638 -0.3341 -1.7821 -2.6282 -1.4133  0.3636 -2.8445  0.6943  0.3106
-     0.2548 -0.5406 -2.5517 -1.7037 -0.7230  2.0527  1.4838 -0.4078 -0.5459 -1.3875
-    -3.4917 -1.0278 -3.1806 -1.7807  3.1320 -3.9973 -0.7726  3.8712  0.5966  0.1608
-    -2.7756  0.8781 -1.2200  2.9019  1.5007  1.3835 -0.1510 -2.9587  0.1377  1.2194
-    -2.0159  2.9220  2.1916 -2.0630 -1.3939  2.0322  1.8727  0.9909 -0.4869 -0.6182
-    [torch.FloatTensor of size 10x10]
+.. code-block:: python
 
 
-**Total running time of the script:** ( 0 minutes  0.002 seconds)
+    from torch.autograd.gradcheck import gradcheck
+
+    moduleConv = ScipyConv2d(3, 3)
+
+    input = [torch.randn(20, 20, dtype=torch.double, requires_grad=True)]
+    test = gradcheck(moduleConv, input, eps=1e-6, atol=1e-4)
+    print("Are the gradients correct: ", test)
+
+**Total running time of the script:** ( 0 minutes  0.000 seconds)
 
 
+.. _sphx_glr_download_advanced_numpy_extensions_tutorial.py:
 
-.. container:: sphx-glr-footer
+
+.. only :: html
+
+ .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download
@@ -245,6 +197,9 @@ did not verify it’s correctness*
 
      :download:`Download Jupyter notebook: numpy_extensions_tutorial.ipynb <numpy_extensions_tutorial.ipynb>`
 
-.. rst-class:: sphx-glr-signature
 
-    `Generated by Sphinx-Gallery <http://sphinx-gallery.readthedocs.io>`_
+.. only:: html
+
+ .. rst-class:: sphx-glr-signature
+
+    `Gallery generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
